@@ -1,0 +1,1 @@
+[{"Source": "C1", "Color": "w", "Line_Size": 3.0, "Window_Size": 5, "Channels": "1", "Sampling_Rate": 19, "Type": "EEG"}]

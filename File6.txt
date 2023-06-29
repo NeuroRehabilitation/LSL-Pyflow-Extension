@@ -1,0 +1,1 @@
+{"Source": "Ustream1", "Color": "r", "Line_Size": 0.5, "Window_Size": "1000", "Channels": "1", "Sampling_Rate": [19, 19, 19], "Type": "EEG"}
