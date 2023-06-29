@@ -53,21 +53,24 @@ class OpenWindow(NodeBase):
     def stop(self, *args, **kwargs):
         self.bWorking = False
         self.online = False
-
         self.Prosess.terminate()
+        self.Prosess.join()
+        self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.q,))
 
     def start(self, *args, **kwargs):
+        if self.bWorking:
+            self.Prosess.terminate()
+            self.Prosess.join()
+            self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.q,))
+
         self.bWorking = True
         self.Prosess.start()
-        print("start")
         self.q.put(self.info.getData())
-        print("start1")
         while self.q.get() != 1:
-            print("waiting")
             print(self.info.getData())
             self.q.put(self.info.getData())
         self.online = True
-        print("done")
+
 
     @staticmethod
     def category():

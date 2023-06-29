@@ -54,45 +54,50 @@ class LSL_Reader2(NodeBase):
 
         def start(self, *args, **kwargs):
 
-            self.bWorking = True
+
+
             streams = resolve_streams()
-            stream_information = dict()
-            for stream in streams:
+            if not streams:
+                print("No streams found")
+            else:
+                self.bWorking = True
+                stream_information = dict()
+                for stream in streams:
 
-                inlet = StreamInlet(stream)
-                stream_channels = dict()
-                channels = inlet.info().desc().child("channels").child("channel")
+                    inlet = StreamInlet(stream)
+                    stream_channels = dict()
+                    channels = inlet.info().desc().child("channels").child("channel")
 
-                channels_dicts = dict()
-                for i in range(inlet.info().channel_count()):
-                    # Get the channel number (e.g. 1)
-                    channel = i + 1
+                    channels_dicts = dict()
+                    for i in range(inlet.info().channel_count()):
+                        # Get the channel number (e.g. 1)
+                        channel = i + 1
 
-                    # Get the channel type (e.g. ECG)
-                    sensor = channels.child_value("label")
+                        # Get the channel type (e.g. ECG)
+                        sensor = channels.child_value("label")
 
-                    # Get the channel unit (e.g. mV)
-                    unit = channels.child_value("unit")
+                        # Get the channel unit (e.g. mV)
+                        unit = channels.child_value("unit")
 
-                    # Store the information in the stream_channels dictionary
-                    stream_channels.update({channel: [sensor, unit]})
-                    channels = channels.next_sibling()
-                    channels_dicts[sensor] = []
+                        # Store the information in the stream_channels dictionary
+                        stream_channels.update({channel: [sensor, unit]})
+                        channels = channels.next_sibling()
+                        channels_dicts[sensor] = []
 
-                self.DataBase[inlet.info().name()] = channels_dicts
+                    self.DataBase[inlet.info().name()] = channels_dicts
 
-                inlet_info = {
-                    "Name": inlet.info().name(),
-                    "Type": inlet.info().type(),
-                    "Channels": int(inlet.info().channel_count()),
-                    "Sampling Rate": int(inlet.info().nominal_srate()),
-                    "Channels Info": stream_channels,
-                }
-                stream_information[inlet.info().name()] = inlet_info
-                #print(inlet_info)
-                self.Info.setData(stream_information)
-                #print(str(stream_information))
-                self.inlets.append(inlet)
+                    inlet_info = {
+                        "Name": inlet.info().name(),
+                        "Type": inlet.info().type(),
+                        "Channels": int(inlet.info().channel_count()),
+                        "Sampling Rate": int(inlet.info().nominal_srate()),
+                        "Channels Info": stream_channels,
+                    }
+                    stream_information[inlet.info().name()] = inlet_info
+                    #print(inlet_info)
+                    self.Info.setData(stream_information)
+                    #print(str(stream_information))
+                    self.inlets.append(inlet)
 
         def addDataToDict(self, key, data):
             for i, row in enumerate(self.DataBase[key]):
