@@ -16,7 +16,7 @@ class LSL_Writer2(NodeBase):
         self.streamName = self.createInputPin("Name", 'StringPin')
         self.streamType = self.createInputPin("Type", 'StringPin')
         self.streamID = self.createInputPin("ID", 'StringPin')
-        self.Data = self.createInputPin('data', 'AnyPin', structure=StructureType.Dict, constraint="2")
+        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Data.enableOptions(
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
@@ -32,31 +32,37 @@ class LSL_Writer2(NodeBase):
         self.headerColor = FLOW_CONTROL_COLOR
         self.On = False
 
-        self.start_time = time.time()
+        self.DataBase = dict()
+        self.channels_dicts=dict()
+        self.start = time.time()
         self.counter = 0
 
     def Tick(self, delta):
         super(LSL_Writer2, self).Tick(delta)
         if self.bWorking:
-            #timevar = time.time()
-            #if time.time() - self.start_time > 1:
-                #self.start_time = time.time()
-                #print("Number of Data sent in one second:", self.counter)
-                #self.counter = 0
+
             # Generate a random value
             sample = list(self.Data.getData().values())
+
+            self.addDataToDict(self.streamName.getData(),sample)
+
+            self.Send.setData(self.DataBase)
             # Send the data sample
             self.outlet.push_sample(sample)
-            #self.counter += 1
-            #print("Time Consumed 4: ", (time.time() - timevar))
 
+    def addDataToDict(self, key, data):
+        for i, row in enumerate(self.DataBase[key]):
+            self.DataBase[key][row].append(data[i])
 
     def get_all_keys(self, array_of_dicts):
         keys = dict()
+        channels_dicts = dict()
         i = 0
         for key in array_of_dicts.keys():
             keys.update({i: [key, ""]})
+            self.channels_dicts[key] = []
             i += 1
+
         return keys
 
     @staticmethod
@@ -88,13 +94,15 @@ class LSL_Writer2(NodeBase):
                 name=stream_name,
                 type=stream_type,
                 channel_count=channel_count,
-                nominal_srate=250,
+                nominal_srate=19,
                 channel_format='float32',
                 source_id=self.streamID.getData()
             )
-
+        self.DataBase[stream_name] = self.channels_dicts
         self.outlet = StreamOutlet(info)
         self.bWorking = True
+
+        self.Info_Stream.setData(dict(stream_name=stream_desc))
 
     @staticmethod
     def category():

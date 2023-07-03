@@ -17,7 +17,6 @@ _EXPORTERS = OrderedDict()
 
 _NODES={
 	OpenWindow.__name__:OpenWindow
-
 }
 
 

@@ -26,7 +26,6 @@ class LSL_Reader2(NodeBase):
 
         def Tick(self, delta):
             super(LSL_Reader2, self).Tick(delta)
-            self.data = []
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
@@ -39,8 +38,6 @@ class LSL_Reader2(NodeBase):
                     self.addDataToDict(inlet.info().name(), sample)
                     self.Send.setData(self.DataBase)
                 self.counter += 1
-
-
         @staticmethod
         def keywords():
             return []
@@ -53,9 +50,6 @@ class LSL_Reader2(NodeBase):
             self.bWorking = False
 
         def start(self, *args, **kwargs):
-
-
-
             streams = resolve_streams()
             if not streams:
                 print("No streams found")

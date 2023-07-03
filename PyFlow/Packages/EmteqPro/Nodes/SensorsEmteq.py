@@ -1,0 +1,46 @@
+from PyFlow.Core import NodeBase
+from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
+from PyFlow.Core.Common import *
+
+
+class SensorsEmteq(NodeBase):
+    def __init__(self, name):
+        super(SensorsEmteq, self).__init__(name)
+        self.Sensor_Name = self.createInputPin('Name', 'StringPin')
+        self.data = self.createInputPin('InData', 'AnyPin', structure=StructureType.Multi)
+        self.data.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.data.disableOptions(PinOptions.SupportsOnlyArrays)
+
+        self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
+        self.Send.enableOptions(PinOptions.AllowAny)
+
+        self.LastValue = self.createOutputPin('LastValue', 'FloatPin')
+    @staticmethod
+    def pinTypeHints():
+        helper = NodePinsSuggestionsHelper()
+        helper.addInputDataType('BoolPin')
+        helper.addOutputDataType('BoolPin')
+        helper.addInputStruct(StructureType.Single)
+        helper.addOutputStruct(StructureType.Single)
+        return helper
+
+    @staticmethod
+    def category():
+        return 'Data Management'
+
+    @staticmethod
+    def keywords():
+        return []
+
+    @staticmethod
+    def description():
+        return "Description in rst format."
+
+    def compute(self, *args, **kwargs):
+        sensor_name = self.Sensor_Name.getData()
+        data = self.data.getData()
+        if sensor_name in data:
+            self.Send.setData(data[sensor_name])
+            self.LastValue.setData(data[sensor_name][-1])
+

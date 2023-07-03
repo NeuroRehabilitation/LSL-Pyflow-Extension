@@ -1,11 +1,13 @@
-PACKAGE_NAME = 'Test'
+PACKAGE_NAME = 'EmteqPro'
 
 from collections import OrderedDict
 from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
-from PyFlow.Packages.Test.Nodes.DataBase import DataBase
-from PyFlow.Packages.Test.Nodes.CreateDict import CreateDict
+from PyFlow.Packages.EmteqPro.Nodes.AcquisitionEmteq import AcquisitionEmteq
+from PyFlow.Packages.EmteqPro.Nodes.SensorsEmteq import SensorsEmteq
+from PyFlow.Packages.EmteqPro.Nodes.CalculationEmteq import CalculationEmteq
+from PyFlow.Packages.EmteqPro.Nodes.CSVEmteq import CSVEmteq
 
 # Factories
 
@@ -16,14 +18,18 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
+
 _NODES={
-	DataBase.__name__:DataBase,
-	CreateDict.__name__:CreateDict
+	AcquisitionEmteq.__name__:AcquisitionEmteq,
+	SensorsEmteq.__name__:SensorsEmteq,
+	CSVEmteq.__name__:CSVEmteq,
+	CalculationEmteq.__name__:CalculationEmteq
 }
 
-class Test(IPackage):
+
+class EmteqPro(IPackage):
 	def __init__(self):
-		super(Test, self).__init__()
+		super(EmteqPro, self).__init__()
 
 	@staticmethod
 	def GetExporters():

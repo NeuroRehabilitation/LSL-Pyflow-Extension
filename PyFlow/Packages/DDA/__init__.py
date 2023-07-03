@@ -1,11 +1,10 @@
-PACKAGE_NAME = 'Test'
+PACKAGE_NAME = 'DDA'
 
 from collections import OrderedDict
 from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
-from PyFlow.Packages.Test.Nodes.DataBase import DataBase
-from PyFlow.Packages.Test.Nodes.CreateDict import CreateDict
+from PyFlow.Packages.DDA.Nodes.DDA1 import DDA1
 
 # Factories
 
@@ -16,14 +15,12 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_NODES={
-	DataBase.__name__:DataBase,
-	CreateDict.__name__:CreateDict
-}
+_NODES[DDA1.__name__] = DDA1
 
-class Test(IPackage):
+
+class DDA(IPackage):
 	def __init__(self):
-		super(Test, self).__init__()
+		super(DDA, self).__init__()
 
 	@staticmethod
 	def GetExporters():

@@ -15,12 +15,15 @@ class OpenWindow(NodeBase):
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
         self.bWorking = False
-        self.data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
-        self.data.disableOptions(PinOptions.SupportsOnlyArrays)
+
         self.info = self.createInputPin('Info', 'AnyPin', structure=StructureType.Single)
         self.info.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.info.disableOptions(PinOptions.SupportsOnlyArrays)
+
+        self.data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.data.disableOptions(PinOptions.SupportsOnlyArrays)
+
         self.info2 = {'UStream_1': {'Name': 'UStream_1', 'Type': 'Unity.StreamType', 'Channels': 3, 'Sampling Rate': 19, 'Channels Info': {1: ['U1', ''], 2: ['U2', ''], 3: ['U3', '']}}}
         self.q = multiprocessing.Queue()
         self.online = False
