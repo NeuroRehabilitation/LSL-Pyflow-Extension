@@ -37,9 +37,12 @@ class OpenWindow(NodeBase):
         if self.bWorking and self.online:
             if time.time() - self.start > 1:
                 self.start = time.time()
-                print("OpenReceiver->Number of values in one second: " + str(self.counter))
+                #print("OpenReceiver->Number of values in one second: " + str(self.counter))
                 self.counter = 0
-                self.q.put(self.data.getData())
+                if self.data.getData() is None:
+                    self.stop()
+                else:
+                    self.q.put(self.data.getData())
             self.counter += 1
 
 
@@ -65,7 +68,6 @@ class OpenWindow(NodeBase):
             self.Prosess.terminate()
             self.Prosess.join()
             self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.q,))
-
         self.bWorking = True
         self.Prosess.start()
         self.q.put(self.info.getData())

@@ -1,5 +1,4 @@
-from PyFlow.Packages.LSLController.Nodes.LSL_Writer import LSL_Writer
-from PyFlow.Packages.LSLController.Nodes.LSL_Writer2 import LSL_Writer2
+
 
 PACKAGE_NAME = 'LSLController'
 
@@ -9,6 +8,10 @@ from PyFlow.UI.UIInterfaces import IPackage
 # Class based nodes
 from PyFlow.Packages.LSLController.Nodes.LSL_Reader import LSL_Reader
 from PyFlow.Packages.LSLController.Nodes.LSL_Reader2 import LSL_Reader2
+
+from PyFlow.Packages.LSLController.Nodes.LSL_Writer import LSL_Writer
+from PyFlow.Packages.LSLController.Nodes.LSL_Writer2 import LSL_Writer2
+from PyFlow.Packages.LSLController.Nodes.LSL_Writer3 import LSL_Writer3
 # Factories
 
 _FOO_LIBS = {}
@@ -23,9 +26,9 @@ _NODES={
 	LSL_Reader.__name__:LSL_Reader,
 	LSL_Reader2.__name__:LSL_Reader2,
 	LSL_Writer.__name__:LSL_Writer,
+	LSL_Writer3.__name__:LSL_Writer3,
 	LSL_Writer2.__name__:LSL_Writer2
 }
-
 
 class LSLController(IPackage):
 	def __init__(self):

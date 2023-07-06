@@ -31,12 +31,17 @@ class LSL_Reader2(NodeBase):
                     self.start = time.time()
                     print("LSL Receiver2->Number of values in one second:" + str(self.counter))
                     self.counter = 0
-                for inlet in self.inlets:
-                    now = datetime.now()
-                    sample, timestamp = inlet.pull_sample()
-                    new_data = {inlet.info().name(): sample}
-                    self.addDataToDict(inlet.info().name(), sample)
-                    self.Send.setData(self.DataBase)
+                try:
+                    for inlet in self.inlets:
+                        now = datetime.now()
+                        sample, timestamp = inlet.pull_sample()
+                        new_data = {inlet.info().name(): sample}
+                        self.addDataToDict(inlet.info().name(), sample)
+                        self.Send.setData(self.DataBase)
+                except pylsl.LostError:
+                    print("Connection to the inlet lost.")
+                    self.Send.setData(None)
+                    self.stop()
                 self.counter += 1
         @staticmethod
         def keywords():

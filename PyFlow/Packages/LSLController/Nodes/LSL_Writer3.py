@@ -1,3 +1,4 @@
+import multiprocessing
 import random
 
 from PyFlow.Core import NodeBase
@@ -8,9 +9,9 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
 #DemoNode
 # LSL_Writer
-class LSL_Writer2(NodeBase):
+class LSL_Writer3(NodeBase):
     def __init__(self, name):
-        super(LSL_Writer2, self).__init__(name)
+        super(LSL_Writer3, self).__init__(name)
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
         self.streamName = self.createInputPin("Name", 'StringPin')
@@ -36,8 +37,11 @@ class LSL_Writer2(NodeBase):
         self.start = time.time()
         self.counter = 0
 
+        self.q = multiprocessing.Queue()
+        self.Prosess = multiprocessing.Process(target=Sender, args=(self.q,))
+
     def Tick(self, delta):
-        super(LSL_Writer2, self).Tick(delta)
+        super(LSL_Writer3, self).Tick(delta)
         if self.bWorking:
 
             # Generate a random value
@@ -47,11 +51,8 @@ class LSL_Writer2(NodeBase):
 
             self.Send.setData(self.DataBase)
             # Send the data sample
-
-
-            if time.time() - self.start > 1:
-                #self.outlet.push_sample(sample)
-                self.start = time.time()
+            #self.outlet.push_sample(sample)
+            self.q.put(sample)
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):
@@ -103,25 +104,47 @@ class LSL_Writer2(NodeBase):
                 "Sampling Rate": 20,
                 "Channels Info": self.get_all_keys(data),
             }
-            info = StreamInfo(
-                name=stream_name,
-                type=stream_type,
-                channel_count=channel_count,
-                nominal_srate=19,
-                channel_format='float32',
-                source_id=self.streamID.getData()
-            )
-            info_channels = info.desc().append_child("channels")
-
-            for name in data.keys():
-                info_channels.append_child("channel").append_child_value("label",name)
 
         self.DataBase[stream_name] = self.channels_dicts
         #self.outlet = StreamOutlet(info)
-        self.bWorking = True
+        print("Flag1")
+        self.Prosess.start()
+        self.q.put(stream_desc)
+        self.q.put(stream_desc)
 
+        self.bWorking = True
         self.Info_Stream.setData(dict(stream_name=stream_desc))
 
     @staticmethod
     def category():
         return 'FlowControl'
+
+
+def Sender(q):
+    info_string = q.get()
+    info = StreamInfo(
+        name=info_string["Name"],
+        type=info_string["Type"],
+        channel_count=info_string["Channels"],
+        nominal_srate=20,
+        channel_format='float32',
+        source_id="ID1"
+    )
+    print("hi")
+    info_channels = info.desc().append_child("channels")
+    for name in Init_Channel_Names(info_string["Channels Info"]):
+        info_channels.append_child("channel").append_child_value("label", name)
+    print("hi hi")
+    outlet = StreamOutlet(info)
+
+    outlet = StreamOutlet(info)
+    while True:
+        if q.get() is not None:
+            samples=q.get()
+            outlet.push_sample(samples)
+
+def Init_Channel_Names( dictio):
+    dict_keys = []
+    for key in dictio:
+        dict_keys.append(dictio[key][0])
+    return dict_keys

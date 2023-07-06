@@ -53,5 +53,5 @@ class DataBase(NodeBase):
                 lastvalues.append(self.data[source][channels][-1])
         self.N_Channels.setData(n_channels)
         self.Lastvalues.setData(lastvalues)
-        print("->" + str(n_channels))
+
 

@@ -61,7 +61,7 @@ from PyFlow.ConfigManager import ConfigManager
 
 import PyFlow.UI.resources
 
-EDITOR_TARGET_FPS = 1000
+EDITOR_TARGET_FPS = 2000
 
 
 def generateRandomString(numSymbolds=5):
@@ -422,7 +422,7 @@ class PyFlow(QMainWindow):
         self.tick_timer.timeout.disconnect()
 
     def mainLoop(self):
-        deltaTime = currentProcessorTime() - self._lastClock
+        deltaTime = (currentProcessorTime() - self._lastClock)/2
         ds = (deltaTime * 1000.0)
 
         if ds > 0:
