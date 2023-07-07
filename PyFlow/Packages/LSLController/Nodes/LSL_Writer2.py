@@ -47,10 +47,10 @@ class LSL_Writer2(NodeBase):
 
             self.Send.setData(self.DataBase)
             # Send the data sample
-
+            self.outlet.push_sample(sample)
 
             if time.time() - self.start > 1:
-                #self.outlet.push_sample(sample)
+
                 self.start = time.time()
 
     def addDataToDict(self, key, data):
@@ -75,7 +75,6 @@ class LSL_Writer2(NodeBase):
         for key in array_of_dicts.keys():
             info.desc().append_child_value("channel", key)
             i += 1
-
         return info
 
     @staticmethod
@@ -117,7 +116,7 @@ class LSL_Writer2(NodeBase):
                 info_channels.append_child("channel").append_child_value("label",name)
 
         self.DataBase[stream_name] = self.channels_dicts
-        #self.outlet = StreamOutlet(info)
+        self.outlet = StreamOutlet(info)
         self.bWorking = True
 
         self.Info_Stream.setData(dict(stream_name=stream_desc))

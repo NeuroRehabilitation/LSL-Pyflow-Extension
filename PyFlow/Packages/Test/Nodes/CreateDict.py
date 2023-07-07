@@ -10,6 +10,7 @@ class CreateDict(NodeBase):
     def __init__(self, name):
         super(CreateDict, self).__init__(name)
         # ____Input____#
+        self.inExec = self.createInputPin(DEFAULT_IN_EXEC_NAME, 'ExecPin', None, self.compute)
         self.Keys = self.createInputPin('Keys', 'AnyPin', structure=StructureType.Multi)
         self.Keys.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Keys.disableOptions(PinOptions.SupportsOnlyArrays)
@@ -21,6 +22,7 @@ class CreateDict(NodeBase):
         #_____Output_____#
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+        self.outExec = self.createOutputPin(DEFAULT_OUT_EXEC_NAME, 'ExecPin')
 
     @staticmethod
     def pinTypeHints():
