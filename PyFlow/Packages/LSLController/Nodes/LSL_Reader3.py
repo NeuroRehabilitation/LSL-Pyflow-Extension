@@ -6,12 +6,13 @@ from PyFlow.Core.Common import *
 from pylsl import StreamInlet, resolve_streams, pylsl
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 #LSL_Writer
-class LSL_Reader2(NodeBase):
+class LSL_Reader3(NodeBase):
         def __init__(self, name):
-            super(LSL_Reader2, self).__init__(name)
+            super(LSL_Reader3, self).__init__(name)
             self.out = self.createOutputPin("OUT", 'ExecPin')
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
+            self.StreamName = self.createInputPin("Name", 'StringPin')
             self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
             self.Send.enableOptions(PinOptions.AllowAny)
             self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
@@ -25,22 +26,23 @@ class LSL_Reader2(NodeBase):
             self.counter = 0
 
         def Tick(self, delta):
-            super(LSL_Reader2, self).Tick(delta)
+            super(LSL_Reader3, self).Tick(delta)
             self.data = []
+            timer1 = time.time()
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
                     print("Number of values in one second->" + str(self.counter))
                     self.counter = 0
-                for inlet in self.inlets:
 
+                sample, timestamp = self.inlets[0].pull_sample()
+                new_data = {self.inlets[0].info().name(): sample}
+                self.addDataToDict(self.inlets[0].info().name(), sample)
+                self.Send.setData(self.DataBase)
 
-                    now = datetime.now()
-                    sample, timestamp = inlet.pull_sample()
-                    new_data = {inlet.info().name(): sample}
-                    self.addDataToDict(inlet.info().name(), sample)
-                    self.Send.setData(self.DataBase)
+            if timer1-time.time() != 0:
                 self.counter += 1
+                print("it took |"+str(timer1-time.time())+"| to get the values")
 
 
         @staticmethod
@@ -62,6 +64,8 @@ class LSL_Reader2(NodeBase):
             for stream in streams:
 
                 inlet = StreamInlet(stream)
+                if inlet.info().name() != self.StreamName.getData():
+                    continue
                 stream_channels = dict()
                 channels = inlet.info().desc().child("channels").child("channel")
 

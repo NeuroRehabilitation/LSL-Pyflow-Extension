@@ -36,8 +36,8 @@ class timer(NodeBase):
         super(timer, self).Tick(delta)
         if self.bWorking:
             interval = self.interval.getData()
-            if interval < 0.02:
-                interval = 0.02
+            if interval < 0.005:
+                interval = 0.005
             self.accum += delta
             if self.accum >= interval:
                 self.out.call()

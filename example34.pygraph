@@ -1,0 +1,1806 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "LSL_Reader2",
+            "owningGraphName": "root",
+            "name": "LSL_Reader2",
+            "uuid": "4642f587-47f0-4f76-acd4-62c9b83d3b88",
+            "inputs": [
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader2_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "145e04f1-0c7a-4e99-a15f-e52bcc766169",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader2_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "cc97b7fe-7d6e-4868-8382-02a5749a7727",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader2_Data",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "b5fd60e1-f57c-4b66-ab88-0377b3d1d8a9",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "OUT",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader2_OUT",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "2e6a4123-7561-4872-ac30-d23acf46c344",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "OUT",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader2_Info",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "d866be73-897d-4865-80a4-ecbf78474a3a",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LSL_Reader2"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LSL_Reader2</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -376.0,
+            "y": -86.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "DefaultLib",
+            "type": "makeString",
+            "owningGraphName": "root",
+            "name": "makeString",
+            "uuid": "ca8076ed-5c72-4d4d-a792-bcd60e024490",
+            "inputs": [
+                {
+                    "name": "s",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString_s",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ballSpeed\"",
+                    "uuid": "2124456a-1d13-4130-a529-1942ffe9ea73",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"ballSpeed\"",
+                    "uuid": "2c482ebf-1048-4c4a-8a87-ae0cfe4e5bc6",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ca8076ed-5c72-4d4d-a792-bcd60e024490",
+                            "rhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2c482ebf-1048-4c4a-8a87-ae0cfe4e5bc6",
+                                "destinationUUID": "2d6e9769-1d3a-4ed3-9883-eec4dc72bc8a",
+                                "sourceName": "makeString_out",
+                                "destinationName": "makeDictElement_key",
+                                "uuid": "fe243f24-d339-475f-85ee-eac531654c1f",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeString"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeString</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -239.0,
+            "y": -273.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "DefaultLib",
+            "type": "makeString",
+            "owningGraphName": "root",
+            "name": "makeString1",
+            "uuid": "b1c38523-bc23-4e6d-af50-571211058d15",
+            "inputs": [
+                {
+                    "name": "s",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString1_s",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ballSpawnRate\"",
+                    "uuid": "6b7487df-26f3-4e33-b060-3aa817b502fd",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString1_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"ballSpawnRate\"",
+                    "uuid": "1bc9d16a-835e-4be7-a555-4eb67d02ed57",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString1",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement6",
+                            "inPinId": 1,
+                            "lhsNodeUid": "b1c38523-bc23-4e6d-af50-571211058d15",
+                            "rhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1bc9d16a-835e-4be7-a555-4eb67d02ed57",
+                                "destinationUUID": "7cd3f196-2583-406a-8a44-367a05538d7d",
+                                "sourceName": "makeString1_out",
+                                "destinationName": "makeDictElement6_key",
+                                "uuid": "3e8d47cb-40b4-41db-9bfa-8c120638999e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeString1"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeString1</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -233.0,
+            "y": -107.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "DefaultLib",
+            "type": "makeString",
+            "owningGraphName": "root",
+            "name": "makeString3",
+            "uuid": "ae387876-fd26-448e-b54b-3747d838588a",
+            "inputs": [
+                {
+                    "name": "s",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString3_s",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"\"",
+                    "uuid": "1eec4833-7e1b-4721-9f20-7e75878be13c",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeString3_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"\"",
+                    "uuid": "ff05392e-9433-4a64-9e3b-2af3b1079aa0",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString3",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement7",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ae387876-fd26-448e-b54b-3747d838588a",
+                            "rhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "ff05392e-9433-4a64-9e3b-2af3b1079aa0",
+                                "destinationUUID": "ecf23aaf-d42d-4f37-ac1b-c41f74b80c68",
+                                "sourceName": "makeString3_out",
+                                "destinationName": "makeDictElement7_key",
+                                "uuid": "92723e0f-6137-4ce0-952a-7de120008ef4",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeString3"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeString3</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -231.0,
+            "y": 54.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "RandomLib",
+            "type": "randint",
+            "owningGraphName": "root",
+            "name": "randint",
+            "uuid": "1b12fe1e-1edd-496f-842e-0b8fd3d7fefc",
+            "inputs": [
+                {
+                    "name": "end",
+                    "package": "PyFlowBase",
+                    "fullName": "randint_end",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "10",
+                    "uuid": "11c140a7-7fa0-4feb-8f9b-2dd0aeb05f17",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "end",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "start",
+                    "package": "PyFlowBase",
+                    "fullName": "randint_start",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "6aa385ed-24e7-4732-bcb3-e3b05d6b6b63",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "start",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Result",
+                    "package": "PyFlowBase",
+                    "fullName": "randint_Result",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "0",
+                    "uuid": "e56c84a1-f4f9-42bb-a16e-c43be98c132a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement",
+                            "inPinId": 2,
+                            "lhsNodeUid": "1b12fe1e-1edd-496f-842e-0b8fd3d7fefc",
+                            "rhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Result",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "e56c84a1-f4f9-42bb-a16e-c43be98c132a",
+                                "destinationUUID": "ab9a183f-51f2-4316-a910-42ff1155a9d6",
+                                "sourceName": "randint_Result",
+                                "destinationName": "makeDictElement_value",
+                                "uuid": "91377a74-ca8f-4c63-b657-d46c8aea7f97",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "randint"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">randint</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -240.0,
+            "y": -201.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "RandomLib",
+            "type": "randint",
+            "owningGraphName": "root",
+            "name": "randint4",
+            "uuid": "31545e4e-c611-4f64-9aa9-9919369fe36c",
+            "inputs": [
+                {
+                    "name": "end",
+                    "package": "PyFlowBase",
+                    "fullName": "randint4_end",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "10",
+                    "uuid": "f85dd190-684f-41c9-81be-125261e60a2b",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "end",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "start",
+                    "package": "PyFlowBase",
+                    "fullName": "randint4_start",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "5fc8590f-309f-4d94-9422-69aece393dbb",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "start",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Result",
+                    "package": "PyFlowBase",
+                    "fullName": "randint4_Result",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "8",
+                    "uuid": "fd3d62b1-cf40-4d1c-bbb2-90340e71b705",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint4",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement6",
+                            "inPinId": 2,
+                            "lhsNodeUid": "31545e4e-c611-4f64-9aa9-9919369fe36c",
+                            "rhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Result",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "fd3d62b1-cf40-4d1c-bbb2-90340e71b705",
+                                "destinationUUID": "12518483-00aa-4c52-87d8-d6e5837869a9",
+                                "sourceName": "randint4_Result",
+                                "destinationName": "makeDictElement6_value",
+                                "uuid": "533cd6ad-7b85-4855-9a36-48a8d496b023",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "randint4"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">randint4</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -243.0,
+            "y": -45.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "RandomLib",
+            "type": "randint",
+            "owningGraphName": "root",
+            "name": "randint5",
+            "uuid": "fff8d340-b819-4285-9231-77dca3727e0a",
+            "inputs": [
+                {
+                    "name": "end",
+                    "package": "PyFlowBase",
+                    "fullName": "randint5_end",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "10",
+                    "uuid": "654f2c33-6796-49cc-a208-14600b673553",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "end",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "start",
+                    "package": "PyFlowBase",
+                    "fullName": "randint5_start",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "bf2defe0-cd99-462e-a13d-dbec4ecacddc",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "start",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Result",
+                    "package": "PyFlowBase",
+                    "fullName": "randint5_Result",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "5",
+                    "uuid": "af868026-762f-4096-9d86-0c2158b408e2",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint5",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement7",
+                            "inPinId": 2,
+                            "lhsNodeUid": "fff8d340-b819-4285-9231-77dca3727e0a",
+                            "rhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Result",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "af868026-762f-4096-9d86-0c2158b408e2",
+                                "destinationUUID": "ca71e9f6-08ac-4482-95d5-c5c8cebcb8c2",
+                                "sourceName": "randint5_Result",
+                                "destinationName": "makeDictElement7_value",
+                                "uuid": "0bfa3d3e-e403-4698-b49c-9ecd3deeef43",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "randint5"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">randint5</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -236.0,
+            "y": 120.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "makeDictElement",
+            "owningGraphName": "root",
+            "name": "makeDictElement",
+            "uuid": "20e46984-cba1-487a-9b0d-4ab8c17411e2",
+            "inputs": [
+                {
+                    "name": "value",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement_value",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "ab9a183f-51f2-4316-a910-42ff1155a9d6",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement",
+                            "inPinId": 2,
+                            "lhsNodeUid": "1b12fe1e-1edd-496f-842e-0b8fd3d7fefc",
+                            "rhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "value",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "e56c84a1-f4f9-42bb-a16e-c43be98c132a",
+                                "destinationUUID": "ab9a183f-51f2-4316-a910-42ff1155a9d6",
+                                "sourceName": "randint_Result",
+                                "destinationName": "makeDictElement_value",
+                                "uuid": "91377a74-ca8f-4c63-b657-d46c8aea7f97",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                },
+                {
+                    "name": "key",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement_key",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"ballSpeed\"",
+                    "uuid": "2d6e9769-1d3a-4ed3-9883-eec4dc72bc8a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ca8076ed-5c72-4d4d-a792-bcd60e024490",
+                            "rhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "key",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2c482ebf-1048-4c4a-8a87-ae0cfe4e5bc6",
+                                "destinationUUID": "2d6e9769-1d3a-4ed3-9883-eec4dc72bc8a",
+                                "sourceName": "makeString_out",
+                                "destinationName": "makeDictElement_key",
+                                "uuid": "fe243f24-d339-475f-85ee-eac531654c1f",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement_out",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "[\"ballSpeed\", 0]",
+                    "uuid": "eccf8d99-9c7d-411b-b28d-ab135be2e27d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDictElement",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eccf8d99-9c7d-411b-b28d-ab135be2e27d",
+                                "destinationUUID": "c744288a-87ec-4a9c-8373-b198f913cfcc",
+                                "sourceName": "makeDictElement_out",
+                                "destinationName": "makeDict_data",
+                                "uuid": "48c9dd38-7b06-4156-9233-f9cdd970ca96",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeDictElement"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDictElement</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -48.0,
+            "y": -274.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "makeDictElement",
+            "owningGraphName": "root",
+            "name": "makeDictElement6",
+            "uuid": "bed8c5f4-bb21-4341-b409-79b30611df29",
+            "inputs": [
+                {
+                    "name": "value",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement6_value",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "8",
+                    "uuid": "12518483-00aa-4c52-87d8-d6e5837869a9",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint4",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement6",
+                            "inPinId": 2,
+                            "lhsNodeUid": "31545e4e-c611-4f64-9aa9-9919369fe36c",
+                            "rhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "value",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "fd3d62b1-cf40-4d1c-bbb2-90340e71b705",
+                                "destinationUUID": "12518483-00aa-4c52-87d8-d6e5837869a9",
+                                "sourceName": "randint4_Result",
+                                "destinationName": "makeDictElement6_value",
+                                "uuid": "533cd6ad-7b85-4855-9a36-48a8d496b023",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                },
+                {
+                    "name": "key",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement6_key",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"ballSpawnRate\"",
+                    "uuid": "7cd3f196-2583-406a-8a44-367a05538d7d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString1",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement6",
+                            "inPinId": 1,
+                            "lhsNodeUid": "b1c38523-bc23-4e6d-af50-571211058d15",
+                            "rhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "key",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1bc9d16a-835e-4be7-a555-4eb67d02ed57",
+                                "destinationUUID": "7cd3f196-2583-406a-8a44-367a05538d7d",
+                                "sourceName": "makeString1_out",
+                                "destinationName": "makeDictElement6_key",
+                                "uuid": "3e8d47cb-40b4-41db-9bfa-8c120638999e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement6_out",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "[\"ballSpawnRate\", 8]",
+                    "uuid": "352d1503-d948-4edd-9444-81a1f7f56f2f",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDictElement6",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "352d1503-d948-4edd-9444-81a1f7f56f2f",
+                                "destinationUUID": "c744288a-87ec-4a9c-8373-b198f913cfcc",
+                                "sourceName": "makeDictElement6_out",
+                                "destinationName": "makeDict_data",
+                                "uuid": "18eb2242-f96b-483c-81e4-bea06a02fcd2",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeDictElement6"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDictElement6</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -72.0,
+            "y": -70.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "makeDictElement",
+            "owningGraphName": "root",
+            "name": "makeDictElement7",
+            "uuid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64",
+            "inputs": [
+                {
+                    "name": "key",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement7_key",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"\"",
+                    "uuid": "ecf23aaf-d42d-4f37-ac1b-c41f74b80c68",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeString3",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement7",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ae387876-fd26-448e-b54b-3747d838588a",
+                            "rhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "key",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "ff05392e-9433-4a64-9e3b-2af3b1079aa0",
+                                "destinationUUID": "ecf23aaf-d42d-4f37-ac1b-c41f74b80c68",
+                                "sourceName": "makeString3_out",
+                                "destinationName": "makeDictElement7_key",
+                                "uuid": "92723e0f-6137-4ce0-952a-7de120008ef4",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "value",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement7_value",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "5",
+                    "uuid": "ca71e9f6-08ac-4482-95d5-c5c8cebcb8c2",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "randint5",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDictElement7",
+                            "inPinId": 2,
+                            "lhsNodeUid": "fff8d340-b819-4285-9231-77dca3727e0a",
+                            "rhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "value",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "af868026-762f-4096-9d86-0c2158b408e2",
+                                "destinationUUID": "ca71e9f6-08ac-4482-95d5-c5c8cebcb8c2",
+                                "sourceName": "randint5_Result",
+                                "destinationName": "makeDictElement7_value",
+                                "uuid": "0bfa3d3e-e403-4698-b49c-9ecd3deeef43",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDictElement7_out",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "[\"\", 5]",
+                    "uuid": "9ca1a4ca-b63d-43cb-b93e-c49953402cc1",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDictElement7",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9ca1a4ca-b63d-43cb-b93e-c49953402cc1",
+                                "destinationUUID": "c744288a-87ec-4a9c-8373-b198f913cfcc",
+                                "sourceName": "makeDictElement7_out",
+                                "destinationName": "makeDict_data",
+                                "uuid": "685b5ea5-04f6-44d9-9a9b-baa63e81d66e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeDictElement7"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDictElement7</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -17.0,
+            "y": 110.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "makeDict",
+            "owningGraphName": "root",
+            "name": "makeDict",
+            "uuid": "210e22ec-a55a-45ea-bcbe-28a9860afe55",
+            "inputs": [
+                {
+                    "name": "KeyType",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDict_KeyType",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"\"",
+                    "uuid": "72bb5d3e-d7a8-44aa-8522-34db49b572c5",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "KeyType",
+                        "wires": {}
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "data",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDict_data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "{\"ballSpeed\": 0, \"ballSpawnRate\": 8, \"\": 5}",
+                    "uuid": "c744288a-87ec-4a9c-8373-b198f913cfcc",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDictElement",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "20e46984-cba1-487a-9b0d-4ab8c17411e2",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        },
+                        {
+                            "lhsNodeName": "makeDictElement6",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "bed8c5f4-bb21-4341-b409-79b30611df29",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        },
+                        {
+                            "lhsNodeName": "makeDictElement7",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeDict",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0ad0f186-834c-44e7-904b-fdf9c3eb1d64",
+                            "rhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "data",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9ca1a4ca-b63d-43cb-b93e-c49953402cc1",
+                                "destinationUUID": "c744288a-87ec-4a9c-8373-b198f913cfcc",
+                                "sourceName": "makeDictElement7_out",
+                                "destinationName": "makeDict_data",
+                                "uuid": "685b5ea5-04f6-44d9-9a9b-baa63e81d66e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "result",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDict_result",
+                    "dataType": "BoolPin",
+                    "direction": 1,
+                    "value": "true",
+                    "uuid": "0271c8e6-f46e-4697-9326-2453cf9c0a15",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "makeDict_out",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "{\"ballSpeed\": 0, \"ballSpawnRate\": 8, \"\": 5}",
+                    "uuid": "e092f8cb-3613-4af3-b3f6-fde68d8453cc",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDict",
+                            "outPinId": 1,
+                            "rhsNodeName": "LSL_Writer8",
+                            "inPinId": 6,
+                            "lhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55",
+                            "rhsNodeUid": "276919b1-5167-40fd-9e7a-f36e99f01653"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        4,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "6": {
+                                "sourceUUID": "e092f8cb-3613-4af3-b3f6-fde68d8453cc",
+                                "destinationUUID": "cc5b215d-5bd4-41d6-baf1-98fad56e0b27",
+                                "sourceName": "makeDict_out",
+                                "destinationName": "LSL_Writer8_Data",
+                                "uuid": "72ec30d4-63be-455e-a8bc-65dc51e166ae",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "makeDict"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDict</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 87.0,
+            "y": -115.0
+        },
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "LSL_Writer2",
+            "owningGraphName": "root",
+            "name": "LSL_Writer8",
+            "uuid": "276919b1-5167-40fd-9e7a-f36e99f01653",
+            "inputs": [
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"PyflowStream\"",
+                    "uuid": "1bec5f5b-ac28-40ef-8acf-74a94cbbf0c3",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "{\"ballSpeed\": 0, \"ballSpawnRate\": 8, \"\": 5}",
+                    "uuid": "cc5b215d-5bd4-41d6-baf1-98fad56e0b27",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "makeDict",
+                            "outPinId": 1,
+                            "rhsNodeName": "LSL_Writer8",
+                            "inPinId": 6,
+                            "lhsNodeUid": "210e22ec-a55a-45ea-bcbe-28a9860afe55",
+                            "rhsNodeUid": "276919b1-5167-40fd-9e7a-f36e99f01653"
+                        }
+                    ],
+                    "pinIndex": 6,
+                    "options": [
+                        2,
+                        4,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "6": {
+                                "sourceUUID": "e092f8cb-3613-4af3-b3f6-fde68d8453cc",
+                                "destinationUUID": "cc5b215d-5bd4-41d6-baf1-98fad56e0b27",
+                                "sourceName": "makeDict_out",
+                                "destinationName": "LSL_Writer8_Data",
+                                "uuid": "72ec30d4-63be-455e-a8bc-65dc51e166ae",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "2fe5cb0b-280c-4699-99b8-ff29c9923e22",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "ID",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_ID",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ID1\"",
+                    "uuid": "de56b369-ade3-436c-a625-d1af15c08279",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "ID",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a9638544-7f84-4e3d-883f-27746acd390f",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Type",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Type",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"PyflowStream\"",
+                    "uuid": "9f31a643-f0e1-4331-9528-c7463f3c8b45",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Type",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_Info",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "7d320cfc-da88-41be-9cf9-1886fb691cdc",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "DataOut",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer8_DataOut",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "15a38d4e-9fdd-47a3-b443-2a4a9f19ef57",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "DataOut",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LSL_Writer8"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LSL_Writer8</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 294.0,
+            "y": -124.0
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "2.0.1",
+    "activeGraph": "root"
+}

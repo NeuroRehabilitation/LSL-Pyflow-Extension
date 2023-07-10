@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <content url="file://$MODULE_DIR$/../QT_-Python_Plot" />
-    <orderEntry type="jdk" jdkName="Python 3.9 (Test1)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (LSL-Pyflow-Extension-main)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

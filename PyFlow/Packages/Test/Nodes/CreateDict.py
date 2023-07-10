@@ -22,6 +22,7 @@ class CreateDict(NodeBase):
         #_____Output_____#
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+
         self.outExec = self.createOutputPin(DEFAULT_OUT_EXEC_NAME, 'ExecPin')
 
     @staticmethod
@@ -49,10 +50,15 @@ class CreateDict(NodeBase):
 
 
     def compute(self, *args, **kwargs):
-        self.Send.setData(self.create_dict(self.Keys.getData(),self.Data.getData()))
+        if self.Keys.getData() is not None:
+            if self.Data.getData() is not None:
+                self.Send.setData(self.create_dict(self.Keys.getData(),self.Data.getData()))
 
     def create_dict(self,strings, floats):
         result_dict = {}
         for i in range(len(strings)):
-            result_dict[strings[i]] = floats[i]
+            if i < len(floats):
+                result_dict[strings[i]] = floats[i]
+            else:
+                result_dict[strings[i]] = 0
         return result_dict

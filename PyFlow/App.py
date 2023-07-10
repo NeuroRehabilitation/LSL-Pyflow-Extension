@@ -415,14 +415,15 @@ class PyFlow(QMainWindow):
 
     def startMainLoop(self):
         self.tick_timer.timeout.connect(self.mainLoop)
-        self.tick_timer.start(1000 / EDITOR_TARGET_FPS)
+        self.tick_timer.start(0)
+        #self.tick_timer.start(1000 / EDITOR_TARGET_FPS)
 
     def stopMainLoop(self):
         self.tick_timer.stop()
         self.tick_timer.timeout.disconnect()
 
     def mainLoop(self):
-        deltaTime = (currentProcessorTime() - self._lastClock)/2
+        deltaTime = currentProcessorTime() - self._lastClock
         ds = (deltaTime * 1000.0)
 
         if ds > 0:

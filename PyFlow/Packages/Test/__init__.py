@@ -5,6 +5,7 @@ from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
 from PyFlow.Packages.Test.Nodes.DataBase import DataBase
+from PyFlow.Packages.Test.Nodes.DataBase2 import DataBase2
 from PyFlow.Packages.Test.Nodes.CreateDict import CreateDict
 
 # Factories
@@ -18,6 +19,7 @@ _EXPORTERS = OrderedDict()
 
 _NODES={
 	DataBase.__name__:DataBase,
+	DataBase2.__name__:DataBase2,
 	CreateDict.__name__:CreateDict
 }
 
