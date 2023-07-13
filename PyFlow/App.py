@@ -17,6 +17,7 @@
 """
 
 import os
+import PyQt5
 import sys
 import subprocess
 import json
