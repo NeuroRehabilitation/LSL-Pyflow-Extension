@@ -38,11 +38,12 @@ class LSL_Reader3(NodeBase):
                 sample, timestamp = self.inlets[0].pull_sample()
                 new_data = {self.inlets[0].info().name(): sample}
                 self.addDataToDict(self.inlets[0].info().name(), sample)
+                self.out.call()
                 self.Send.setData(self.DataBase)
 
             if timer1-time.time() != 0:
                 self.counter += 1
-                print("it took |"+str(timer1-time.time())+"| to get the values")
+                #print("it took |"+str(timer1-time.time())+"| to get the values")
 
 
         @staticmethod

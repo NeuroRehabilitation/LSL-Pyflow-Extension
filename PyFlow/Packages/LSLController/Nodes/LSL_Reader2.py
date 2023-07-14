@@ -35,7 +35,8 @@ class LSL_Reader2(NodeBase):
                 for inlet in self.inlets:
                     now = datetime.now()
                     sample, timestamp = inlet.pull_sample()
-                    new_data = {inlet.info().name(): sample}
+
+                    print(inlet.info().name()+" Sample:"+str(sample))
                     self.addDataToDict(inlet.info().name(), sample)
                     self.Send.setData(self.DataBase)
                 self.counter += 1

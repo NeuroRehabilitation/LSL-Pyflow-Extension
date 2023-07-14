@@ -50,13 +50,13 @@ class LSL_Reader4(NodeBase):
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
-                    print("LSL Receiver2->Number of values in one second:" + str(self.counter))
+                    #print("LSL Receiver2->Number of values in one second:" + str(self.counter))
                     self.counter = 0
                     self.out.call()
                 stream_name, data = self.streams_receiver.data_queue.get()
                 self.getBuffers(data, stream_name)
-                print(stream_name + "->" + str(self.synced_dict))
-                self.Send.getData(self.synced_dict)
+                #print(stream_name + "->" + str(self.synced_dict))
+                self.Send.setData(self.synced_dict)
 
         @staticmethod
         def keywords():
@@ -86,7 +86,7 @@ class LSL_Reader4(NodeBase):
                 self.info_dict[stream["Name"]] = stream
                 self.info_dict[stream["Name"]]["Max Size"] = self.getBufferMaxSize(stream["Name"])
                 self.info_dict[stream["Name"]]["Number full arrays"] = 0
-                self.DataBase[stream.info().name()] = self.getChannelInformation(stream)
+                #self.DataBase[stream.info().name()] = self.getChannelInformation(stream)
 
             self.Info.setData(self.streams_info)
 
@@ -98,19 +98,11 @@ class LSL_Reader4(NodeBase):
 
         def getChannelInformation(self,inlet):
             channels_dicts = dict()
-            for i in range(inlet.info().channel_count()):
-                # Get the channel number (e.g. 1)
-                channel = i + 1
-
-                # Get the channel type (e.g. ECG)
-                sensor = channels.child_value("label")
-
-                # Get the channel unit (e.g. mV)
-                unit = channels.child_value("unit")
-
-                # Store the information in the stream_channels dictionary
-                channels = channels.next_sibling()
+            for i in range(inlet["Channels"]):
+                print("->"+str(inlet["Channels Info"]))
+                sensor = inlet["Channels Info"][i][0]
                 channels_dicts[sensor] = []
+                channels = channels.next_sibling()
             return channels_dicts
 
 

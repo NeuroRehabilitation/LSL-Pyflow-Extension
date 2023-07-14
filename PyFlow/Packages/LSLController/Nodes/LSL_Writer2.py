@@ -85,7 +85,7 @@ class LSL_Writer2(NodeBase):
 
     def start(self, *args, **kwargs):
         data = self.Data.getData()
-        if len(data) >= 1:
+        if data is not None:
             stream_name = self.streamName.getData()
             stream_type = self.streamType.getData()
             channel_count = len(data)
@@ -108,7 +108,7 @@ class LSL_Writer2(NodeBase):
 
             for name in data.keys():
                 info_channels.append_child("channel").append_child_value("label",name)
-        self.DataBase[stream_name] = self.channels_dicts
+            self.DataBase[stream_name] = self.channels_dicts
 
 
         self.bWorking = True
