@@ -24,7 +24,6 @@ class OpenWindow(NodeBase):
         self.data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.data.disableOptions(PinOptions.SupportsOnlyArrays)
 
-        self.info2 = {'UStream_1': {'Name': 'UStream_1', 'Type': 'Unity.StreamType', 'Channels': 3, 'Sampling Rate': 19, 'Channels Info': {1: ['U1', ''], 2: ['U2', ''], 3: ['U3', '']}}}
         self.q = multiprocessing.Queue()
         self.online = False
         self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.q,))
@@ -37,7 +36,6 @@ class OpenWindow(NodeBase):
         if self.bWorking and self.online:
             if time.time() - self.start > 1:
                 self.start = time.time()
-                print("OpenReceiver->Number of values in one second: " + str(self.counter))
                 self.counter = 0
                 self.q.put(self.data.getData())
             self.counter += 1
@@ -70,7 +68,7 @@ class OpenWindow(NodeBase):
         self.Prosess.start()
         self.q.put(self.info.getData())
         while self.q.get() != 1:
-            print(self.info.getData())
+            #print(self.info.getData())
             self.q.put(self.info.getData())
         self.online = True
 
