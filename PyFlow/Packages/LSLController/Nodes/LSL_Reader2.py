@@ -9,9 +9,10 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 class LSL_Reader2(NodeBase):
         def __init__(self, name):
             super(LSL_Reader2, self).__init__(name)
-            self.out = self.createOutputPin("OUT", 'ExecPin')
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
+
+            self.out = self.createOutputPin("OUT", 'ExecPin')
             self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
             self.Send.enableOptions(PinOptions.AllowAny)
             self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
@@ -36,9 +37,9 @@ class LSL_Reader2(NodeBase):
                     now = datetime.now()
                     sample, timestamp = inlet.pull_sample()
 
-                    print(inlet.info().name()+" Sample:"+str(sample))
+
                     self.addDataToDict(inlet.info().name(), sample)
-                    self.Send.setData(self.DataBase)
+                    self.Send.setData(sample)
                 self.counter += 1
         @staticmethod
         def keywords():

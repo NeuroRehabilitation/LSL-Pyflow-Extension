@@ -55,17 +55,19 @@ class LSL_Reader4(NodeBase):
     def Tick(self, delta):
         super(LSL_Reader4, self).Tick(delta)
         if self.bWorking:
+            self.graph_queue.put(self.DataBase)
+            stream_name, data = self.streams_receiver.data_queue.get()
             if int(time.time()) - self.start >= 1:
                 self.start = time.time()
                 self.counter = 0
+                self.Send.setData(data)
                 #for rate in self.samplerate:
                     #print("")
                     #rate = 0
-            self.graph_queue.put(self.DataBase)
-            stream_name, data = self.streams_receiver.data_queue.get()
+
 
             self.getBuffers(data, stream_name)
-            self.Send.setData(self.synced_dict)
+
             self.addDataToDict(stream_name, data[0])
 
     @staticmethod

@@ -9,15 +9,21 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 class LSL_Reader3(NodeBase):
         def __init__(self, name):
             super(LSL_Reader3, self).__init__(name)
-            self.out = self.createOutputPin("OUT", 'ExecPin')
+            # Input  Pins
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
             self.StreamName = self.createInputPin("Name", 'StringPin')
+            self.Buffer = self.createInputPin("Buffer", 'IntPin')
+
+            # Output  Pins
+            self.out = self.createOutputPin("OUT", 'ExecPin')
             self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
             self.Send.enableOptions(PinOptions.AllowAny)
             self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
             self.Info.enableOptions(PinOptions.AllowAny)
-            self.inlets = []
+
+
+            self.inlet = None
             self.bWorking = False
             self.headerColor = FLOW_CONTROL_COLOR
 
@@ -32,12 +38,13 @@ class LSL_Reader3(NodeBase):
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
-                    print("Number of values in one second->" + str(self.counter))
+                    print(str(self.inlet.info().nominal_srate())+"Number of values in one second->" + str(self.counter))
                     self.counter = 0
 
-                sample, timestamp = self.inlets[0].pull_sample()
-                new_data = {self.inlets[0].info().name(): sample}
-                self.addDataToDict(self.inlets[0].info().name(), sample)
+                sample, timestamp = self.inlet.pull_sample()
+                new_data = {self.inlet.info().name(): sample}
+                self.addDataToDict(self.inlet.info().name(), sample)
+
                 self.out.call()
                 self.Send.setData(self.DataBase)
 
@@ -63,8 +70,9 @@ class LSL_Reader3(NodeBase):
             streams = resolve_streams()
             stream_information = dict()
             for stream in streams:
-
                 inlet = StreamInlet(stream)
+
+
                 if inlet.info().name() != self.StreamName.getData():
                     continue
                 stream_channels = dict()
@@ -99,7 +107,8 @@ class LSL_Reader3(NodeBase):
                 #print(inlet_info)
                 self.Info.setData(stream_information)
                 #print(str(stream_information))
-                self.inlets.append(inlet)
+                self.inlet=inlet
+
 
         def addDataToDict(self, key, data):
             for i, row in enumerate(self.DataBase[key]):
