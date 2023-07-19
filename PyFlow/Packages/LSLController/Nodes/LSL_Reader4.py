@@ -15,14 +15,10 @@ import multiprocessing
 class LSL_Reader4(NodeBase):
     def __init__(self, name):
         super(LSL_Reader4, self).__init__(name)
-        self.out = self.createOutputPin("OUT", 'ExecPin')
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
         self.BufferWindow = self.createInputPin("Buffer", 'IntPin')
-        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Single)
-        self.Send.enableOptions(PinOptions.AllowAny)
-        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
-        self.Info.enableOptions(PinOptions.AllowAny)
+
         self.inlets = []
         self.bWorking = False
         self.headerColor = FLOW_CONTROL_COLOR
@@ -61,11 +57,11 @@ class LSL_Reader4(NodeBase):
                 #for rate in self.samplerate:
                     #print("")
                     #rate = 0
-            self.graph_queue.put(self.DataBase)
+                self.graph_queue.put(self.DataBase)
             stream_name, data = self.streams_receiver.data_queue.get()
 
             self.getBuffers(data, stream_name)
-            self.Send.setData(self.synced_dict)
+            #self.Send.setData(self.synced_dict)
             self.addDataToDict(stream_name, data[0])
 
     @staticmethod
@@ -107,7 +103,7 @@ class LSL_Reader4(NodeBase):
             self.samplerate = {stream["Name"]: 0}
             self.DataBase[stream["Name"]] = self.getChannelInformation(stream)
 
-        self.Info.setData(self.streams_info)
+        #self.Info.setData(self.streams_info)
 
         self.Prosess.start()
         self.graph_queue.put(self.streams_info)
