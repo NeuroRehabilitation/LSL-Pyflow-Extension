@@ -21,10 +21,12 @@ class LSL_Writer2(NodeBase):
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
+        self.out = self.createOutputPin("OUT", 'ExecPin')
         self.Info_Stream = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
         self.Info_Stream.enableOptions(PinOptions.AllowAny)
         self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+
         self.info=None
         self.bWorking = False
         self.outlet = None
@@ -40,7 +42,7 @@ class LSL_Writer2(NodeBase):
     def Tick(self, delta):
         super(LSL_Writer2, self).Tick(delta)
         if self.bWorking:
-
+            self.out.call()
             # Generate a random value
             sample=list(self.Data.getData().values())
 
@@ -84,8 +86,10 @@ class LSL_Writer2(NodeBase):
         self.On = False
 
     def start(self, *args, **kwargs):
+        self.out.call()
         data = self.Data.getData()
         if data is not None:
+            stream_information = []
             stream_name = self.streamName.getData()
             stream_type = self.streamType.getData()
             channel_count = len(data)
@@ -112,9 +116,10 @@ class LSL_Writer2(NodeBase):
 
 
         self.bWorking = True
+        stream_information.append(info)
         self.info=info
         self.outlet = StreamOutlet(self.info)
-        self.Info_Stream.setData(dict(stream_name=stream_desc))
+        self.Info_Stream.setData(stream_information)
 
     @staticmethod
     def category():

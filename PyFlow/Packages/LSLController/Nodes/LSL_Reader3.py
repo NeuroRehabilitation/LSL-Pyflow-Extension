@@ -9,21 +9,19 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 class LSL_Reader3(NodeBase):
         def __init__(self, name):
             super(LSL_Reader3, self).__init__(name)
-            # Input  Pins
+            # Input pins
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
             self.StreamName = self.createInputPin("Name", 'StringPin')
-            self.Buffer = self.createInputPin("Buffer", 'IntPin')
 
-            # Output  Pins
+            # Output pins
             self.out = self.createOutputPin("OUT", 'ExecPin')
             self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
             self.Send.enableOptions(PinOptions.AllowAny)
             self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
             self.Info.enableOptions(PinOptions.AllowAny)
 
-
-            self.inlet = None
+            self.inlets = []
             self.bWorking = False
             self.headerColor = FLOW_CONTROL_COLOR
 
@@ -38,13 +36,18 @@ class LSL_Reader3(NodeBase):
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
-                    print(str(self.inlet.info().nominal_srate())+"Number of values in one second->" + str(self.counter))
+                    print("Number of values in one second->" + str(self.counter))
                     self.counter = 0
 
-                sample, timestamp = self.inlet.pull_sample()
-                new_data = {self.inlet.info().name(): sample}
-                self.addDataToDict(self.inlet.info().name(), sample)
+                # Pull a chunk of samples from the inlet
+                samples, timestamps = self.inlets[0].pull_chunk(max_samples=200)
 
+                if samples:
+                    # Process the received samples
+                    for sample, timestamp in zip(samples, timestamps):
+                        # Do something with the sample data and timestamp
+                        #print("Received sample:", sample, "at timestamp:", timestamp)
+                        self.addDataToDict(self.inlets[0].info().name(), sample)
                 self.out.call()
                 self.Send.setData(self.DataBase)
 
@@ -68,11 +71,10 @@ class LSL_Reader3(NodeBase):
 
             self.bWorking = True
             streams = resolve_streams()
-            stream_information = dict()
+            stream_information = []
             for stream in streams:
+
                 inlet = StreamInlet(stream)
-
-
                 if inlet.info().name() != self.StreamName.getData():
                     continue
                 stream_channels = dict()
@@ -103,16 +105,17 @@ class LSL_Reader3(NodeBase):
                     "Sampling Rate": int(inlet.info().nominal_srate()),
                     "Channels Info": stream_channels,
                 }
-                stream_information[inlet.info().name()] = inlet_info
+                stream_information.append(inlet_info)
                 #print(inlet_info)
                 self.Info.setData(stream_information)
                 #print(str(stream_information))
-                self.inlet=inlet
-
+                self.inlets.append(inlet)
 
         def addDataToDict(self, key, data):
             for i, row in enumerate(self.DataBase[key]):
                 self.DataBase[key][row].append(data[i])
+                if(len(self.DataBase[key][row])>(self.inlets[0].info().nominal_srate()*60)):
+                    self.DataBase[key][row].pop(0)
 
         @staticmethod
         def category():
