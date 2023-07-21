@@ -55,7 +55,9 @@ class DDA1(NodeBase):
         print("Life Spawn Rate:", life_spawn_rate)
 
         Dificulty=[]
-        Dificulty.append(ball_speed, ball_spawn_rate, life_spawn_rate)
+        Dificulty.append(ball_speed)
+        Dificulty.append(ball_spawn_rate)
+        Dificulty.append(life_spawn_rate)
         self.Send.setData(Dificulty)
 
     def calculate_skill_level(self,score, lifes, time_left):
