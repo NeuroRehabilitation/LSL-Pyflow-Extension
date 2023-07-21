@@ -35,11 +35,15 @@ class LSL_Reader2(NodeBase):
                     self.out.call()
                 for inlet in self.inlets:
                     now = datetime.now()
-                    sample, timestamp = inlet.pull_sample()
+                    samples, timestamps =inlet.pull_chunk(max_samples=int(inlet.info().nominal_srate()))
 
-
-                    self.addDataToDict(inlet.info().name(), sample)
-                    self.Send.setData(sample)
+                    if samples:
+                        # Process the received samples
+                        for sample, timestamp in zip(samples, timestamps):
+                            # Do something with the sample data and timestamp
+                            print(inlet.info().name()+"Received sample:", sample, "at timestamp:", timestamp)
+                            self.addDataToDict(inlet.info().name(), sample)
+                self.Send.setData(self.DataBase)
                 self.counter += 1
         @staticmethod
         def keywords():
@@ -58,7 +62,7 @@ class LSL_Reader2(NodeBase):
                 print("No streams found")
             else:
                 self.bWorking = True
-                stream_information = dict()
+                stream_information = []
                 for stream in streams:
 
                     inlet = StreamInlet(stream)
@@ -90,7 +94,7 @@ class LSL_Reader2(NodeBase):
                         "Sampling Rate": int(inlet.info().nominal_srate()),
                         "Channels Info": stream_channels,
                     }
-                    stream_information[inlet.info().name()] = inlet_info
+                    stream_information.append(inlet_info)
                     #print(inlet_info)
                     self.Info.setData(stream_information)
                     #print(str(stream_information))

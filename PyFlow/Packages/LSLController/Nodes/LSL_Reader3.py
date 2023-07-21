@@ -40,13 +40,13 @@ class LSL_Reader3(NodeBase):
                     self.counter = 0
 
                 # Pull a chunk of samples from the inlet
-                samples, timestamps = self.inlets[0].pull_chunk(max_samples=200)
+                samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
 
                 if samples:
                     # Process the received samples
                     for sample, timestamp in zip(samples, timestamps):
                         # Do something with the sample data and timestamp
-                        #print("Received sample:", sample, "at timestamp:", timestamp)
+                        #print(+"Received sample:", sample, "at timestamp:", timestamp)
                         self.addDataToDict(self.inlets[0].info().name(), sample)
                 self.out.call()
                 self.Send.setData(self.DataBase)
