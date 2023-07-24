@@ -12,6 +12,29 @@
             "uuid": "4e3db71f-b5bb-48f5-94ca-fe816fd092e0",
             "inputs": [
                 {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream2\"",
+                    "uuid": "6b54ef4b-8f4d-4be7-8b98-a5216843a7b0",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
                     "name": "Begin",
                     "package": "PyFlowBase",
                     "fullName": "LSL_Reader3_Begin",
@@ -58,29 +81,6 @@
                         "displayName": "Stop",
                         "wires": {}
                     }
-                },
-                {
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "LSL_Reader3_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"Stream2\"",
-                    "uuid": "6b54ef4b-8f4d-4be7-8b98-a5216843a7b0",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
                 }
             ],
             "outputs": [
@@ -119,18 +119,18 @@
                         {
                             "lhsNodeName": "LSL_Reader3",
                             "outPinId": 2,
-                            "rhsNodeName": "DataBase2",
-                            "inPinId": 1,
-                            "lhsNodeUid": "4e3db71f-b5bb-48f5-94ca-fe816fd092e0",
-                            "rhsNodeUid": "a7a3066a-66ff-4127-b71e-cf3f2c43ac6c"
-                        },
-                        {
-                            "lhsNodeName": "LSL_Reader3",
-                            "outPinId": 2,
                             "rhsNodeName": "OpenWindow",
                             "inPinId": 4,
                             "lhsNodeUid": "4e3db71f-b5bb-48f5-94ca-fe816fd092e0",
                             "rhsNodeUid": "27c11e0a-99be-4215-bef8-3b073f75d50e"
+                        },
+                        {
+                            "lhsNodeName": "LSL_Reader3",
+                            "outPinId": 2,
+                            "rhsNodeName": "DataBase2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "4e3db71f-b5bb-48f5-94ca-fe816fd092e0",
+                            "rhsNodeUid": "a7a3066a-66ff-4127-b71e-cf3f2c43ac6c"
                         }
                     ],
                     "pinIndex": 2,
@@ -149,12 +149,12 @@
                         "bLabelHidden": false,
                         "displayName": "Data",
                         "wires": {
-                            "1": {
+                            "4": {
                                 "sourceUUID": "1f32c949-f3b8-4959-a9e2-f64c3bb67f22",
-                                "destinationUUID": "35f791e6-f78b-4dfa-8f68-4baadf138cee",
+                                "destinationUUID": "5b6b9baa-7313-4bb3-9a58-d38bf398c4c7",
                                 "sourceName": "LSL_Reader3_Data",
-                                "destinationName": "DataBase2_Data",
-                                "uuid": "417eccea-4022-4207-930f-8638f876bce3",
+                                "destinationName": "OpenWindow_Data",
+                                "uuid": "010fbf55-f052-4b3c-8148-decd3728399b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -164,12 +164,12 @@
                                 "snapVToFirst": 1,
                                 "snapVToSecond": 0
                             },
-                            "4": {
+                            "1": {
                                 "sourceUUID": "1f32c949-f3b8-4959-a9e2-f64c3bb67f22",
-                                "destinationUUID": "5b6b9baa-7313-4bb3-9a58-d38bf398c4c7",
+                                "destinationUUID": "35f791e6-f78b-4dfa-8f68-4baadf138cee",
                                 "sourceName": "LSL_Reader3_Data",
-                                "destinationName": "OpenWindow_Data",
-                                "uuid": "a8744e64-5666-4878-8bbf-a2f54a62e79f",
+                                "destinationName": "DataBase2_Data",
+                                "uuid": "d6e04a25-4905-42d7-b469-f1d013661d1e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -219,7 +219,7 @@
                                 "destinationUUID": "482e94c8-017d-4edd-b6b7-18c0ccf63e07",
                                 "sourceName": "LSL_Reader3_Info",
                                 "destinationName": "OpenWindow_Info",
-                                "uuid": "5d23534d-af48-49e1-beff-3839570b8105",
+                                "uuid": "d33d1d20-065a-4729-a249-0733ed94e8da",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -246,8 +246,8 @@
                     "output": {}
                 }
             },
-            "x": -465.0,
-            "y": -146.0
+            "x": -883.4688266394708,
+            "y": 6.116321794970357
         },
         {
             "package": "PyMonitor",
@@ -257,6 +257,30 @@
             "name": "OpenWindow",
             "uuid": "27c11e0a-99be-4215-bef8-3b073f75d50e",
             "inputs": [
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenWindow_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a190d5ad-bf7a-4358-9a5b-f74be800b80b",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
                 {
                     "name": "Stop",
                     "package": "PyFlowBase",
@@ -322,7 +346,7 @@
                                 "destinationUUID": "5b6b9baa-7313-4bb3-9a58-d38bf398c4c7",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "OpenWindow_Data",
-                                "uuid": "a8744e64-5666-4878-8bbf-a2f54a62e79f",
+                                "uuid": "010fbf55-f052-4b3c-8148-decd3728399b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -374,7 +398,7 @@
                                 "destinationUUID": "482e94c8-017d-4edd-b6b7-18c0ccf63e07",
                                 "sourceName": "LSL_Reader3_Info",
                                 "destinationName": "OpenWindow_Info",
-                                "uuid": "5d23534d-af48-49e1-beff-3839570b8105",
+                                "uuid": "d33d1d20-065a-4729-a249-0733ed94e8da",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -385,30 +409,6 @@
                                 "snapVToSecond": 0
                             }
                         }
-                    }
-                },
-                {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "OpenWindow_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "a190d5ad-bf7a-4358-9a5b-f74be800b80b",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {}
                     }
                 }
             ],
@@ -450,8 +450,8 @@
                     "output": {}
                 }
             },
-            "x": -197.0,
-            "y": 53.12765957446808
+            "x": -686.9765333632625,
+            "y": 128.40129929520083
         },
         {
             "package": "Test",
@@ -502,7 +502,7 @@
                                 "destinationUUID": "35f791e6-f78b-4dfa-8f68-4baadf138cee",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "DataBase2_Data",
-                                "uuid": "417eccea-4022-4207-930f-8638f876bce3",
+                                "uuid": "d6e04a25-4905-42d7-b469-f1d013661d1e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -517,6 +517,33 @@
                 }
             ],
             "outputs": [
+                {
+                    "name": "Data1",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_Data1",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "207e905a-5c83-455d-b766-f73880afb240",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data1",
+                        "wires": {}
+                    }
+                },
                 {
                     "name": "N_Channels",
                     "package": "PyFlowBase",
@@ -598,7 +625,7 @@
                                 "destinationUUID": "e536f462-7ccf-412c-bdf8-cadd21109957",
                                 "sourceName": "DataBase2_Last_Value",
                                 "destinationName": "DDA1_Data",
-                                "uuid": "af72f564-79d6-4dac-a7a0-8b390bfee5ff",
+                                "uuid": "75c51c40-d7ba-479e-9707-1a65ef595885",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -609,33 +636,6 @@
                                 "snapVToSecond": 0
                             }
                         }
-                    }
-                },
-                {
-                    "name": "Data1",
-                    "package": "PyFlowBase",
-                    "fullName": "DataBase2_Data1",
-                    "dataType": "AnyPin",
-                    "direction": 1,
-                    "value": null,
-                    "uuid": "207e905a-5c83-455d-b766-f73880afb240",
-                    "linkedTo": [],
-                    "pinIndex": 4,
-                    "options": [
-                        1,
-                        2,
-                        16,
-                        256,
-                        512
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data1",
-                        "wires": {}
                     }
                 }
             ],
@@ -652,8 +652,8 @@
                     "output": {}
                 }
             },
-            "x": -74.0,
-            "y": 143.1276595744681
+            "x": -689.0359942463544,
+            "y": -6.705730294364597
         },
         {
             "package": "Test",
@@ -663,6 +663,59 @@
             "name": "CreateDict",
             "uuid": "97775ec4-841a-499e-bf44-961c239c5f80",
             "inputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "CreateDict_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "[20, 4, 2]",
+                    "uuid": "d070b302-5c1c-4368-8b9e-006210184b2e",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "DDA1",
+                            "outPinId": 1,
+                            "rhsNodeName": "CreateDict",
+                            "inPinId": 3,
+                            "lhsNodeUid": "1f9b8871-f2e3-4011-9c1a-6f02e22010a2",
+                            "rhsNodeUid": "97775ec4-841a-499e-bf44-961c239c5f80"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "442e7b7d-baac-4652-9293-c3d7b1f08bbd",
+                                "destinationUUID": "d070b302-5c1c-4368-8b9e-006210184b2e",
+                                "sourceName": "DDA1_Data1",
+                                "destinationName": "CreateDict_Data",
+                                "uuid": "fac6001a-cfb1-444e-9bd8-20cb81a8d27a",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                },
                 {
                     "name": "Keys",
                     "package": "PyFlowBase",
@@ -704,7 +757,7 @@
                                 "destinationUUID": "23be30a2-a974-4e00-8eda-6d87e159f611",
                                 "sourceName": "makeList_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "a8f06ee4-fc1e-48d3-8b19-c410d6bc4add",
+                                "uuid": "cd745e74-a58c-4af6-b01c-d2d97cf45783",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -753,7 +806,7 @@
                                 "destinationUUID": "540418b4-c599-4333-bdbe-c991a9dee467",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "860f85ec-f19b-4cd1-bfba-8c388fb9803e",
+                                "uuid": "fe99fdf2-ec66-4fd2-86cf-325a4382d5d9",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -765,59 +818,6 @@
                             }
                         }
                     }
-                },
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "CreateDict_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": "[20, 4, 2]",
-                    "uuid": "d070b302-5c1c-4368-8b9e-006210184b2e",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "DDA1",
-                            "outPinId": 1,
-                            "rhsNodeName": "CreateDict",
-                            "inPinId": 3,
-                            "lhsNodeUid": "1f9b8871-f2e3-4011-9c1a-6f02e22010a2",
-                            "rhsNodeUid": "97775ec4-841a-499e-bf44-961c239c5f80"
-                        }
-                    ],
-                    "pinIndex": 3,
-                    "options": [
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {
-                            "3": {
-                                "sourceUUID": "442e7b7d-baac-4652-9293-c3d7b1f08bbd",
-                                "destinationUUID": "d070b302-5c1c-4368-8b9e-006210184b2e",
-                                "sourceName": "DDA1_Data1",
-                                "destinationName": "CreateDict_Data",
-                                "uuid": "c7e614ac-19ca-433b-a402-93adbb7750dc",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    },
-                    "currDataType": "IntPin"
                 }
             ],
             "outputs": [
@@ -883,7 +883,7 @@
                                 "destinationUUID": "5d0fcca5-5c66-4e97-ba47-e9a85e4a5ffc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "ec383886-3848-428e-9eca-a7dcd4b3812c",
+                                "uuid": "d341bdb1-3b5d-48d4-8139-f2e4769af8a5",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -910,8 +910,8 @@
                     "output": {}
                 }
             },
-            "x": 338.55319148936167,
-            "y": -145.74468085106383
+            "x": -376.5303714634667,
+            "y": -262.22888115107213
         },
         {
             "package": "PyFlowBase",
@@ -981,7 +981,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "ca9068a2-5b5a-45f3-a3fb-50aa9de5dc35",
+                                "uuid": "43a7524f-78a8-4972-afef-8644f6314ff6",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1008,8 +1008,8 @@
                     "output": {}
                 }
             },
-            "x": -6.6382978723404165,
-            "y": -97.74468085106383
+            "x": -716.2359191410968,
+            "y": -245.08730312397506
         },
         {
             "package": "PyFlowBase",
@@ -1079,7 +1079,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString1_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "6b7d42e3-cb5a-4b65-9f7d-e59c9764b7af",
+                                "uuid": "ad0130c3-c39c-4b4e-8262-55e5705bb04e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1106,8 +1106,8 @@
                     "output": {}
                 }
             },
-            "x": 0.20889748549323173,
-            "y": -32.87234042553192
+            "x": -716.2461508883528,
+            "y": -171.30030746182672
         },
         {
             "package": "PyFlowBase",
@@ -1177,7 +1177,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString4_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "6ab3a93c-a03b-4043-9e67-b520d10610b2",
+                                "uuid": "7562f760-3dd6-4d08-92a8-3cf167a226a8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1204,8 +1204,8 @@
                     "output": {}
                 }
             },
-            "x": 1.0,
-            "y": 24.127659574468083
+            "x": -716.1407910843549,
+            "y": -101.95693867266547
         },
         {
             "package": "PyFlowBase",
@@ -1271,14 +1271,6 @@
                     "uuid": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "makeString1",
-                            "outPinId": 1,
-                            "rhsNodeName": "makeList",
-                            "inPinId": 1,
-                            "lhsNodeUid": "ca09919e-2fff-4a2e-b55b-763936654115",
-                            "rhsNodeUid": "8c0eb6a8-55e5-4d3f-890f-f2616090fcc2"
-                        },
-                        {
                             "lhsNodeName": "makeString4",
                             "outPinId": 1,
                             "rhsNodeName": "makeList",
@@ -1292,6 +1284,14 @@
                             "rhsNodeName": "makeList",
                             "inPinId": 1,
                             "lhsNodeUid": "f417f5f6-c22d-47c7-ba14-dcc51daf126a",
+                            "rhsNodeUid": "8c0eb6a8-55e5-4d3f-890f-f2616090fcc2"
+                        },
+                        {
+                            "lhsNodeName": "makeString1",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeList",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ca09919e-2fff-4a2e-b55b-763936654115",
                             "rhsNodeUid": "8c0eb6a8-55e5-4d3f-890f-f2616090fcc2"
                         }
                     ],
@@ -1315,7 +1315,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString4_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "6ab3a93c-a03b-4043-9e67-b520d10610b2",
+                                "uuid": "7562f760-3dd6-4d08-92a8-3cf167a226a8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1330,6 +1330,29 @@
                 }
             ],
             "outputs": [
+                {
+                    "name": "result",
+                    "package": "PyFlowBase",
+                    "fullName": "makeList_result",
+                    "dataType": "BoolPin",
+                    "direction": 1,
+                    "value": "true",
+                    "uuid": "6e63339b-35bc-4447-afd0-e6d0f5de31ec",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {}
+                    }
+                },
                 {
                     "name": "out",
                     "package": "PyFlowBase",
@@ -1367,7 +1390,7 @@
                                 "destinationUUID": "23be30a2-a974-4e00-8eda-6d87e159f611",
                                 "sourceName": "makeList_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "a8f06ee4-fc1e-48d3-8b19-c410d6bc4add",
+                                "uuid": "cd745e74-a58c-4af6-b01c-d2d97cf45783",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1378,29 +1401,6 @@
                                 "snapVToSecond": 0
                             }
                         }
-                    }
-                },
-                {
-                    "name": "result",
-                    "package": "PyFlowBase",
-                    "fullName": "makeList_result",
-                    "dataType": "BoolPin",
-                    "direction": 1,
-                    "value": "true",
-                    "uuid": "6e63339b-35bc-4447-afd0-e6d0f5de31ec",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "result",
-                        "wires": {}
                     }
                 }
             ],
@@ -1417,8 +1417,8 @@
                     "output": {}
                 }
             },
-            "x": 115.0,
-            "y": -9.872340425531917
+            "x": -541.8550427330905,
+            "y": -245.04909143360453
         },
         {
             "package": "LSLController",
@@ -1428,29 +1428,6 @@
             "name": "LSL_Writer2",
             "uuid": "92f1df20-4519-4c37-b761-ea1eb4ca3445",
             "inputs": [
-                {
-                    "name": "Type",
-                    "package": "PyFlowBase",
-                    "fullName": "LSL_Writer2_Type",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"PyflowStream\"",
-                    "uuid": "8130cd5f-f249-47c3-9ef7-4de58b9449ec",
-                    "linkedTo": [],
-                    "pinIndex": 4,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Type",
-                        "wires": {}
-                    }
-                },
                 {
                     "name": "Stop",
                     "package": "PyFlowBase",
@@ -1539,7 +1516,7 @@
                                 "destinationUUID": "5d0fcca5-5c66-4e97-ba47-e9a85e4a5ffc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "ec383886-3848-428e-9eca-a7dcd4b3812c",
+                                "uuid": "d341bdb1-3b5d-48d4-8139-f2e4769af8a5",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1598,61 +1575,32 @@
                         "displayName": "Begin",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "DataOut",
+                    "name": "Type",
                     "package": "PyFlowBase",
-                    "fullName": "LSL_Writer2_DataOut",
-                    "dataType": "AnyPin",
-                    "direction": 1,
-                    "value": null,
-                    "uuid": "6bf82223-c863-430f-ac83-0743216391ab",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "LSL_Writer2",
-                            "outPinId": 3,
-                            "rhsNodeName": "OpenWindow6",
-                            "inPinId": 4,
-                            "lhsNodeUid": "92f1df20-4519-4c37-b761-ea1eb4ca3445",
-                            "rhsNodeUid": "9cf53e1f-3372-4196-83b1-97e57c8dd5db"
-                        }
-                    ],
-                    "pinIndex": 3,
+                    "fullName": "LSL_Writer2_Type",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"PyflowStream\"",
+                    "uuid": "8130cd5f-f249-47c3-9ef7-4de58b9449ec",
+                    "linkedTo": [],
+                    "pinIndex": 4,
                     "options": [
-                        1,
-                        2,
-                        16,
-                        256,
-                        512
+                        256
                     ],
-                    "structure": 3,
+                    "structure": 0,
                     "alwaysList": false,
                     "alwaysSingle": false,
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "DataOut",
-                        "wires": {
-                            "4": {
-                                "sourceUUID": "6bf82223-c863-430f-ac83-0743216391ab",
-                                "destinationUUID": "c1f92f46-10bc-4d82-b491-81048eeb39a3",
-                                "sourceName": "LSL_Writer2_DataOut",
-                                "destinationName": "OpenWindow6_Data",
-                                "uuid": "62664d76-db63-4fc5-ab45-9f5dd80c6ef4",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
+                        "displayName": "Type",
+                        "wires": {}
                     }
-                },
+                }
+            ],
+            "outputs": [
                 {
                     "name": "OUT",
                     "package": "PyFlowBase",
@@ -1688,7 +1636,7 @@
                                 "destinationUUID": "540418b4-c599-4333-bdbe-c991a9dee467",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "860f85ec-f19b-4cd1-bfba-8c388fb9803e",
+                                "uuid": "fe99fdf2-ec66-4fd2-86cf-325a4382d5d9",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1738,7 +1686,59 @@
                                 "destinationUUID": "fc7886c2-16a0-4b0a-9ae5-4ba764a584f7",
                                 "sourceName": "LSL_Writer2_Info",
                                 "destinationName": "OpenWindow6_Info",
-                                "uuid": "89d48a49-c834-4182-a015-4ce3b8cbd897",
+                                "uuid": "188f11f0-b0db-4939-b2b9-871c73168134",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "DataOut",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Writer2_DataOut",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "6bf82223-c863-430f-ac83-0743216391ab",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Writer2",
+                            "outPinId": 3,
+                            "rhsNodeName": "OpenWindow6",
+                            "inPinId": 4,
+                            "lhsNodeUid": "92f1df20-4519-4c37-b761-ea1eb4ca3445",
+                            "rhsNodeUid": "9cf53e1f-3372-4196-83b1-97e57c8dd5db"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "DataOut",
+                        "wires": {
+                            "4": {
+                                "sourceUUID": "6bf82223-c863-430f-ac83-0743216391ab",
+                                "destinationUUID": "c1f92f46-10bc-4d82-b491-81048eeb39a3",
+                                "sourceName": "LSL_Writer2_DataOut",
+                                "destinationName": "OpenWindow6_Data",
+                                "uuid": "549cd20a-1979-4b3b-89ab-15468d67a51c",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1765,8 +1765,8 @@
                     "output": {}
                 }
             },
-            "x": 129.5957446808511,
-            "y": -328.2765957446809
+            "x": -212.56997116555712,
+            "y": -43.61410792224589
         },
         {
             "package": "PyMonitor",
@@ -1776,6 +1776,30 @@
             "name": "OpenWindow6",
             "uuid": "9cf53e1f-3372-4196-83b1-97e57c8dd5db",
             "inputs": [
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenWindow6_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "25bf5300-0d74-42d8-8ae2-8b3f505981aa",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
                 {
                     "name": "Stop",
                     "package": "PyFlowBase",
@@ -1841,7 +1865,7 @@
                                 "destinationUUID": "c1f92f46-10bc-4d82-b491-81048eeb39a3",
                                 "sourceName": "LSL_Writer2_DataOut",
                                 "destinationName": "OpenWindow6_Data",
-                                "uuid": "62664d76-db63-4fc5-ab45-9f5dd80c6ef4",
+                                "uuid": "549cd20a-1979-4b3b-89ab-15468d67a51c",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1893,7 +1917,7 @@
                                 "destinationUUID": "fc7886c2-16a0-4b0a-9ae5-4ba764a584f7",
                                 "sourceName": "LSL_Writer2_Info",
                                 "destinationName": "OpenWindow6_Info",
-                                "uuid": "89d48a49-c834-4182-a015-4ce3b8cbd897",
+                                "uuid": "188f11f0-b0db-4939-b2b9-871c73168134",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1904,30 +1928,6 @@
                                 "snapVToSecond": 0
                             }
                         }
-                    }
-                },
-                {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "OpenWindow6_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "25bf5300-0d74-42d8-8ae2-8b3f505981aa",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {}
                     }
                 }
             ],
@@ -1969,8 +1969,8 @@
                     "output": {}
                 }
             },
-            "x": 498.0,
-            "y": -343.0
+            "x": -42.86230394342805,
+            "y": -60.964141540413365
         },
         {
             "package": "DDA",
@@ -1980,52 +1980,6 @@
             "name": "DDA1",
             "uuid": "1f9b8871-f2e3-4011-9c1a-6f02e22010a2",
             "inputs": [
-                {
-                    "name": "Focus",
-                    "package": "PyFlowBase",
-                    "fullName": "DDA1_Focus",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "39b58032-d4eb-4277-b2e1-2570be75e227",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Focus",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "NValues",
-                    "package": "PyFlowBase",
-                    "fullName": "DDA1_NValues",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "be7ad14f-631e-44f0-998c-7e2ef12304d6",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "NValues",
-                        "wires": {}
-                    }
-                },
                 {
                     "name": "Data",
                     "package": "PyFlowBase",
@@ -2065,7 +2019,7 @@
                                 "destinationUUID": "e536f462-7ccf-412c-bdf8-cadd21109957",
                                 "sourceName": "DataBase2_Last_Value",
                                 "destinationName": "DDA1_Data",
-                                "uuid": "af72f564-79d6-4dac-a7a0-8b390bfee5ff",
+                                "uuid": "75c51c40-d7ba-479e-9707-1a65ef595885",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2078,6 +2032,77 @@
                         }
                     },
                     "currDataType": "IntPin"
+                },
+                {
+                    "name": "Focus",
+                    "package": "PyFlowBase",
+                    "fullName": "DDA1_Focus",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "39b58032-d4eb-4277-b2e1-2570be75e227",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CalculationEmteq",
+                            "outPinId": 1,
+                            "rhsNodeName": "DDA1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "340ca59a-07d1-4450-bf81-a1538bf077cc",
+                            "rhsNodeUid": "1f9b8871-f2e3-4011-9c1a-6f02e22010a2"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Focus",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "c9a85212-a109-4070-af7d-deb0bda5b70a",
+                                "destinationUUID": "39b58032-d4eb-4277-b2e1-2570be75e227",
+                                "sourceName": "CalculationEmteq_Focus",
+                                "destinationName": "DDA1_Focus",
+                                "uuid": "37fdbe43-1d49-4082-bd27-b722cdf47f8d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "NValues",
+                    "package": "PyFlowBase",
+                    "fullName": "DDA1_NValues",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "be7ad14f-631e-44f0-998c-7e2ef12304d6",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "NValues",
+                        "wires": {}
+                    }
                 }
             ],
             "outputs": [
@@ -2120,7 +2145,7 @@
                                 "destinationUUID": "d070b302-5c1c-4368-8b9e-006210184b2e",
                                 "sourceName": "DDA1_Data1",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "c7e614ac-19ca-433b-a402-93adbb7750dc",
+                                "uuid": "fac6001a-cfb1-444e-9bd8-20cb81a8d27a",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2148,8 +2173,464 @@
                     "output": {}
                 }
             },
-            "x": 200.0,
-            "y": 110.0
+            "x": -515.083562952828,
+            "y": -6.484200300008166
+        },
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "LSL_Reader3",
+            "owningGraphName": "root",
+            "name": "LSL_Reader5",
+            "uuid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+            "inputs": [
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Emteq\"",
+                    "uuid": "bd44be6b-4e70-4117-8928-aed6aa84e532",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "1f62c787-fa0a-4393-8515-edb70cf78c5d",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "f6129c59-d1ae-4e1d-bea7-e4e6b92ed878",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_Data",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "9038fc25-2ffd-4b08-a536-2f75f4e70d47",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 2,
+                            "rhsNodeName": "AcquisitionEmteq",
+                            "inPinId": 1,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        1,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "9038fc25-2ffd-4b08-a536-2f75f4e70d47",
+                                "destinationUUID": "5b08a1a1-3437-4519-929c-49d50fcd6223",
+                                "sourceName": "LSL_Reader5_Data",
+                                "destinationName": "AcquisitionEmteq_InData",
+                                "uuid": "fe64820b-5be6-4013-b3ee-02d584fe4e1e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_Info",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "ac3525ec-ab93-4bec-8308-c92fac2e3744",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "OUT",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader5_OUT",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "ad3f76f7-ed68-4394-b103-038f3f61cde7",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "OUT",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LSL_Reader5"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LSL_Reader5</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -910.0330624872627,
+            "y": 286.07948967944355
+        },
+        {
+            "package": "EmteqPro",
+            "lib": null,
+            "type": "CalculationEmteq",
+            "owningGraphName": "root",
+            "name": "CalculationEmteq",
+            "uuid": "340ca59a-07d1-4450-bf81-a1538bf077cc",
+            "inputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "CalculationEmteq_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "2a0e748c-9ce2-4f2a-a6c0-b370d365561b",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "AcquisitionEmteq",
+                            "outPinId": 1,
+                            "rhsNodeName": "CalculationEmteq",
+                            "inPinId": 1,
+                            "lhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78",
+                            "rhsNodeUid": "340ca59a-07d1-4450-bf81-a1538bf077cc"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        1,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "9ac07afe-54c2-49b3-bdd3-c408a4f2362b",
+                                "destinationUUID": "2a0e748c-9ce2-4f2a-a6c0-b370d365561b",
+                                "sourceName": "AcquisitionEmteq_DataOut",
+                                "destinationName": "CalculationEmteq_Data",
+                                "uuid": "3ac298b8-3ce2-4aea-a2ee-fdef9a9cc9e2",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Focus",
+                    "package": "PyFlowBase",
+                    "fullName": "CalculationEmteq_Focus",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "0",
+                    "uuid": "c9a85212-a109-4070-af7d-deb0bda5b70a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CalculationEmteq",
+                            "outPinId": 1,
+                            "rhsNodeName": "DDA1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "340ca59a-07d1-4450-bf81-a1538bf077cc",
+                            "rhsNodeUid": "1f9b8871-f2e3-4011-9c1a-6f02e22010a2"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Focus",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "c9a85212-a109-4070-af7d-deb0bda5b70a",
+                                "destinationUUID": "39b58032-d4eb-4277-b2e1-2570be75e227",
+                                "sourceName": "CalculationEmteq_Focus",
+                                "destinationName": "DDA1_Focus",
+                                "uuid": "37fdbe43-1d49-4082-bd27-b722cdf47f8d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "CalculationEmteq"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CalculationEmteq</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -583.1250326814857,
+            "y": 294.93069839750945
+        },
+        {
+            "package": "EmteqPro",
+            "lib": null,
+            "type": "AcquisitionEmteq",
+            "owningGraphName": "root",
+            "name": "AcquisitionEmteq",
+            "uuid": "6c14adfb-694c-401b-afbb-187b9748df78",
+            "inputs": [
+                {
+                    "name": "InData",
+                    "package": "PyFlowBase",
+                    "fullName": "AcquisitionEmteq_InData",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "5b08a1a1-3437-4519-929c-49d50fcd6223",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 2,
+                            "rhsNodeName": "AcquisitionEmteq",
+                            "inPinId": 1,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        1,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "InData",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "9038fc25-2ffd-4b08-a536-2f75f4e70d47",
+                                "destinationUUID": "5b08a1a1-3437-4519-929c-49d50fcd6223",
+                                "sourceName": "LSL_Reader5_Data",
+                                "destinationName": "AcquisitionEmteq_InData",
+                                "uuid": "fe64820b-5be6-4013-b3ee-02d584fe4e1e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "DataOut",
+                    "package": "PyFlowBase",
+                    "fullName": "AcquisitionEmteq_DataOut",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "9ac07afe-54c2-49b3-bdd3-c408a4f2362b",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "AcquisitionEmteq",
+                            "outPinId": 1,
+                            "rhsNodeName": "CalculationEmteq",
+                            "inPinId": 1,
+                            "lhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78",
+                            "rhsNodeUid": "340ca59a-07d1-4450-bf81-a1538bf077cc"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        1,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "DataOut",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "9ac07afe-54c2-49b3-bdd3-c408a4f2362b",
+                                "destinationUUID": "2a0e748c-9ce2-4f2a-a6c0-b370d365561b",
+                                "sourceName": "AcquisitionEmteq_DataOut",
+                                "destinationName": "CalculationEmteq_Data",
+                                "uuid": "3ac298b8-3ce2-4aea-a2ee-fdef9a9cc9e2",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "AcquisitionEmteq"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">AcquisitionEmteq</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -770.0656696088959,
+            "y": 299.74922318858705
         }
     ],
     "depth": 1,
