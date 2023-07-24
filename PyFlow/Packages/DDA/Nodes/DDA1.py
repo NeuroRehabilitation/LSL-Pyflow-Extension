@@ -50,14 +50,23 @@ class DDA1(NodeBase):
         skill_level = self.calculate_skill_level(player_score, remaining_lives, time_left)
         ball_speed, ball_spawn_rate, life_spawn_rate = self.set_difficulty(skill_level)
 
-        print("Ball Speed:", ball_speed)
-        print("Ball Spawn Rate:", ball_spawn_rate)
-        print("Life Spawn Rate:", life_spawn_rate)
+        Dificulty_Skill=[]
+        Dificulty_Skill.append(ball_speed)
+        Dificulty_Skill.append(ball_spawn_rate)
+        Dificulty_Skill.append(life_spawn_rate)
 
-        Dificulty=[]
-        Dificulty.append(ball_speed)
-        Dificulty.append(ball_spawn_rate)
-        Dificulty.append(life_spawn_rate)
+        ball_speed, ball_spawn_rate, life_spawn_rate = self.set_difficulty_focus(skill_level)
+
+        Dificulty_Focus = []
+        Dificulty_Focus.append(ball_speed)
+        Dificulty_Focus.append(ball_spawn_rate)
+        Dificulty_Focus.append(life_spawn_rate)
+
+        Dificulty = []
+        Dificulty.append((Dificulty_Skill[0]+Dificulty_Focus[0])/2)
+        Dificulty.append((Dificulty_Skill[1]+Dificulty_Focus[1])/2)
+        Dificulty.append((Dificulty_Skill[2]+Dificulty_Focus[2])/2)
+
         self.Send.setData(Dificulty)
 
     def calculate_skill_level(self,score, lifes, time_left):
@@ -80,6 +89,28 @@ class DDA1(NodeBase):
             ball_spawn_rate = 4
             life_spawn_rate = 2
         elif skill_level <= 150:
+            ball_speed = 30
+            ball_spawn_rate = 3
+            life_spawn_rate = 1
+        else:
+            ball_speed = 60
+            ball_spawn_rate = 2
+            life_spawn_rate = 1
+
+        return ball_speed, ball_spawn_rate, life_spawn_rate
+
+    def set_difficulty_focus(self, focus):
+        # You can define your own mapping of skill levels to difficulty settings
+        # Here's a simple example:
+        if focus <= -1:
+            ball_speed = 10
+            ball_spawn_rate = 5
+            life_spawn_rate = 3
+        elif focus <= 0:
+            ball_speed = 20
+            ball_spawn_rate = 4
+            life_spawn_rate = 2
+        elif focus <= 1:
             ball_speed = 30
             ball_spawn_rate = 3
             life_spawn_rate = 1

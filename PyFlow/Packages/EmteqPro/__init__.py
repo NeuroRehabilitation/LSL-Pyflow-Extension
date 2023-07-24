@@ -8,6 +8,7 @@ from PyFlow.Packages.EmteqPro.Nodes.AcquisitionEmteq import AcquisitionEmteq
 from PyFlow.Packages.EmteqPro.Nodes.SensorsEmteq import SensorsEmteq
 from PyFlow.Packages.EmteqPro.Nodes.CalculationEmteq import CalculationEmteq
 from PyFlow.Packages.EmteqPro.Nodes.CSVEmteq import CSVEmteq
+from PyFlow.Packages.EmteqPro.Nodes.HeartRate import HeartRate
 
 # Factories
 
@@ -23,6 +24,7 @@ _NODES={
 	AcquisitionEmteq.__name__:AcquisitionEmteq,
 	SensorsEmteq.__name__:SensorsEmteq,
 	CSVEmteq.__name__:CSVEmteq,
+	HeartRate.__name__:HeartRate,
 	CalculationEmteq.__name__:CalculationEmteq
 }
 

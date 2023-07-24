@@ -40,13 +40,20 @@ class CalculationEmteq(NodeBase):
 
     def compute(self, *args, **kwargs):
         data = self.Data.getData()
-        emg_features = 0;
-        ppg_features = data["PPG"]
+
+        ppg_features = data["Ppg"]
         # Assuming you have 'emg_features' and 'ppg_features' as numpy arrays
-        valence_estimation, arousal_estimation = self.estimate_valence_arousal(emg_features, ppg_features)
+        valence_estimation, arousal_estimation, dfc_mod = self.estimate_valence_arousal(
+            [L_Zygomaticus, R_Zygomaticus, L_Orbicularis, R_Orbicularis, L_Frontalis, R_Frontalis, Corrugator],
+            ppg_features
+        )
+
 
         print("Estimated Valence:", valence_estimation)
+
         print("Estimated Arousal:", arousal_estimation)
+
+        self.Focus.setData(dfc_mod)
 
     def estimate_valence_arousal(self,emg_features, ppg_features):
         # Define thresholds for valence and arousal estimation
@@ -59,16 +66,23 @@ class CalculationEmteq(NodeBase):
         # Calculate the average of PPG sensor features
         avg_ppg = np.mean(ppg_features)
 
+        # Translates the values of valence and arousal to numeric one
+        dfc_mod = 0
+
         # Estimate valence based on facial EMG features
         if avg_emg >= valence_threshold:
             valence = 'Positive'
+            dfc_mod = dfc_mod + 1
         else:
             valence = 'Negative'
+            dfc_mod = dfc_mod - 1
 
         # Estimate arousal based on PPG sensor features
         if avg_ppg >= arousal_threshold:
             arousal = 'High'
+            dfc_mod = dfc_mod + 2
         else:
             arousal = 'Low'
+            dfc_mod = dfc_mod - 2
 
-        return valence, arousal
+        return valence, arousal, dfc_mod
