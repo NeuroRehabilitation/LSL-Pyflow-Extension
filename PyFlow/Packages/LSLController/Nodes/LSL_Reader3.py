@@ -38,18 +38,20 @@ class LSL_Reader3(NodeBase):
                     self.start = time.time()
                     print("Number of values in one second->" + str(self.counter))
                     self.counter = 0
+                if len(self.inlets) != 0:
+                    # Pull a chunk of samples from the inlet
+                    samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
 
-                # Pull a chunk of samples from the inlet
-                samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
-
-                if samples:
-                    # Process the received samples
-                    for sample, timestamp in zip(samples, timestamps):
-                        # Do something with the sample data and timestamp
-                        #print(+"Received sample:", sample, "at timestamp:", timestamp)
-                        self.addDataToDict(self.inlets[0].info().name(), sample)
-                self.out.call()
-                self.Send.setData(self.DataBase)
+                    if samples:
+                        # Process the received samples
+                        for sample, timestamp in zip(samples, timestamps):
+                            # Do something with the sample data and timestamp
+                            #print(+"Received sample:", sample, "at timestamp:", timestamp)
+                            self.addDataToDict(self.inlets[0].info().name(), sample)
+                    self.out.call()
+                    self.Send.setData(self.DataBase)
+                else:
+                    self.bWorking = False
 
             if timer1-time.time() != 0:
                 self.counter += 1

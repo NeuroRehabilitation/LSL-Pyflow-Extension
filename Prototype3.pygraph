@@ -154,7 +154,7 @@
                                 "destinationUUID": "5b6b9baa-7313-4bb3-9a58-d38bf398c4c7",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "OpenWindow_Data",
-                                "uuid": "bfeaacfd-4082-44f4-9a13-f178f5df1054",
+                                "uuid": "92060130-ef2a-4285-a542-424c20d7cb23",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -169,7 +169,7 @@
                                 "destinationUUID": "35f791e6-f78b-4dfa-8f68-4baadf138cee",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "DataBase2_Data",
-                                "uuid": "658e10eb-5adf-44c0-923b-266d7c298d22",
+                                "uuid": "43ae15cf-e8b6-4aa2-88a1-73f957383ca8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -219,7 +219,7 @@
                                 "destinationUUID": "482e94c8-017d-4edd-b6b7-18c0ccf63e07",
                                 "sourceName": "LSL_Reader3_Info",
                                 "destinationName": "OpenWindow_Info",
-                                "uuid": "eb43cf37-9cf6-46fa-9113-97c548d0d14d",
+                                "uuid": "b1523cf9-e505-4352-b46c-7179ede746e4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -346,7 +346,7 @@
                                 "destinationUUID": "5b6b9baa-7313-4bb3-9a58-d38bf398c4c7",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "OpenWindow_Data",
-                                "uuid": "bfeaacfd-4082-44f4-9a13-f178f5df1054",
+                                "uuid": "92060130-ef2a-4285-a542-424c20d7cb23",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -398,7 +398,7 @@
                                 "destinationUUID": "482e94c8-017d-4edd-b6b7-18c0ccf63e07",
                                 "sourceName": "LSL_Reader3_Info",
                                 "destinationName": "OpenWindow_Info",
-                                "uuid": "eb43cf37-9cf6-46fa-9113-97c548d0d14d",
+                                "uuid": "b1523cf9-e505-4352-b46c-7179ede746e4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -502,7 +502,7 @@
                                 "destinationUUID": "35f791e6-f78b-4dfa-8f68-4baadf138cee",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "DataBase2_Data",
-                                "uuid": "658e10eb-5adf-44c0-923b-266d7c298d22",
+                                "uuid": "43ae15cf-e8b6-4aa2-88a1-73f957383ca8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -545,29 +545,6 @@
                     }
                 },
                 {
-                    "name": "N_Channels",
-                    "package": "PyFlowBase",
-                    "fullName": "DataBase2_N_Channels",
-                    "dataType": "IntPin",
-                    "direction": 1,
-                    "value": "7",
-                    "uuid": "adee503c-af93-4d7a-ab12-d99dea82e064",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "N_Channels",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "N_Source",
                     "package": "PyFlowBase",
                     "fullName": "DataBase2_N_Source",
@@ -587,6 +564,29 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "N_Source",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "N_Channels",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_N_Channels",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "7",
+                    "uuid": "adee503c-af93-4d7a-ab12-d99dea82e064",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "N_Channels",
                         "wires": {}
                     }
                 },
@@ -625,7 +625,7 @@
                                 "destinationUUID": "e536f462-7ccf-412c-bdf8-cadd21109957",
                                 "sourceName": "DataBase2_Last_Value",
                                 "destinationName": "DDA1_Data",
-                                "uuid": "b1315ff4-f0ce-4624-9989-d2aecb0fd834",
+                                "uuid": "44767ba5-8951-477e-a630-95b64aab737d",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -704,7 +704,7 @@
                                 "destinationUUID": "23be30a2-a974-4e00-8eda-6d87e159f611",
                                 "sourceName": "makeList_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "ee055a58-77f8-47f8-b9f0-018ffbc6d6a0",
+                                "uuid": "6625997e-531c-49b7-87b9-ad1d795c2695",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -753,7 +753,7 @@
                                 "destinationUUID": "540418b4-c599-4333-bdbe-c991a9dee467",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "37e8daf8-36fd-405f-94e0-fc9da192b5a2",
+                                "uuid": "205a26e9-36cf-41d6-945e-e6400f2fc8b8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -805,7 +805,7 @@
                                 "destinationUUID": "d070b302-5c1c-4368-8b9e-006210184b2e",
                                 "sourceName": "DDA1_Data1",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "b66b887f-df06-47b3-bf99-defd51cbce34",
+                                "uuid": "ab7f02f6-5a9e-4c21-816d-58c9dbd30d00",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -860,7 +860,7 @@
                                 "destinationUUID": "5d0fcca5-5c66-4e97-ba47-e9a85e4a5ffc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "8cc197bc-8c50-41e6-aa94-20d07ade2381",
+                                "uuid": "57cf1d05-d1b9-45db-8ae3-ce30c6c93f74",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -981,7 +981,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "6a613c0c-49e0-4d0d-9951-c8be25f13210",
+                                "uuid": "91ce9e3b-97c6-4a6c-b255-d8013ed31363",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1079,7 +1079,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString1_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "51041f22-eb71-4d55-b0f7-808d7e1d4161",
+                                "uuid": "477ee141-0396-405f-af31-cc2eb596f181",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1177,7 +1177,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString4_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "ed10f017-aa53-4e4c-844e-698255ddaccb",
+                                "uuid": "d8861b9b-1a79-47cd-815d-c9f3132f559e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1269,7 +1269,7 @@
                                 "destinationUUID": "8e4dd447-714d-4fd5-9c32-992f0be7771b",
                                 "sourceName": "makeString4_out",
                                 "destinationName": "makeList_data",
-                                "uuid": "ed10f017-aa53-4e4c-844e-698255ddaccb",
+                                "uuid": "d8861b9b-1a79-47cd-815d-c9f3132f559e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1390,7 +1390,7 @@
                                 "destinationUUID": "23be30a2-a974-4e00-8eda-6d87e159f611",
                                 "sourceName": "makeList_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "ee055a58-77f8-47f8-b9f0-018ffbc6d6a0",
+                                "uuid": "6625997e-531c-49b7-87b9-ad1d795c2695",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1562,7 +1562,7 @@
                                 "destinationUUID": "5d0fcca5-5c66-4e97-ba47-e9a85e4a5ffc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "8cc197bc-8c50-41e6-aa94-20d07ade2381",
+                                "uuid": "57cf1d05-d1b9-45db-8ae3-ce30c6c93f74",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1640,7 +1640,7 @@
                                 "destinationUUID": "c1f92f46-10bc-4d82-b491-81048eeb39a3",
                                 "sourceName": "LSL_Writer2_DataOut",
                                 "destinationName": "OpenWindow6_Data",
-                                "uuid": "53dc2ae1-c7b0-4abe-98f6-508ba5f57c8b",
+                                "uuid": "5e8a887a-2eb4-42ec-a00b-0f4eb0c83ce8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1688,7 +1688,7 @@
                                 "destinationUUID": "540418b4-c599-4333-bdbe-c991a9dee467",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "37e8daf8-36fd-405f-94e0-fc9da192b5a2",
+                                "uuid": "205a26e9-36cf-41d6-945e-e6400f2fc8b8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1738,7 +1738,7 @@
                                 "destinationUUID": "fc7886c2-16a0-4b0a-9ae5-4ba764a584f7",
                                 "sourceName": "LSL_Writer2_Info",
                                 "destinationName": "OpenWindow6_Info",
-                                "uuid": "76bca70a-0f71-4812-94f6-4a0af781ba87",
+                                "uuid": "b6c44d61-9589-47ca-98a4-3e6254bff9f8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1841,7 +1841,7 @@
                                 "destinationUUID": "c1f92f46-10bc-4d82-b491-81048eeb39a3",
                                 "sourceName": "LSL_Writer2_DataOut",
                                 "destinationName": "OpenWindow6_Data",
-                                "uuid": "53dc2ae1-c7b0-4abe-98f6-508ba5f57c8b",
+                                "uuid": "5e8a887a-2eb4-42ec-a00b-0f4eb0c83ce8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1893,7 +1893,7 @@
                                 "destinationUUID": "fc7886c2-16a0-4b0a-9ae5-4ba764a584f7",
                                 "sourceName": "LSL_Writer2_Info",
                                 "destinationName": "OpenWindow6_Info",
-                                "uuid": "76bca70a-0f71-4812-94f6-4a0af781ba87",
+                                "uuid": "b6c44d61-9589-47ca-98a4-3e6254bff9f8",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2015,7 +2015,7 @@
                                 "destinationUUID": "39b58032-d4eb-4277-b2e1-2570be75e227",
                                 "sourceName": "CalculationEmteq_Focus",
                                 "destinationName": "DDA1_Focus",
-                                "uuid": "d558a64a-baa6-4984-a71e-939cdc650c0a",
+                                "uuid": "b6e73353-4850-4ea2-b603-61b1109b75b4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2090,7 +2090,7 @@
                                 "destinationUUID": "e536f462-7ccf-412c-bdf8-cadd21109957",
                                 "sourceName": "DataBase2_Last_Value",
                                 "destinationName": "DDA1_Data",
-                                "uuid": "b1315ff4-f0ce-4624-9989-d2aecb0fd834",
+                                "uuid": "44767ba5-8951-477e-a630-95b64aab737d",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2145,7 +2145,7 @@
                                 "destinationUUID": "d070b302-5c1c-4368-8b9e-006210184b2e",
                                 "sourceName": "DDA1_Data1",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "b66b887f-df06-47b3-bf99-defd51cbce34",
+                                "uuid": "ab7f02f6-5a9e-4c21-816d-58c9dbd30d00",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2265,7 +2265,16 @@
                     "direction": 1,
                     "value": null,
                     "uuid": "ac3525ec-ab93-4bec-8308-c92fac2e3744",
-                    "linkedTo": [],
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 3,
+                            "rhsNodeName": "OpenWindow7",
+                            "inPinId": 3,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "684e09da-e99f-46fb-9a1a-0770dfb55782"
+                        }
+                    ],
                     "pinIndex": 3,
                     "options": [
                         16,
@@ -2279,7 +2288,23 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "Info",
-                        "wires": {}
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "ac3525ec-ab93-4bec-8308-c92fac2e3744",
+                                "destinationUUID": "aaed1e0c-14a0-4a6f-b2cb-a07ca2eaf0e7",
+                                "sourceName": "LSL_Reader5_Info",
+                                "destinationName": "OpenWindow7_Info",
+                                "uuid": "5854b10b-eab9-4987-ad76-55d8a4c69f8b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 },
                 {
@@ -2298,6 +2323,14 @@
                             "inPinId": 1,
                             "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
                             "rhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78"
+                        },
+                        {
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 2,
+                            "rhsNodeName": "OpenWindow7",
+                            "inPinId": 4,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "684e09da-e99f-46fb-9a1a-0770dfb55782"
                         }
                     ],
                     "pinIndex": 2,
@@ -2321,7 +2354,22 @@
                                 "destinationUUID": "5b08a1a1-3437-4519-929c-49d50fcd6223",
                                 "sourceName": "LSL_Reader5_Data",
                                 "destinationName": "AcquisitionEmteq_InData",
-                                "uuid": "2f4f8a27-df17-42ff-ac7f-c59690bb56b3",
+                                "uuid": "1a462836-9798-42d7-bfc1-b31ba4710ba7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            },
+                            "4": {
+                                "sourceUUID": "9038fc25-2ffd-4b08-a536-2f75f4e70d47",
+                                "destinationUUID": "5ff7069f-4e59-46b9-a602-3b7724c97535",
+                                "sourceName": "LSL_Reader5_Data",
+                                "destinationName": "OpenWindow7_Data",
+                                "uuid": "65bbd66d-c2fc-495b-aa85-6eed9eb4ce44",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2342,16 +2390,7 @@
                     "direction": 1,
                     "value": "null",
                     "uuid": "ad3f76f7-ed68-4394-b103-038f3f61cde7",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "LSL_Reader5",
-                            "outPinId": 1,
-                            "rhsNodeName": "HeartRate",
-                            "inPinId": 1,
-                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
-                            "rhsNodeUid": "9a6bb98b-a024-420e-b050-3966dc3b1459"
-                        }
-                    ],
+                    "linkedTo": [],
                     "pinIndex": 1,
                     "options": [
                         256
@@ -2363,23 +2402,7 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "OUT",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "ad3f76f7-ed68-4394-b103-038f3f61cde7",
-                                "destinationUUID": "e0a634c2-54f3-4a5f-bd97-765403185d75",
-                                "sourceName": "LSL_Reader5_OUT",
-                                "destinationName": "HeartRate_inExec",
-                                "uuid": "c2935b3a-7d93-4064-a077-89b92107e55a",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
+                        "wires": {}
                     }
                 }
             ],
@@ -2448,7 +2471,7 @@
                                 "destinationUUID": "2a0e748c-9ce2-4f2a-a6c0-b370d365561b",
                                 "sourceName": "AcquisitionEmteq_DataOut",
                                 "destinationName": "CalculationEmteq_Data",
-                                "uuid": "0dca0730-6e8c-4371-8ecf-09446e785527",
+                                "uuid": "861cfe4e-a3de-41c1-a984-dd4a79642c4c",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2498,7 +2521,7 @@
                                 "destinationUUID": "39b58032-d4eb-4277-b2e1-2570be75e227",
                                 "sourceName": "CalculationEmteq_Focus",
                                 "destinationName": "DDA1_Focus",
-                                "uuid": "d558a64a-baa6-4984-a71e-939cdc650c0a",
+                                "uuid": "b6e73353-4850-4ea2-b603-61b1109b75b4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2577,7 +2600,7 @@
                                 "destinationUUID": "5b08a1a1-3437-4519-929c-49d50fcd6223",
                                 "sourceName": "LSL_Reader5_Data",
                                 "destinationName": "AcquisitionEmteq_InData",
-                                "uuid": "2f4f8a27-df17-42ff-ac7f-c59690bb56b3",
+                                "uuid": "1a462836-9798-42d7-bfc1-b31ba4710ba7",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2608,14 +2631,6 @@
                             "inPinId": 1,
                             "lhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78",
                             "rhsNodeUid": "340ca59a-07d1-4450-bf81-a1538bf077cc"
-                        },
-                        {
-                            "lhsNodeName": "AcquisitionEmteq",
-                            "outPinId": 1,
-                            "rhsNodeName": "HeartRate",
-                            "inPinId": 2,
-                            "lhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78",
-                            "rhsNodeUid": "9a6bb98b-a024-420e-b050-3966dc3b1459"
                         }
                     ],
                     "pinIndex": 1,
@@ -2639,22 +2654,7 @@
                                 "destinationUUID": "2a0e748c-9ce2-4f2a-a6c0-b370d365561b",
                                 "sourceName": "AcquisitionEmteq_DataOut",
                                 "destinationName": "CalculationEmteq_Data",
-                                "uuid": "0dca0730-6e8c-4371-8ecf-09446e785527",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            },
-                            "2": {
-                                "sourceUUID": "9ac07afe-54c2-49b3-bdd3-c408a4f2362b",
-                                "destinationUUID": "a63f5e9f-74de-4697-b572-0f6c9b32a107",
-                                "sourceName": "AcquisitionEmteq_DataOut",
-                                "destinationName": "HeartRate_InData",
-                                "uuid": "5e75116c-37ed-47ff-bbb7-e7696186f033",
+                                "uuid": "861cfe4e-a3de-41c1-a984-dd4a79642c4c",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2685,81 +2685,32 @@
             "y": 192.52260553825664
         },
         {
-            "package": "EmteqPro",
+            "package": "PyMonitor",
             "lib": null,
-            "type": "HeartRate",
+            "type": "OpenWindow",
             "owningGraphName": "root",
-            "name": "HeartRate",
-            "uuid": "9a6bb98b-a024-420e-b050-3966dc3b1459",
+            "name": "OpenWindow7",
+            "uuid": "684e09da-e99f-46fb-9a1a-0770dfb55782",
             "inputs": [
                 {
-                    "name": "inExec",
+                    "name": "Data",
                     "package": "PyFlowBase",
-                    "fullName": "HeartRate_inExec",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "e0a634c2-54f3-4a5f-bd97-765403185d75",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "LSL_Reader5",
-                            "outPinId": 1,
-                            "rhsNodeName": "HeartRate",
-                            "inPinId": 1,
-                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
-                            "rhsNodeUid": "9a6bb98b-a024-420e-b050-3966dc3b1459"
-                        }
-                    ],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "inExec",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "ad3f76f7-ed68-4394-b103-038f3f61cde7",
-                                "destinationUUID": "e0a634c2-54f3-4a5f-bd97-765403185d75",
-                                "sourceName": "LSL_Reader5_OUT",
-                                "destinationName": "HeartRate_inExec",
-                                "uuid": "c2935b3a-7d93-4064-a077-89b92107e55a",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "InData",
-                    "package": "PyFlowBase",
-                    "fullName": "HeartRate_InData",
+                    "fullName": "OpenWindow7_Data",
                     "dataType": "AnyPin",
                     "direction": 0,
                     "value": null,
-                    "uuid": "a63f5e9f-74de-4697-b572-0f6c9b32a107",
+                    "uuid": "5ff7069f-4e59-46b9-a602-3b7724c97535",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "AcquisitionEmteq",
-                            "outPinId": 1,
-                            "rhsNodeName": "HeartRate",
-                            "inPinId": 2,
-                            "lhsNodeUid": "6c14adfb-694c-401b-afbb-187b9748df78",
-                            "rhsNodeUid": "9a6bb98b-a024-420e-b050-3966dc3b1459"
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 2,
+                            "rhsNodeName": "OpenWindow7",
+                            "inPinId": 4,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "684e09da-e99f-46fb-9a1a-0770dfb55782"
                         }
                     ],
-                    "pinIndex": 2,
+                    "pinIndex": 4,
                     "options": [
                         1,
                         2,
@@ -2775,14 +2726,14 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "InData",
+                        "displayName": "Data",
                         "wires": {
-                            "2": {
-                                "sourceUUID": "9ac07afe-54c2-49b3-bdd3-c408a4f2362b",
-                                "destinationUUID": "a63f5e9f-74de-4697-b572-0f6c9b32a107",
-                                "sourceName": "AcquisitionEmteq_DataOut",
-                                "destinationName": "HeartRate_InData",
-                                "uuid": "5e75116c-37ed-47ff-bbb7-e7696186f033",
+                            "4": {
+                                "sourceUUID": "9038fc25-2ffd-4b08-a536-2f75f4e70d47",
+                                "destinationUUID": "5ff7069f-4e59-46b9-a602-3b7724c97535",
+                                "sourceName": "LSL_Reader5_Data",
+                                "destinationName": "OpenWindow7_Data",
+                                "uuid": "65bbd66d-c2fc-495b-aa85-6eed9eb4ce44",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2794,17 +2745,117 @@
                             }
                         }
                     }
+                },
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenWindow7_Info",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "aaed1e0c-14a0-4a6f-b2cb-a07ca2eaf0e7",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader5",
+                            "outPinId": 3,
+                            "rhsNodeName": "OpenWindow7",
+                            "inPinId": 3,
+                            "lhsNodeUid": "2bbc36e6-90b9-413b-88fa-35b31ec9730f",
+                            "rhsNodeUid": "684e09da-e99f-46fb-9a1a-0770dfb55782"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "ac3525ec-ab93-4bec-8308-c92fac2e3744",
+                                "destinationUUID": "aaed1e0c-14a0-4a6f-b2cb-a07ca2eaf0e7",
+                                "sourceName": "LSL_Reader5_Info",
+                                "destinationName": "OpenWindow7_Info",
+                                "uuid": "5854b10b-eab9-4987-ad76-55d8a4c69f8b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenWindow7_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a1396c60-ce27-4327-a1e9-51645183e92e",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenWindow7_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "f9fba3e3-a490-4f91-a6ac-4e850f37c648",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
                 }
             ],
             "outputs": [
                 {
-                    "name": "outExec",
+                    "name": "OUT",
                     "package": "PyFlowBase",
-                    "fullName": "HeartRate_outExec",
+                    "fullName": "OpenWindow7_OUT",
                     "dataType": "ExecPin",
                     "direction": 1,
                     "value": "null",
-                    "uuid": "93d005d4-c597-420f-8fa6-1fc1f322a189",
+                    "uuid": "a4014375-941b-482e-936c-43174cc02bfb",
                     "linkedTo": [],
                     "pinIndex": 1,
                     "options": [
@@ -2816,53 +2867,26 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "outExec",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "DataOut",
-                    "package": "PyFlowBase",
-                    "fullName": "HeartRate_DataOut",
-                    "dataType": "AnyPin",
-                    "direction": 1,
-                    "value": null,
-                    "uuid": "3ee2163c-adf5-474a-9ae5-4b6328833da2",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        1,
-                        2,
-                        16,
-                        256,
-                        512
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "DataOut",
+                        "displayName": "OUT",
                         "wires": {}
                     }
                 }
             ],
             "meta": {
                 "var": {},
-                "label": "HeartRate"
+                "label": "OpenWindow7"
             },
             "wrapper": {
                 "collapsed": false,
-                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">HeartRate</p></body></html>",
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">OpenWindow7</p></body></html>",
                 "exposeInputsToCompound": false,
                 "groups": {
                     "input": {},
                     "output": {}
                 }
             },
-            "x": -175.1342546090367,
-            "y": 307.4771554118172
+            "x": -210.565509518477,
+            "y": 314.3505039193729
         }
     ],
     "depth": 1,
