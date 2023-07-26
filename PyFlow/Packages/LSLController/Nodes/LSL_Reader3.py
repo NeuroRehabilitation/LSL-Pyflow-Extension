@@ -40,7 +40,7 @@ class LSL_Reader3(NodeBase):
                     self.counter = 0
                 if len(self.inlets) != 0:
                     # Pull a chunk of samples from the inlet
-                    samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
+                    samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()/2))
 
                     if samples:
                         # Process the received samples
