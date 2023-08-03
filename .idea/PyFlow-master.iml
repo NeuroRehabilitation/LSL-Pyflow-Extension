@@ -5,11 +5,12 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <content url="file://$MODULE_DIR$/../QT_-Python_Plot" />
-    <orderEntry type="jdk" jdkName="Python 3.10 (LSL-Pyflow-Extension)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />
+    <option name="renderExternalDocumentation" value="true" />
   </component>
 </module>

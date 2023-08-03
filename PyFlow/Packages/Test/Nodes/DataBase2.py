@@ -6,18 +6,20 @@ from PyFlow.Core.Common import *
 
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
+
 class DataBase2(NodeBase):
     def __init__(self, name):
         super(DataBase2, self).__init__(name)
         # ____Input____#
         self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
-        #_____Output_____#
-        self.N_Channels = self.createOutputPin('N_Channels',"IntPin")
-        self.N_Sources = self.createOutputPin('N_Source',"IntPin")
-        self.Lastvalues = self.createOutputPin('Last_Value','IntPin')
+        # _____Output_____#
+        self.N_Channels = self.createOutputPin('N_Channels', "IntPin")
+        self.N_Sources = self.createOutputPin('N_Source', "IntPin")
+        self.Lastvalues = self.createOutputPin('Last_Value', 'IntPin')
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 
@@ -43,15 +45,23 @@ class DataBase2(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        self.data = self.Data.getData()
-        self.N_Sources.setData(len(self.data))
+        data = self.Data.getData()
+        self.N_Sources.setData(len(data))
         n_channels = 0
         lastvalues = []
-        for source in self.data:
-            n_channels += len(source)
-            for channels in self.data[source]:
-                lastvalues.append(self.data[source][channels][-1])
+
+        for source in data:
+            n_channels += len(data[source])
+
+            for channels in data[source]:
+                if not data[source][channels]:
+                    continue
+                # print("Source = {} | Data = {} | Channels = {} | Number Channel = {}".format(source, data[source],
+                # channels, n_channels))
+                lastvalues.append(data[source][channels][-1])
+                if channels == "DelayTest":
+                    lastvalues[0] = data[source][channels][-1]
+                    continue
+
         self.N_Channels.setData(n_channels)
         self.Lastvalues.setData(lastvalues)
-        print("->" + str(n_channels))
-
