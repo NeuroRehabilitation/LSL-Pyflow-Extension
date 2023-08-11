@@ -69,10 +69,11 @@ class DDA1(NodeBase):
 
         self.Send.setData(Dificulty)
 
-    def calculate_skill_level(self,score, lifes, time_left):
+    def calculate_skill_level(self, score, lifes, time_left):
         # You can define your own formula to calculate the skill level
         # based on the player's score, remaining lives, and time left.
         # For example:
+        print("Score = {} \n Life = {} \n Time = {}".format(score, lifes, time_left))
         skill_level = (score + lifes * 10) / (time_left + 1)
         return skill_level
 

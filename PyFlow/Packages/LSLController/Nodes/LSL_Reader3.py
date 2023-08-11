@@ -23,8 +23,10 @@ class LSL_Reader3(NodeBase):
 
         # Output pins
         self.out = self.createOutputPin("OUT", 'ExecPin')
+
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+
         self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
         self.Info.enableOptions(PinOptions.AllowAny)
 
@@ -37,6 +39,7 @@ class LSL_Reader3(NodeBase):
 
         self.Graph_queue = multiprocessing.Queue()
         self.online = False
+
         self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
 
         self.start = time.time()
@@ -65,14 +68,14 @@ class LSL_Reader3(NodeBase):
                 if samples:
                     # Process the received samples
                     for sample, timestamp in zip(samples, timestamps):
-
                         # Do something with the sample data and timestamp
                         # self.Send.setData(sample)
                         # print(+"Received sample:", sample, "at timestamp:", timestamp)
                         self.addDataToDict(self.inlets[0].info().name(), sample)
 
-                self.out.call()
                 self.Send.setData(self.DataBase)
+
+                self.out.call()
 
             else:
                 self.bWorking = False
@@ -159,8 +162,8 @@ class LSL_Reader3(NodeBase):
             # if i == 0:
             # print("Lenght"+str(len(self.DataBase[key][row])))
 
-            if (len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate())):
-                # print("Lenght" + str(len(self.DataBase[key][row])))
+            if len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate()):
+                # print("Length" + str(len(self.DataBase[key][row])))
                 self.DataBase[key][row].pop(0)
                 self.Graph_queue.put(self.DataBase)
                 self.DataBase = None

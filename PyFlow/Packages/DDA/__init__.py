@@ -5,6 +5,8 @@ from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
 from PyFlow.Packages.DDA.Nodes.DDA1 import DDA1
+from PyFlow.Packages.DDA.Nodes.Skill import Skill
+from PyFlow.Packages.DDA.Nodes.Difficulty import Difficulty
 
 # Factories
 
@@ -15,8 +17,13 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_NODES[DDA1.__name__] = DDA1
 
+_NODES[DDA1.__name__] = DDA1
+_NODES = {
+    DDA1.__name__: DDA1,
+    Skill.__name__: Skill,
+	Difficulty.__name__: Difficulty
+}
 
 class DDA(IPackage):
 	def __init__(self):

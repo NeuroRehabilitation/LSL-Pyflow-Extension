@@ -20,6 +20,7 @@ class DataBase2(NodeBase):
         self.N_Channels = self.createOutputPin('N_Channels', "IntPin")
         self.N_Sources = self.createOutputPin('N_Source', "IntPin")
         self.Lastvalues = self.createOutputPin('Last_Value', 'IntPin')
+
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 

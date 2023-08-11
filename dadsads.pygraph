@@ -1,0 +1,384 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "LSL_Reader3",
+            "owningGraphName": "root",
+            "name": "LSL_Reader3",
+            "uuid": "ca154e1a-ec2b-4e6f-a47b-b32a0b906ae9",
+            "inputs": [
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "21bbe39a-9f13-4299-8016-9f8bf57361c6",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "f0b91f03-6815-49b9-b853-f7c15d6dac2b",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream2\"",
+                    "uuid": "807b5fae-492c-4c14-b65c-a993684e61e7",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "OUT",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_OUT",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "8fd0b003-1c5d-4cff-8d6d-147d3436d187",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "OUT",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Data",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "1c361338-87dc-44df-96a8-32b4ed9205d9",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader3",
+                            "outPinId": 2,
+                            "rhsNodeName": "DataBase2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ca154e1a-ec2b-4e6f-a47b-b32a0b906ae9",
+                            "rhsNodeUid": "37cbfaaa-7732-4ed7-9757-81b80b8a1cb9"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        1,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1c361338-87dc-44df-96a8-32b4ed9205d9",
+                                "destinationUUID": "d01b89f2-8d03-4801-a8be-1f0aa3cd0ccb",
+                                "sourceName": "LSL_Reader3_Data",
+                                "destinationName": "DataBase2_Data",
+                                "uuid": "7aeaa759-93c9-4d48-ae43-6e626fbadb94",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "LSL_Reader3_Info",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "78f32f56-9785-4ee7-ae47-efc5f6800909",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LSL_Reader3"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LSL_Reader3</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -317.0,
+            "y": -151.0
+        },
+        {
+            "package": "Test",
+            "lib": null,
+            "type": "DataBase2",
+            "owningGraphName": "root",
+            "name": "DataBase2",
+            "uuid": "37cbfaaa-7732-4ed7-9757-81b80b8a1cb9",
+            "inputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "d01b89f2-8d03-4801-a8be-1f0aa3cd0ccb",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LSL_Reader3",
+                            "outPinId": 2,
+                            "rhsNodeName": "DataBase2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "ca154e1a-ec2b-4e6f-a47b-b32a0b906ae9",
+                            "rhsNodeUid": "37cbfaaa-7732-4ed7-9757-81b80b8a1cb9"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        1,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1c361338-87dc-44df-96a8-32b4ed9205d9",
+                                "destinationUUID": "d01b89f2-8d03-4801-a8be-1f0aa3cd0ccb",
+                                "sourceName": "LSL_Reader3_Data",
+                                "destinationName": "DataBase2_Data",
+                                "uuid": "7aeaa759-93c9-4d48-ae43-6e626fbadb94",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Data1",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_Data1",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "137bf96e-200c-4777-b1ea-ade164ecfd15",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        1,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data1",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "N_Source",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_N_Source",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "0",
+                    "uuid": "c7343b7e-ac19-4db6-8e3a-b50084b99311",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "N_Source",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "N_Channels",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_N_Channels",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "0",
+                    "uuid": "1022b646-231f-46e8-bfc3-c332ff4dd7d8",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "N_Channels",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Last_Value",
+                    "package": "PyFlowBase",
+                    "fullName": "DataBase2_Last_Value",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "0",
+                    "uuid": "f7e42791-c382-4b7b-a585-9e26170b7607",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Last_Value",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "DataBase2"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">DataBase2</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 2.0,
+            "y": -260.0
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "2.0.1",
+    "activeGraph": "root"
+}
