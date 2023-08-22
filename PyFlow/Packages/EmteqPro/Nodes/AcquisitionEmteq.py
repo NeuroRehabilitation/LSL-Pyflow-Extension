@@ -36,10 +36,10 @@ class AcquisitionEmteq(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        Sources=self.data.getData()
-        Emteq_data=dict()
+        Sources = self.data.getData()
+        Emteq_data = dict()
         for source in Sources:
             if source == "Emteq":
-                Emteq_data=Sources[source]
+                Emteq_data = Sources[source]
 
         self.Send.setData(Emteq_data)

@@ -3,14 +3,16 @@ from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
 
 
-class Difficulty(NodeBase):
+class Difficulty1(NodeBase):
     def __init__(self, name):
-        super(Difficulty, self).__init__(name)
-        self.Performance = self.createInputPin('Performance', 'FloatPin')
+        super(Difficulty1, self).__init__(name)
+        self.Const = self.createInputPin('Performance', 'FloatPin')
         self.Name = self.createInputPin('Name', 'StringPin')
 
         self.Max = self.createInputPin('Max', 'IntPin')
         self.Min = self.createInputPin('Min', 'IntPin')
+
+        self.LastLine = self.createInputPin('LastValue', 'FloatPin')
 
         # _____Output_____#
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
@@ -38,13 +40,14 @@ class Difficulty(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        if (self.Performance.getData() is not None) and (self.Name.getData() is not None) and (
+        if (self.Const.getData() is not None) and (self.Name.getData() is not None) and (
                 self.Max.getData() is not None) and (self.Min.getData() is not None):
-            name = self.Name.getData()
+
+            name = self.Data.getData()
             max = self.Max.getData()
             min = self.Min.getData()
-            performance = self.Performance.getData()
-            difficulty = {name: (performance * (max - min)) + min}
+            const = self.Const.getData()
 
-            self.Send.get(difficulty)
+
+
 
