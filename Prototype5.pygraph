@@ -12,39 +12,12 @@
             "uuid": "16fd7dd9-d40b-40b3-beed-7ed4b6c0ddda",
             "inputs": [
                 {
-<<<<<<< HEAD
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"ScorePsecond\"",
-                    "uuid": "567ff72f-3874-49ed-a671-002e6ee9894f",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Max",
-=======
                     "name": "StreamName",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "package": "PyFlowBase",
                     "fullName": "Skill_StreamName",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"Stream\"",
+                    "value": "\"Stream2 \"",
                     "uuid": "6f22e91f-759c-4b12-ba0a-a532da3c98f5",
                     "linkedTo": [],
                     "pinIndex": 1,
@@ -171,11 +144,7 @@
                                 "destinationUUID": "1f95d0a2-858b-4048-a2c0-50720f30fc79",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "Skill_Data",
-<<<<<<< HEAD
-                                "uuid": "98c6398f-fa6c-48a7-b44d-8c7229947143",
-=======
-                                "uuid": "a1164d4a-3221-4e05-85d7-5a2f2b17ded8",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "269fe852-bc40-483a-9e68-37b172732039",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -207,57 +176,7 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-<<<<<<< HEAD
-                        "displayName": "Min",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "StreamName",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill_StreamName",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"Stream2 \"",
-                    "uuid": "6f22e91f-759c-4b12-ba0a-a532da3c98f5",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "StreamName",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Target",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill_Target",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "2b16de62-9ba7-45c9-b13d-c946d62bad5d",
-                    "linkedTo": [],
-                    "pinIndex": 5,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Target",
-=======
                         "displayName": "Max",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         "wires": {}
                     }
                 }
@@ -298,11 +217,7 @@
                                 "destinationUUID": "2a6c7b24-e25b-45a0-a081-ebeca62bd243",
                                 "sourceName": "Skill_Performance",
                                 "destinationName": "Difficulty_Performance",
-<<<<<<< HEAD
-                                "uuid": "b2425ba5-f139-4cff-8a47-780ff48c3922",
-=======
-                                "uuid": "113165cc-12d0-492c-8e07-9612ef9365f8",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "a508d4e7-d2e1-4ffa-a196-07a1406a6409",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -398,11 +313,7 @@
                                 "destinationUUID": "2a6c7b24-e25b-45a0-a081-ebeca62bd243",
                                 "sourceName": "Skill_Performance",
                                 "destinationName": "Difficulty_Performance",
-<<<<<<< HEAD
-                                "uuid": "b2425ba5-f139-4cff-8a47-780ff48c3922",
-=======
-                                "uuid": "113165cc-12d0-492c-8e07-9612ef9365f8",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "a508d4e7-d2e1-4ffa-a196-07a1406a6409",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -469,34 +380,27 @@
                     "fullName": "Difficulty_Data",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "{}",
+                    "value": null,
                     "uuid": "d563474b-232f-46f0-bb3c-2638dc16ea53",
                     "linkedTo": [
                         {
                             "lhsNodeName": "Difficulty",
                             "outPinId": 1,
-<<<<<<< HEAD
-                            "rhsNodeName": "LSL_Writer2",
-                            "inPinId": 6,
-                            "lhsNodeUid": "d56464f4-ddc3-47d2-b3a1-70f81dabbee4",
-                            "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
-=======
                             "rhsNodeName": "CreateDict2",
                             "inPinId": 2,
                             "lhsNodeUid": "d56464f4-ddc3-47d2-b3a1-70f81dabbee4",
                             "rhsNodeUid": "661e12b3-1d64-4cf8-9c16-27f1d185c0b5"
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         }
                     ],
                     "pinIndex": 1,
                     "options": [
-                        2,
+                        1,
                         4,
                         16,
                         256,
                         512
                     ],
-                    "structure": 2,
+                    "structure": 1,
                     "alwaysList": false,
                     "alwaysSingle": false,
                     "alwaysDict": false,
@@ -504,21 +408,12 @@
                         "bLabelHidden": false,
                         "displayName": "Data",
                         "wires": {
-<<<<<<< HEAD
-                            "6": {
-                                "sourceUUID": "d563474b-232f-46f0-bb3c-2638dc16ea53",
-                                "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
-                                "sourceName": "Difficulty_Data",
-                                "destinationName": "LSL_Writer2_Data",
-                                "uuid": "080e49f4-8398-4e6c-b0f6-4eeb8e4f74f6",
-=======
                             "2": {
                                 "sourceUUID": "d563474b-232f-46f0-bb3c-2638dc16ea53",
                                 "destinationUUID": "b825c26e-4cec-44d4-93a0-dfb96e349f3d",
                                 "sourceName": "Difficulty_Data",
                                 "destinationName": "CreateDict2_Data",
-                                "uuid": "10d3669e-f428-4721-beb4-8be0d8244fc9",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "c51b6d91-73a2-4793-bc64-53d38093437b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -529,12 +424,7 @@
                                 "snapVToSecond": 0
                             }
                         }
-<<<<<<< HEAD
-                    },
-                    "currDataType": "FloatPin"
-=======
                     }
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                 }
             ],
             "meta": {
@@ -550,7 +440,7 @@
                     "output": {}
                 }
             },
-            "x": -117.0,
+            "x": -118.0,
             "y": -212.0
         },
         {
@@ -646,8 +536,6 @@
                         {
                             "lhsNodeName": "LSL_Reader3",
                             "outPinId": 2,
-<<<<<<< HEAD
-=======
                             "rhsNodeName": "Skill",
                             "inPinId": 6,
                             "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
@@ -656,7 +544,6 @@
                         {
                             "lhsNodeName": "LSL_Reader3",
                             "outPinId": 2,
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                             "rhsNodeName": "Skill4",
                             "inPinId": 6,
                             "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
@@ -669,17 +556,6 @@
                             "inPinId": 6,
                             "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
                             "rhsNodeUid": "93e34718-703d-43b1-9166-69dfb64ad7b3"
-<<<<<<< HEAD
-                        },
-                        {
-                            "lhsNodeName": "LSL_Reader3",
-                            "outPinId": 2,
-                            "rhsNodeName": "Skill",
-                            "inPinId": 6,
-                            "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
-                            "rhsNodeUid": "16fd7dd9-d40b-40b3-beed-7ed4b6c0ddda"
-=======
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         }
                     ],
                     "pinIndex": 2,
@@ -700,17 +576,10 @@
                         "wires": {
                             "6": {
                                 "sourceUUID": "0b66f637-be2f-41f0-946f-09cf4b0f0389",
-<<<<<<< HEAD
-                                "destinationUUID": "1f95d0a2-858b-4048-a2c0-50720f30fc79",
-                                "sourceName": "LSL_Reader3_Data",
-                                "destinationName": "Skill_Data",
-                                "uuid": "98c6398f-fa6c-48a7-b44d-8c7229947143",
-=======
                                 "destinationUUID": "51fbcf08-7527-4a52-a88c-dc34259d92eb",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "Skill1_Data",
-                                "uuid": "0c355b78-9432-44ff-ad8b-3fe476069d44",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "20d7077c-01ca-4f5b-a586-1c103db2d034",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -785,13 +654,8 @@
                     "output": {}
                 }
             },
-<<<<<<< HEAD
-            "x": -581.0,
-            "y": -14.0
-=======
-            "x": -589.0,
-            "y": -39.0
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+            "x": -599.0,
+            "y": -156.0
         },
         {
             "package": "DDA",
@@ -802,7 +666,52 @@
             "uuid": "93e34718-703d-43b1-9166-69dfb64ad7b3",
             "inputs": [
                 {
-<<<<<<< HEAD
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ReactTime\"",
+                    "uuid": "7f43b453-97d1-4777-9fac-e2f0bdcb3d8d",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Focus",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Focus",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "0",
+                    "uuid": "95706b86-4f8f-433e-82c9-d970885eb895",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Focus",
+                        "wires": {}
+                    }
+                },
+                {
                     "name": "Data",
                     "package": "PyFlowBase",
                     "fullName": "Skill1_Data",
@@ -843,7 +752,7 @@
                                 "destinationUUID": "51fbcf08-7527-4a52-a88c-dc34259d92eb",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "Skill1_Data",
-                                "uuid": "8b4cedcf-08a4-4af3-a77c-3ce1876535d5",
+                                "uuid": "20d7077c-01ca-4f5b-a586-1c103db2d034",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -924,181 +833,6 @@
                         "displayName": "Min",
                         "wires": {}
                     }
-                },
-                {
-=======
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"LifePsecond\"",
-                    "uuid": "7f43b453-97d1-4777-9fac-e2f0bdcb3d8d",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Target",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Target",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "1637fccd-e736-4e30-a3df-9cb617e225d5",
-                    "linkedTo": [],
-                    "pinIndex": 5,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-<<<<<<< HEAD
-                        "displayName": "Target",
-=======
-                        "displayName": "Focus",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "51fbcf08-7527-4a52-a88c-dc34259d92eb",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "LSL_Reader3",
-                            "outPinId": 2,
-                            "rhsNodeName": "Skill1",
-                            "inPinId": 6,
-                            "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
-                            "rhsNodeUid": "93e34718-703d-43b1-9166-69dfb64ad7b3"
-                        }
-                    ],
-                    "pinIndex": 6,
-                    "options": [
-                        1,
-                        2,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {
-                            "6": {
-                                "sourceUUID": "0b66f637-be2f-41f0-946f-09cf4b0f0389",
-                                "destinationUUID": "51fbcf08-7527-4a52-a88c-dc34259d92eb",
-                                "sourceName": "LSL_Reader3_Data",
-                                "destinationName": "Skill1_Data",
-                                "uuid": "0c355b78-9432-44ff-ad8b-3fe476069d44",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "Max",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Max",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "1",
-                    "uuid": "230348c3-9920-4b2b-becd-75517aac1baa",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Max",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "StreamName",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_StreamName",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"Stream\"",
-                    "uuid": "cade85a9-2ed5-417e-8773-b7da90216234",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "StreamName",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Min",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Min",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "0f7879bc-bd5b-4d63-887a-fcd3d7cb7e45",
-                    "linkedTo": [],
-                    "pinIndex": 4,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Min",
-                        "wires": {}
-                    }
                 }
             ],
             "outputs": [
@@ -1110,7 +844,16 @@
                     "direction": 1,
                     "value": "0.0",
                     "uuid": "6a1a82d7-c95d-4337-865a-567f2421894b",
-                    "linkedTo": [],
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "Skill1",
+                            "outPinId": 1,
+                            "rhsNodeName": "Difficulty2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "93e34718-703d-43b1-9166-69dfb64ad7b3",
+                            "rhsNodeUid": "14a25b23-95b0-4da6-aaf0-68af73478b7f"
+                        }
+                    ],
                     "pinIndex": 1,
                     "options": [
                         256
@@ -1122,16 +865,13 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "Performance",
-<<<<<<< HEAD
-                        "wires": {}
-=======
                         "wires": {
                             "1": {
                                 "sourceUUID": "6a1a82d7-c95d-4337-865a-567f2421894b",
                                 "destinationUUID": "34e868af-a03c-4446-8059-a43bdd92ffd4",
                                 "sourceName": "Skill1_Performance",
                                 "destinationName": "Difficulty2_Performance",
-                                "uuid": "a8466f53-bfb5-45b7-8496-24290ad09b7b",
+                                "uuid": "1cfe2c34-3cc0-4636-95eb-ee2fccac1852",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1142,7 +882,6 @@
                                 "snapVToSecond": 0
                             }
                         }
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     }
                 }
             ],
@@ -1159,10 +898,6 @@
                     "output": {}
                 }
             },
-<<<<<<< HEAD
-            "x": -315.0,
-            "y": -70.0
-=======
             "x": -329.0,
             "y": -107.0
         },
@@ -1232,7 +967,7 @@
                                 "destinationUUID": "34e868af-a03c-4446-8059-a43bdd92ffd4",
                                 "sourceName": "Skill1_Performance",
                                 "destinationName": "Difficulty2_Performance",
-                                "uuid": "a8466f53-bfb5-45b7-8496-24290ad09b7b",
+                                "uuid": "1cfe2c34-3cc0-4636-95eb-ee2fccac1852",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1332,7 +1067,7 @@
                                 "destinationUUID": "b825c26e-4cec-44d4-93a0-dfb96e349f3d",
                                 "sourceName": "Difficulty2_Data",
                                 "destinationName": "CreateDict2_Data",
-                                "uuid": "1f14956d-9a65-4f23-b8fd-eebe83697fb3",
+                                "uuid": "1e9697d8-38cb-4712-b658-ced65b4ebf26",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1361,7 +1096,6 @@
             },
             "x": -116.0,
             "y": -71.0
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
         },
         {
             "package": "DDA",
@@ -1372,115 +1106,12 @@
             "uuid": "7f7ed441-6b6f-4d10-a4f0-c6eda2602a86",
             "inputs": [
                 {
-<<<<<<< HEAD
-                    "name": "Target",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_Target",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "0",
-                    "uuid": "e15ca3a7-fee6-46d3-b323-bf05462e970e",
-                    "linkedTo": [],
-                    "pinIndex": 5,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Target",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Max",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_Max",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "3",
-                    "uuid": "f1149fc5-873e-4054-a097-54138342e772",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Max",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "cf08d764-84b3-47d7-b570-ff45a421a121",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "LSL_Reader3",
-                            "outPinId": 2,
-                            "rhsNodeName": "Skill4",
-                            "inPinId": 6,
-                            "lhsNodeUid": "3f7f45a4-e5ee-4f2a-a405-41affe05608c",
-                            "rhsNodeUid": "7f7ed441-6b6f-4d10-a4f0-c6eda2602a86"
-                        }
-                    ],
-                    "pinIndex": 6,
-                    "options": [
-                        1,
-                        2,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {
-                            "6": {
-                                "sourceUUID": "0b66f637-be2f-41f0-946f-09cf4b0f0389",
-                                "destinationUUID": "cf08d764-84b3-47d7-b570-ff45a421a121",
-                                "sourceName": "LSL_Reader3_Data",
-                                "destinationName": "Skill4_Data",
-                                "uuid": "203b8b12-1210-4d86-9884-d96683297b2d",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-=======
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "name": "StreamName",
                     "package": "PyFlowBase",
                     "fullName": "Skill4_StreamName",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"Stream\"",
+                    "value": "\"Stream2\"",
                     "uuid": "2e75a428-927b-4444-874e-83b60d9ab770",
                     "linkedTo": [],
                     "pinIndex": 1,
@@ -1526,7 +1157,7 @@
                     "fullName": "Skill4_Name",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"ReactTime\"",
+                    "value": "\"LifePsecond\"",
                     "uuid": "c001790f-fa64-4c5e-9ac0-b7ed5ef692ea",
                     "linkedTo": [],
                     "pinIndex": 2,
@@ -1607,7 +1238,7 @@
                                 "destinationUUID": "cf08d764-84b3-47d7-b570-ff45a421a121",
                                 "sourceName": "LSL_Reader3_Data",
                                 "destinationName": "Skill4_Data",
-                                "uuid": "e89ebbdf-0c76-4b81-a6fd-2d6ed3244642",
+                                "uuid": "4932d85e-5ce5-46e5-8298-e11e6c8aa59b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1680,11 +1311,7 @@
                                 "destinationUUID": "612ef04e-e34c-4278-b1c4-38a1bd3111a2",
                                 "sourceName": "Skill4_Performance",
                                 "destinationName": "Difficulty5_Performance",
-<<<<<<< HEAD
-                                "uuid": "cf9f3e85-e61e-4778-afa0-ad9848c8e473",
-=======
-                                "uuid": "334f76da-8dea-429e-a300-907f51ebaa59",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "d80598bf-3335-4372-b0ca-bebf717fb3c7",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1723,8 +1350,6 @@
             "uuid": "a1373b57-3553-4366-bf4d-4282e44e699f",
             "inputs": [
                 {
-<<<<<<< HEAD
-=======
                     "name": "Performance",
                     "package": "PyFlowBase",
                     "fullName": "Difficulty5_Performance",
@@ -1759,7 +1384,7 @@
                                 "destinationUUID": "612ef04e-e34c-4278-b1c4-38a1bd3111a2",
                                 "sourceName": "Skill4_Performance",
                                 "destinationName": "Difficulty5_Performance",
-                                "uuid": "334f76da-8dea-429e-a300-907f51ebaa59",
+                                "uuid": "d80598bf-3335-4372-b0ca-bebf717fb3c7",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1796,7 +1421,6 @@
                     }
                 },
                 {
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "name": "Name",
                     "package": "PyFlowBase",
                     "fullName": "Difficulty5_Name",
@@ -1820,57 +1444,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "name": "Performance",
-                    "package": "PyFlowBase",
-                    "fullName": "Difficulty5_Performance",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "612ef04e-e34c-4278-b1c4-38a1bd3111a2",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "Skill4",
-                            "outPinId": 1,
-                            "rhsNodeName": "Difficulty5",
-                            "inPinId": 1,
-                            "lhsNodeUid": "7f7ed441-6b6f-4d10-a4f0-c6eda2602a86",
-                            "rhsNodeUid": "a1373b57-3553-4366-bf4d-4282e44e699f"
-                        }
-                    ],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Performance",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "a97b5d68-70d2-4514-a240-47a555baf3a1",
-                                "destinationUUID": "612ef04e-e34c-4278-b1c4-38a1bd3111a2",
-                                "sourceName": "Skill4_Performance",
-                                "destinationName": "Difficulty5_Performance",
-                                "uuid": "cf9f3e85-e61e-4778-afa0-ad9848c8e473",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-=======
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "name": "Max",
                     "package": "PyFlowBase",
                     "fullName": "Difficulty5_Max",
@@ -1892,29 +1465,6 @@
                         "displayName": "Max",
                         "wires": {}
                     }
-                },
-                {
-                    "name": "Min",
-                    "package": "PyFlowBase",
-                    "fullName": "Difficulty5_Min",
-                    "dataType": "IntPin",
-                    "direction": 0,
-                    "value": "1",
-                    "uuid": "f1c4baed-ee6c-41e2-a185-10d6f519bbfb",
-                    "linkedTo": [],
-                    "pinIndex": 4,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Min",
-                        "wires": {}
-                    }
                 }
             ],
             "outputs": [
@@ -1924,34 +1474,27 @@
                     "fullName": "Difficulty5_Data",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "{}",
+                    "value": null,
                     "uuid": "46d7fa5d-883a-4e7e-96d2-c9c351625b50",
                     "linkedTo": [
                         {
                             "lhsNodeName": "Difficulty5",
                             "outPinId": 1,
-<<<<<<< HEAD
-                            "rhsNodeName": "LSL_Writer2",
-                            "inPinId": 6,
-                            "lhsNodeUid": "a1373b57-3553-4366-bf4d-4282e44e699f",
-                            "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
-=======
                             "rhsNodeName": "CreateDict2",
                             "inPinId": 2,
                             "lhsNodeUid": "a1373b57-3553-4366-bf4d-4282e44e699f",
                             "rhsNodeUid": "661e12b3-1d64-4cf8-9c16-27f1d185c0b5"
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         }
                     ],
                     "pinIndex": 1,
                     "options": [
-                        2,
+                        1,
                         4,
                         16,
                         256,
                         512
                     ],
-                    "structure": 2,
+                    "structure": 1,
                     "alwaysList": false,
                     "alwaysSingle": false,
                     "alwaysDict": false,
@@ -1959,21 +1502,12 @@
                         "bLabelHidden": false,
                         "displayName": "Data",
                         "wires": {
-<<<<<<< HEAD
-                            "6": {
-                                "sourceUUID": "46d7fa5d-883a-4e7e-96d2-c9c351625b50",
-                                "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
-                                "sourceName": "Difficulty5_Data",
-                                "destinationName": "LSL_Writer2_Data",
-                                "uuid": "d3af2809-3c81-4a85-b00b-dd88e955bb23",
-=======
                             "2": {
                                 "sourceUUID": "46d7fa5d-883a-4e7e-96d2-c9c351625b50",
                                 "destinationUUID": "b825c26e-4cec-44d4-93a0-dfb96e349f3d",
                                 "sourceName": "Difficulty5_Data",
                                 "destinationName": "CreateDict2_Data",
-                                "uuid": "1272435f-fdb2-43ab-94e1-3471d33aef8d",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "f35e34bc-1370-4aab-a9d6-b24dc3dc80f5",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1984,12 +1518,7 @@
                                 "snapVToSecond": 0
                             }
                         }
-<<<<<<< HEAD
-                    },
-                    "currDataType": "FloatPin"
-=======
                     }
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                 }
             ],
             "meta": {
@@ -2022,13 +1551,10 @@
                     "fullName": "LSL_Writer2_Data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "{\"circleFade\": 0.5800000000000002}",
+                    "value": null,
                     "uuid": "04045d7d-723f-4208-ad88-efcc1b4e2332",
                     "linkedTo": [
                         {
-<<<<<<< HEAD
-                            "lhsNodeName": "Difficulty5",
-=======
                             "lhsNodeName": "CreateDict2",
                             "outPinId": 1,
                             "rhsNodeName": "LSL_Writer2",
@@ -2038,33 +1564,16 @@
                         },
                         {
                             "lhsNodeName": "CreateDict",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                             "outPinId": 1,
                             "rhsNodeName": "LSL_Writer2",
                             "inPinId": 6,
-                            "lhsNodeUid": "a1373b57-3553-4366-bf4d-4282e44e699f",
-                            "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
-                        },
-                        {
-                            "lhsNodeName": "Difficulty",
-                            "outPinId": 1,
-                            "rhsNodeName": "LSL_Writer2",
-                            "inPinId": 6,
-                            "lhsNodeUid": "d56464f4-ddc3-47d2-b3a1-70f81dabbee4",
-                            "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
-                        },
-                        {
-                            "lhsNodeName": "makeDict",
-                            "outPinId": 1,
-                            "rhsNodeName": "LSL_Writer2",
-                            "inPinId": 6,
-                            "lhsNodeUid": "4b27a75b-1b51-465e-891b-a5015c852e6a",
+                            "lhsNodeUid": "1b08fbb3-e711-44d4-ba4a-7937acb4a539",
                             "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
                         }
                     ],
                     "pinIndex": 6,
                     "options": [
-                        2,
+                        1,
                         4,
                         8,
                         16,
@@ -2072,7 +1581,7 @@
                         512,
                         1024
                     ],
-                    "structure": 2,
+                    "structure": 1,
                     "alwaysList": false,
                     "alwaysSingle": false,
                     "alwaysDict": false,
@@ -2081,19 +1590,11 @@
                         "displayName": "Data",
                         "wires": {
                             "6": {
-<<<<<<< HEAD
-                                "sourceUUID": "44311d00-32d6-439a-9303-270a7d5251c8",
-                                "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
-                                "sourceName": "makeDict_out",
-                                "destinationName": "LSL_Writer2_Data",
-                                "uuid": "9c376fdd-a31f-4928-a24c-842d2c4f43eb",
-=======
                                 "sourceUUID": "7603340f-406c-4116-9ab8-7a44943ada89",
                                 "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
                                 "sourceName": "CreateDict2_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "692873bb-23e5-4fb6-ade8-db58e85f209d",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "3203df36-16ef-42e8-8062-f614eef9c3f4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2104,8 +1605,7 @@
                                 "snapVToSecond": 0
                             }
                         }
-                    },
-                    "currDataType": "FloatPin"
+                    }
                 },
                 {
                     "name": "Name",
@@ -2207,7 +1707,7 @@
                     "fullName": "LSL_Writer2_ID",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"\"",
+                    "value": "\"1\"",
                     "uuid": "ba87b24c-1bd4-44f5-b4a1-a2921fdef6d2",
                     "linkedTo": [],
                     "pinIndex": 5,
@@ -2252,32 +1752,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "name": "OUT",
-                    "package": "PyFlowBase",
-                    "fullName": "LSL_Writer2_OUT",
-                    "dataType": "ExecPin",
-                    "direction": 1,
-                    "value": "null",
-                    "uuid": "4db9e381-b992-4956-9871-ee4f4da8061c",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "OUT",
-                        "wires": {}
-                    }
-                },
-                {
-=======
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "name": "DataOut",
                     "package": "PyFlowBase",
                     "fullName": "LSL_Writer2_DataOut",
@@ -2339,7 +1813,7 @@
                                 "destinationUUID": "1b4f62f4-68c0-4822-b9c9-a1ee51bc6fef",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict2_inExec",
-                                "uuid": "0082df56-14be-453b-ad5b-69f3aefc4421",
+                                "uuid": "5265e83f-7360-431a-b3ca-91fa5e1cf2aa",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2366,10 +1840,6 @@
                     "output": {}
                 }
             },
-<<<<<<< HEAD
-            "x": 137.4253018588504,
-            "y": -109.00788580428987
-=======
             "x": 277.4865835005754,
             "y": -152.70730323986942
         },
@@ -2422,7 +1892,7 @@
                                 "destinationUUID": "0d98d70b-6399-4068-a129-851a9f34ee90",
                                 "sourceName": "makeArray_out",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "83e41530-f1d2-4716-b0c1-cd34b414356e",
+                                "uuid": "65cee86e-4c8e-43c4-b97d-6f1c7a2c105a",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2477,7 +1947,7 @@
                                 "destinationUUID": "c3c68a76-aa7c-440a-8af8-0a60b9f8ceec",
                                 "sourceName": "makeArray6_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "47a11a15-e916-435e-96a0-fea18a121e2a",
+                                "uuid": "ff7a0c86-e9a0-4aff-9321-82f7b0d10182",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2579,7 +2049,7 @@
                                 "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "369eee17-4d60-4fb5-8835-7890e041ff10",
+                                "uuid": "d16606ac-f462-4f48-9972-20892eb97395",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2608,7 +2078,6 @@
             },
             "x": -81.17581218702901,
             "y": 250.71584267533126
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
         },
         {
             "package": "PyFlowBase",
@@ -2655,10 +2124,10 @@
                         {
                             "lhsNodeName": "makeString",
                             "outPinId": 1,
-                            "rhsNodeName": "makeDictElement",
+                            "rhsNodeName": "makeArray6",
                             "inPinId": 1,
                             "lhsNodeUid": "3a19d180-ae0e-497e-b05d-56c4d7e0f220",
-                            "rhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13"
+                            "rhsNodeUid": "04493670-494a-44d3-927a-90e36a92d20d"
                         }
                     ],
                     "pinIndex": 1,
@@ -2675,15 +2144,10 @@
                         "wires": {
                             "1": {
                                 "sourceUUID": "9af38167-f044-49d6-ad46-884be55ee1bd",
-                                "destinationUUID": "9c91e51c-4c37-4960-b66f-4a9ea6170ba2",
+                                "destinationUUID": "f5d8108b-3bff-45b2-927f-496eeac976ad",
                                 "sourceName": "makeString_out",
-<<<<<<< HEAD
-                                "destinationName": "makeDictElement_key",
-                                "uuid": "9296ccfa-0f85-4b83-bae9-523ba53cb268",
-=======
                                 "destinationName": "makeArray6_data",
-                                "uuid": "a30645f8-38d6-442b-9eb4-9e5c91a72929",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "108c0919-f3ac-4fda-ac6f-4290d06b1bdd",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2758,10 +2222,10 @@
                         {
                             "lhsNodeName": "makeFloat",
                             "outPinId": 1,
-                            "rhsNodeName": "makeDictElement",
-                            "inPinId": 2,
+                            "rhsNodeName": "makeArray",
+                            "inPinId": 1,
                             "lhsNodeUid": "42896b06-fd41-456c-ae41-e7e43b67b681",
-                            "rhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13"
+                            "rhsNodeUid": "71f239dc-5d24-44b2-96e2-4ff4db33dbf2"
                         }
                     ],
                     "pinIndex": 1,
@@ -2776,17 +2240,12 @@
                         "bLabelHidden": false,
                         "displayName": "out",
                         "wires": {
-                            "2": {
+                            "1": {
                                 "sourceUUID": "be36628a-29ca-41cc-8a82-ae3e04b7924c",
-                                "destinationUUID": "a07b9ad0-7540-46f7-a5de-3cbb866c8043",
+                                "destinationUUID": "2f9b1bca-4303-43ab-8d55-b5a91b650f01",
                                 "sourceName": "makeFloat_out",
-<<<<<<< HEAD
-                                "destinationName": "makeDictElement_value",
-                                "uuid": "30d34d5a-8f41-4759-80c8-91c2b2a7665d",
-=======
                                 "destinationName": "makeArray_data",
-                                "uuid": "88f9fb5d-ce45-42eb-a253-1fa0540e97b7",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "a5c6610d-9854-4a26-b912-5e8633446eb3",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2813,30 +2272,28 @@
                     "output": {}
                 }
             },
-            "x": -648.137692246207,
-            "y": 328.56033285827885
+            "x": -408.1846112584302,
+            "y": 349.2669439079855
         },
         {
-            "package": "PyFlowBase",
+            "package": "DDA",
             "lib": null,
-            "type": "makeDict",
+            "type": "DDA1",
             "owningGraphName": "root",
-            "name": "makeDict",
-            "uuid": "4b27a75b-1b51-465e-891b-a5015c852e6a",
+            "name": "DDA1",
+            "uuid": "e4453335-72c2-4136-b8b6-cf04d1a72fbf",
             "inputs": [
                 {
-<<<<<<< HEAD
-                    "name": "KeyType",
+                    "name": "Focus",
                     "package": "PyFlowBase",
-                    "fullName": "makeDict_KeyType",
-                    "dataType": "AnyPin",
+                    "fullName": "DDA1_Focus",
+                    "dataType": "IntPin",
                     "direction": 0,
-                    "value": "\"\"",
-                    "uuid": "7cdff3e7-42b0-4b7c-b7e3-5cf1be7be533",
+                    "value": "0",
+                    "uuid": "11e597c9-bca5-483f-9921-d9475a5c09aa",
                     "linkedTo": [],
-                    "pinIndex": 1,
+                    "pinIndex": 2,
                     "options": [
-                        16,
                         256
                     ],
                     "structure": 0,
@@ -2845,51 +2302,32 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "KeyType",
+                        "displayName": "Focus",
                         "wires": {}
-                    },
-                    "currDataType": "StringPin"
+                    }
                 },
                 {
-                    "name": "data",
-=======
-                    "name": "Focus",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                    "name": "Data",
                     "package": "PyFlowBase",
-                    "fullName": "makeDict_data",
+                    "fullName": "DDA1_Data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "{\"circleFade\": 0.5800000000000002}",
-                    "uuid": "d19d83d4-dae5-436a-94d4-37eb152a6581",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "makeDictElement",
-                            "outPinId": 1,
-                            "rhsNodeName": "makeDict",
-                            "inPinId": 2,
-                            "lhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13",
-                            "rhsNodeUid": "4b27a75b-1b51-465e-891b-a5015c852e6a"
-                        }
-                    ],
-                    "pinIndex": 2,
+                    "value": null,
+                    "uuid": "482ed5c9-287f-4640-9aa5-04b1e1d61170",
+                    "linkedTo": [],
+                    "pinIndex": 3,
                     "options": [
-<<<<<<< HEAD
-=======
                         1,
                         2,
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         8,
                         16,
                         256,
                         512,
                         1024
                     ],
-                    "structure": 2,
+                    "structure": 3,
                     "alwaysList": false,
                     "alwaysSingle": false,
-<<<<<<< HEAD
-                    "alwaysDict": true,
-=======
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
@@ -3025,26 +2463,16 @@
                     "alwaysList": true,
                     "alwaysSingle": false,
                     "alwaysDict": false,
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "data",
                         "wires": {
-<<<<<<< HEAD
-                            "2": {
-                                "sourceUUID": "ed3eec4b-72bf-40d0-9452-54e3c0cf29bf",
-                                "destinationUUID": "d19d83d4-dae5-436a-94d4-37eb152a6581",
-                                "sourceName": "makeDictElement_out",
-                                "destinationName": "makeDict_data",
-                                "uuid": "fd5a03aa-c4f8-454c-9dc3-e30cfaafd3c6",
-=======
                             "1": {
                                 "sourceUUID": "be36628a-29ca-41cc-8a82-ae3e04b7924c",
                                 "destinationUUID": "2f9b1bca-4303-43ab-8d55-b5a91b650f01",
                                 "sourceName": "makeFloat_out",
                                 "destinationName": "makeArray_data",
-                                "uuid": "88f9fb5d-ce45-42eb-a253-1fa0540e97b7",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "a5c6610d-9854-4a26-b912-5e8633446eb3",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3086,11 +2514,11 @@
                 {
                     "name": "result",
                     "package": "PyFlowBase",
-                    "fullName": "makeDict_result",
+                    "fullName": "makeArray_result",
                     "dataType": "BoolPin",
                     "direction": 1,
                     "value": "true",
-                    "uuid": "2e0bcc81-d303-48df-82b3-791c559fe3cf",
+                    "uuid": "2f5c962c-5dcc-4a5d-b82a-23c761534970",
                     "linkedTo": [],
                     "pinIndex": 2,
                     "options": [
@@ -3109,51 +2537,41 @@
                 {
                     "name": "out",
                     "package": "PyFlowBase",
-                    "fullName": "makeDict_out",
+                    "fullName": "makeArray_out",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "{\"circleFade\": 0.5800000000000002}",
-                    "uuid": "44311d00-32d6-439a-9303-270a7d5251c8",
+                    "value": "[0.5800000000000002]",
+                    "uuid": "be2b4a28-7837-433c-88f1-39e7d8beab2c",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "makeDict",
+                            "lhsNodeName": "makeArray",
                             "outPinId": 1,
-                            "rhsNodeName": "LSL_Writer2",
-                            "inPinId": 6,
-                            "lhsNodeUid": "4b27a75b-1b51-465e-891b-a5015c852e6a",
-                            "rhsNodeUid": "d4f03f8d-bd5e-4c2a-8790-494b9c312b00"
+                            "rhsNodeName": "CreateDict",
+                            "inPinId": 3,
+                            "lhsNodeUid": "71f239dc-5d24-44b2-96e2-4ff4db33dbf2",
+                            "rhsNodeUid": "1b08fbb3-e711-44d4-ba4a-7937acb4a539"
                         }
                     ],
                     "pinIndex": 1,
                     "options": [
                         4,
                         16,
-                        256,
-                        512
+                        256
                     ],
-                    "structure": 2,
-                    "alwaysList": false,
+                    "structure": 1,
+                    "alwaysList": true,
                     "alwaysSingle": false,
-                    "alwaysDict": true,
+                    "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "out",
                         "wires": {
-<<<<<<< HEAD
-                            "6": {
-                                "sourceUUID": "44311d00-32d6-439a-9303-270a7d5251c8",
-                                "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
-                                "sourceName": "makeDict_out",
-                                "destinationName": "LSL_Writer2_Data",
-                                "uuid": "9c376fdd-a31f-4928-a24c-842d2c4f43eb",
-=======
                             "3": {
                                 "sourceUUID": "be2b4a28-7837-433c-88f1-39e7d8beab2c",
                                 "destinationUUID": "0d98d70b-6399-4068-a129-851a9f34ee90",
                                 "sourceName": "makeArray_out",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "83e41530-f1d2-4716-b0c1-cd34b414356e",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "65cee86e-4c8e-43c4-b97d-6f1c7a2c105a",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3170,89 +2588,29 @@
             ],
             "meta": {
                 "var": {},
-                "label": "makeDict"
+                "label": "makeArray"
             },
             "wrapper": {
                 "collapsed": false,
-                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDict</p></body></html>",
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeArray</p></body></html>",
                 "exposeInputsToCompound": false,
                 "groups": {
                     "input": {},
                     "output": {}
                 }
             },
-            "x": -114.68476178711833,
-            "y": 245.22974720865724
+            "x": -229.97365643909717,
+            "y": 318.349937448091
         },
         {
             "package": "PyFlowBase",
             "lib": null,
-            "type": "makeDictElement",
+            "type": "makeArray",
             "owningGraphName": "root",
-            "name": "makeDictElement",
-            "uuid": "cf787226-c497-46c8-904b-5a83bc3c2c13",
+            "name": "makeArray6",
+            "uuid": "04493670-494a-44d3-927a-90e36a92d20d",
             "inputs": [
                 {
-<<<<<<< HEAD
-                    "name": "value",
-                    "package": "PyFlowBase",
-                    "fullName": "makeDictElement_value",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": "0.5800000000000002",
-                    "uuid": "a07b9ad0-7540-46f7-a5de-3cbb866c8043",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "makeFloat",
-                            "outPinId": 1,
-                            "rhsNodeName": "makeDictElement",
-                            "inPinId": 2,
-                            "lhsNodeUid": "42896b06-fd41-456c-ae41-e7e43b67b681",
-                            "rhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13"
-                        }
-                    ],
-                    "pinIndex": 2,
-                    "options": [
-                        16,
-                        256,
-                        512
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "value",
-                        "wires": {
-                            "2": {
-                                "sourceUUID": "be36628a-29ca-41cc-8a82-ae3e04b7924c",
-                                "destinationUUID": "a07b9ad0-7540-46f7-a5de-3cbb866c8043",
-                                "sourceName": "makeFloat_out",
-                                "destinationName": "makeDictElement_value",
-                                "uuid": "30d34d5a-8f41-4759-80c8-91c2b2a7665d",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    },
-                    "currDataType": "FloatPin"
-                },
-                {
-                    "name": "key",
-                    "package": "PyFlowBase",
-                    "fullName": "makeDictElement_key",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": "\"circleFade\"",
-                    "uuid": "9c91e51c-4c37-4960-b66f-4a9ea6170ba2",
-=======
                     "name": "data",
                     "package": "PyFlowBase",
                     "fullName": "makeArray6_data",
@@ -3260,61 +2618,36 @@
                     "direction": 0,
                     "value": "[\"circleFade\"]",
                     "uuid": "f5d8108b-3bff-45b2-927f-496eeac976ad",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "linkedTo": [
                         {
                             "lhsNodeName": "makeString",
                             "outPinId": 1,
-<<<<<<< HEAD
-                            "rhsNodeName": "makeDictElement",
-                            "inPinId": 1,
-                            "lhsNodeUid": "3a19d180-ae0e-497e-b05d-56c4d7e0f220",
-                            "rhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13"
-=======
                             "rhsNodeName": "makeArray6",
                             "inPinId": 1,
                             "lhsNodeUid": "3a19d180-ae0e-497e-b05d-56c4d7e0f220",
                             "rhsNodeUid": "04493670-494a-44d3-927a-90e36a92d20d"
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         }
                     ],
                     "pinIndex": 1,
                     "options": [
-<<<<<<< HEAD
-                        16,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-=======
                         8,
                         16,
                         256
                     ],
                     "structure": 1,
                     "alwaysList": true,
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                     "alwaysSingle": false,
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-<<<<<<< HEAD
-                        "displayName": "key",
-=======
                         "displayName": "data",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                         "wires": {
                             "1": {
                                 "sourceUUID": "9af38167-f044-49d6-ad46-884be55ee1bd",
-                                "destinationUUID": "9c91e51c-4c37-4960-b66f-4a9ea6170ba2",
+                                "destinationUUID": "f5d8108b-3bff-45b2-927f-496eeac976ad",
                                 "sourceName": "makeString_out",
-<<<<<<< HEAD
-                                "destinationName": "makeDictElement_key",
-                                "uuid": "9296ccfa-0f85-4b83-bae9-523ba53cb268",
-=======
                                 "destinationName": "makeArray6_data",
-                                "uuid": "a30645f8-38d6-442b-9eb4-9e5c91a72929",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "108c0919-f3ac-4fda-ac6f-4290d06b1bdd",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3327,8 +2660,6 @@
                         }
                     },
                     "currDataType": "StringPin"
-<<<<<<< HEAD
-=======
                 },
                 {
                     "name": "reversed",
@@ -3375,7 +2706,6 @@
                         "displayName": "sorted",
                         "wires": {}
                     }
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                 }
             ],
             "outputs": [
@@ -3405,30 +2735,29 @@
                 {
                     "name": "out",
                     "package": "PyFlowBase",
-                    "fullName": "makeDictElement_out",
+                    "fullName": "makeArray6_out",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "[\"circleFade\", 0.5800000000000002]",
-                    "uuid": "ed3eec4b-72bf-40d0-9452-54e3c0cf29bf",
+                    "value": "[\"circleFade\"]",
+                    "uuid": "33789c4a-958f-4851-9782-6c1ed84ec14f",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "makeDictElement",
+                            "lhsNodeName": "makeArray6",
                             "outPinId": 1,
-                            "rhsNodeName": "makeDict",
+                            "rhsNodeName": "CreateDict",
                             "inPinId": 2,
-                            "lhsNodeUid": "cf787226-c497-46c8-904b-5a83bc3c2c13",
-                            "rhsNodeUid": "4b27a75b-1b51-465e-891b-a5015c852e6a"
+                            "lhsNodeUid": "04493670-494a-44d3-927a-90e36a92d20d",
+                            "rhsNodeUid": "1b08fbb3-e711-44d4-ba4a-7937acb4a539"
                         }
                     ],
                     "pinIndex": 1,
                     "options": [
+                        4,
                         16,
-                        256,
-                        512,
-                        1024
+                        256
                     ],
-                    "structure": 0,
-                    "alwaysList": false,
+                    "structure": 1,
+                    "alwaysList": true,
                     "alwaysSingle": false,
                     "alwaysDict": false,
                     "wrapper": {
@@ -3436,19 +2765,11 @@
                         "displayName": "out",
                         "wires": {
                             "2": {
-<<<<<<< HEAD
-                                "sourceUUID": "ed3eec4b-72bf-40d0-9452-54e3c0cf29bf",
-                                "destinationUUID": "d19d83d4-dae5-436a-94d4-37eb152a6581",
-                                "sourceName": "makeDictElement_out",
-                                "destinationName": "makeDict_data",
-                                "uuid": "fd5a03aa-c4f8-454c-9dc3-e30cfaafd3c6",
-=======
                                 "sourceUUID": "33789c4a-958f-4851-9782-6c1ed84ec14f",
                                 "destinationUUID": "c3c68a76-aa7c-440a-8af8-0a60b9f8ceec",
                                 "sourceName": "makeArray6_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "47a11a15-e916-435e-96a0-fea18a121e2a",
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
+                                "uuid": "ff7a0c86-e9a0-4aff-9321-82f7b0d10182",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3460,30 +2781,22 @@
                             }
                         }
                     },
-<<<<<<< HEAD
-                    "currDataType": "FloatPin"
-=======
                     "currDataType": "StringPin"
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
                 }
             ],
             "meta": {
                 "var": {},
-                "label": "makeDictElement"
+                "label": "makeArray6"
             },
             "wrapper": {
                 "collapsed": false,
-                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeDictElement</p></body></html>",
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">makeArray6</p></body></html>",
                 "exposeInputsToCompound": false,
                 "groups": {
                     "input": {},
                     "output": {}
                 }
             },
-<<<<<<< HEAD
-            "x": -299.7583392390447,
-            "y": 258.9131384965357
-=======
             "x": -386.29494969744434,
             "y": 230.37821857573388
         },
@@ -3552,7 +2865,7 @@
                                 "destinationUUID": "b825c26e-4cec-44d4-93a0-dfb96e349f3d",
                                 "sourceName": "Difficulty5_Data",
                                 "destinationName": "CreateDict2_Data",
-                                "uuid": "1272435f-fdb2-43ab-94e1-3471d33aef8d",
+                                "uuid": "f35e34bc-1370-4aab-a9d6-b24dc3dc80f5",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3601,7 +2914,7 @@
                                 "destinationUUID": "1b4f62f4-68c0-4822-b9c9-a1ee51bc6fef",
                                 "sourceName": "LSL_Writer2_OUT",
                                 "destinationName": "CreateDict2_inExec",
-                                "uuid": "0082df56-14be-453b-ad5b-69f3aefc4421",
+                                "uuid": "5265e83f-7360-431a-b3ca-91fa5e1cf2aa",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3655,7 +2968,7 @@
                                 "destinationUUID": "04045d7d-723f-4208-ad88-efcc1b4e2332",
                                 "sourceName": "CreateDict2_Data1",
                                 "destinationName": "LSL_Writer2_Data",
-                                "uuid": "692873bb-23e5-4fb6-ade8-db58e85f209d",
+                                "uuid": "3203df36-16ef-42e8-8062-f614eef9c3f4",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3707,7 +3020,6 @@
             },
             "x": 74.0,
             "y": -81.0
->>>>>>> a8fe565a6a6750a41d3a5cbae55021b84ae0c3f2
         }
     ],
     "depth": 1,
