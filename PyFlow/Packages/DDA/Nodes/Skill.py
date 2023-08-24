@@ -47,6 +47,7 @@ class Skill(NodeBase):
                 self.Max.getData() is not None) and (self.Min.getData() is not None) and (
                 self.StreamName.getData() is not None):
 
+            print("Skill issue mate ")
             data = self.Data.getData()
             stream = self.StreamName.getData()
             name = self.Data.getData()

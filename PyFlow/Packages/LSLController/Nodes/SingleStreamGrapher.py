@@ -13,9 +13,9 @@ import multiprocessing
 
 
 # LSL_Writer
-class LSL_Reader3(NodeBase):
+class SingleStreamGrapher(NodeBase):
     def __init__(self, name):
-        super(LSL_Reader3, self).__init__(name)
+        super(SingleStreamGrapher, self).__init__(name)
         # Input pins
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
@@ -46,7 +46,7 @@ class LSL_Reader3(NodeBase):
         self.counter = 0
 
     def Tick(self, delta):
-        super(LSL_Reader3, self).Tick(delta)
+        super(SingleStreamGrapher, self).Tick(delta)
         timer1 = time.time()
         if self.bWorking:
             if time.time() - self.start >= 1:

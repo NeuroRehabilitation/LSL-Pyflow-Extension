@@ -6,9 +6,9 @@ from PyFlow.Core.Common import *
 from pylsl import StreamInlet, resolve_streams, pylsl
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 #LSL_Writer
-class LSL_Reader4(NodeBase):
+class MultiStreamGrapher(NodeBase):
         def __init__(self, name):
-            super(LSL_Reader4, self).__init__(name)
+            super(MultiStreamGrapher, self).__init__(name)
             # Input pins
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
@@ -33,7 +33,7 @@ class LSL_Reader4(NodeBase):
             self.counter = 0
 
         def Tick(self, delta):
-            super(LSL_Reader4, self).Tick(delta)
+            super(MultiStreamGrapher, self).Tick(delta)
             self.data = []
             timer1 = time.time()
             if self.bWorking:

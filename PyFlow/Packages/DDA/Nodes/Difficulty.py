@@ -13,7 +13,9 @@ class Difficulty(NodeBase):
         self.Min = self.createInputPin('Min', 'IntPin')
 
         # _____Output_____#
-        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.NameOut = self.createOutputPin('Name', 'StringPin')
+
+        self.Send = self.createOutputPin('Data','FloatPin')
         self.Send.enableOptions(PinOptions.AllowAny)
 
     @staticmethod
@@ -22,6 +24,7 @@ class Difficulty(NodeBase):
         helper.addInputDataType('BoolPin')
         helper.addOutputDataType('BoolPin')
         helper.addInputStruct(StructureType.Single)
+        helper.addInputStruct(StructureType.Multi)
         helper.addOutputStruct(StructureType.Single)
         return helper
 
@@ -33,6 +36,7 @@ class Difficulty(NodeBase):
     def keywords():
         return []
 
+
     @staticmethod
     def description():
         return "Description in rst format."
@@ -40,11 +44,13 @@ class Difficulty(NodeBase):
     def compute(self, *args, **kwargs):
         if (self.Performance.getData() is not None) and (self.Name.getData() is not None) and (
                 self.Max.getData() is not None) and (self.Min.getData() is not None):
+
             name = self.Name.getData()
             max = self.Max.getData()
             min = self.Min.getData()
             performance = self.Performance.getData()
-            difficulty = {name: (performance * (max - min)) + min}
+            difficulty = performance * (max - min) + min
 
             self.Send.setData(difficulty)
+            self.NameOut.setData(name)
 

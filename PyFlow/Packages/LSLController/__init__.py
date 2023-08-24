@@ -9,8 +9,8 @@ from PyFlow.UI.UIInterfaces import IPackage
 # Class based nodes
 from PyFlow.Packages.LSLController.Nodes.LSL_Reader import LSL_Reader
 from PyFlow.Packages.LSLController.Nodes.LSL_Reader2 import LSL_Reader2
-from PyFlow.Packages.LSLController.Nodes.LSL_Reader3 import LSL_Reader3
-from PyFlow.Packages.LSLController.Nodes.LSL_Reader4 import LSL_Reader4
+from PyFlow.Packages.LSLController.Nodes.SingleStreamGrapher import SingleStreamGrapher
+from PyFlow.Packages.LSLController.Nodes.MultiStreamGrapher import MultiStreamGrapher
 # Factories
 
 _FOO_LIBS = {}
@@ -22,12 +22,12 @@ _EXPORTERS = OrderedDict()
 
 
 _NODES={
-	LSL_Reader.__name__:LSL_Reader,
-	LSL_Reader2.__name__:LSL_Reader2,
-	LSL_Reader3.__name__:LSL_Reader3,
-	LSL_Reader4.__name__:LSL_Reader4,
-	LSL_Writer.__name__:LSL_Writer,
-	LSL_Writer2.__name__:LSL_Writer2
+	LSL_Reader.__name__: LSL_Reader,
+	LSL_Reader2.__name__: LSL_Reader2,
+	SingleStreamGrapher.__name__: SingleStreamGrapher,
+	MultiStreamGrapher.__name__: MultiStreamGrapher,
+	LSL_Writer.__name__: LSL_Writer,
+	LSL_Writer2.__name__: LSL_Writer2
 }
 
 
