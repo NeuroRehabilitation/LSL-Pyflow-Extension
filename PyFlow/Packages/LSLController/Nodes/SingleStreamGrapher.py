@@ -61,8 +61,6 @@ class SingleStreamGrapher(NodeBase):
 
                 self.counter = 0
 
-
-
             if (len(self.inlets) != 0) or (self.does_stream_exist(self.StreamName.getData())):
 
                 # Pull a chunk of samples from the inlet
@@ -70,7 +68,9 @@ class SingleStreamGrapher(NodeBase):
 
                 if samples:
                     # Process the received samples
+
                     for sample, timestamp in zip(samples, timestamps):
+                     
                         self.addDataToDict(self.inlets[0].info().name(), sample)
 
                 self.Send.setData(self.DataBase)
@@ -178,8 +178,6 @@ class SingleStreamGrapher(NodeBase):
     def does_stream_exist(stream_name):
         streams = resolve_stream('name', stream_name)
         return len(streams) > 0
-
-
 
     @staticmethod
     def category():
