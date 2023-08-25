@@ -13,9 +13,9 @@ import multiprocessing
 
 
 # LSL_Writer
-class LSL_Reader(NodeBase):
+class SingleStreamReceiver(NodeBase):
     def __init__(self, name):
-        super(LSL_Reader, self).__init__(name)
+        super(SingleStreamReceiver, self).__init__(name)
         # Input pins
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
@@ -42,7 +42,7 @@ class LSL_Reader(NodeBase):
         self.counter = 0
 
     def Tick(self, delta):
-        super(LSL_Reader, self).Tick(delta)
+        super(SingleStreamReceiver, self).Tick(delta)
         timer1 = time.time()
         if self.bWorking:
             if time.time() - self.start >= 1:
@@ -167,4 +167,4 @@ class LSL_Reader(NodeBase):
 
     @staticmethod
     def category():
-        return 'FlowControl'
+        return 'Receivers'

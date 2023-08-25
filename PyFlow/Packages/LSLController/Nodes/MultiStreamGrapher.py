@@ -130,4 +130,4 @@ class MultiStreamGrapher(NodeBase):
 
         @staticmethod
         def category():
-            return 'FlowControl'
+            return 'Receivers'

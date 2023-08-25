@@ -6,7 +6,7 @@ from PyFlow.Core.Common import *
 from pylsl import StreamInlet, resolve_streams, pylsl
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 #LSL_Writer
-class LSL_Reader2(NodeBase):
+class MultiStreamReceiver(NodeBase):
         def __init__(self, name):
             super(LSL_Reader2, self).__init__(name)
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
@@ -107,4 +107,4 @@ class LSL_Reader2(NodeBase):
 
         @staticmethod
         def category():
-            return 'FlowControl'
+            return 'Receivers'

@@ -60,7 +60,10 @@ class SingleStreamGrapher(NodeBase):
                 # self.DataBase = copy.deepcopy(self.StructDataBase)
 
                 self.counter = 0
-            if len(self.inlets) != 0:
+
+
+
+            if (len(self.inlets) != 0) or (self.does_stream_exist(self.StreamName.getData())):
 
                 # Pull a chunk of samples from the inlet
                 samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
@@ -68,9 +71,6 @@ class SingleStreamGrapher(NodeBase):
                 if samples:
                     # Process the received samples
                     for sample, timestamp in zip(samples, timestamps):
-                        # Do something with the sample data and timestamp
-                        # self.Send.setData(sample)
-                        # print(+"Received sample:", sample, "at timestamp:", timestamp)
                         self.addDataToDict(self.inlets[0].info().name(), sample)
 
                 self.Send.setData(self.DataBase)
@@ -165,10 +165,22 @@ class SingleStreamGrapher(NodeBase):
             if len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate()):
                 # print("Length" + str(len(self.DataBase[key][row])))
                 self.DataBase[key][row].pop(0)
+                print("Sending data")
                 self.Graph_queue.put(self.DataBase)
                 self.DataBase = None
                 self.DataBase = copy.deepcopy(self.StructDataBase)
 
+    def Connection_Check(self):
+        streams = resolve_streams()
+        if len(streams) == 0:
+            stop()
+
+    def does_stream_exist(stream_name):
+        streams = resolve_stream('name', stream_name)
+        return len(streams) > 0
+
+
+
     @staticmethod
     def category():
-        return 'FlowControl'
+        return 'Receivers'

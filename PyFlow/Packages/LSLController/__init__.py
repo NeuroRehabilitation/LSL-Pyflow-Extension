@@ -1,5 +1,5 @@
-from PyFlow.Packages.LSLController.Nodes.LSL_Writer import LSL_Writer
-from PyFlow.Packages.LSLController.Nodes.LSL_Writer2 import LSL_Writer2
+from PyFlow.Packages.LSLController.Nodes.StreamTransmitter import StreamTransmitter
+from PyFlow.Packages.LSLController.Nodes.StreamGrapher import StreamGrapher
 
 PACKAGE_NAME = 'LSLController'
 
@@ -7,8 +7,8 @@ from collections import OrderedDict
 from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
-from PyFlow.Packages.LSLController.Nodes.LSL_Reader import LSL_Reader
-from PyFlow.Packages.LSLController.Nodes.LSL_Reader2 import LSL_Reader2
+from PyFlow.Packages.LSLController.Nodes.SingleStreamReceiver import SingleStreamReceiver
+from PyFlow.Packages.LSLController.Nodes.MultiStreamReceiver import MultiStreamReceiver
 from PyFlow.Packages.LSLController.Nodes.SingleStreamGrapher import SingleStreamGrapher
 from PyFlow.Packages.LSLController.Nodes.MultiStreamGrapher import MultiStreamGrapher
 # Factories
@@ -22,12 +22,12 @@ _EXPORTERS = OrderedDict()
 
 
 _NODES={
-	LSL_Reader.__name__: LSL_Reader,
-	LSL_Reader2.__name__: LSL_Reader2,
+	SingleStreamReceiver.__name__: SingleStreamReceiver,
+	MultiStreamReceiver.__name__: MultiStreamReceiver,
 	SingleStreamGrapher.__name__: SingleStreamGrapher,
 	MultiStreamGrapher.__name__: MultiStreamGrapher,
-	LSL_Writer.__name__: LSL_Writer,
-	LSL_Writer2.__name__: LSL_Writer2
+	StreamGrapher .__name__: StreamGrapher,
+	StreamTransmitter.__name__: StreamTransmitter
 }
 
 

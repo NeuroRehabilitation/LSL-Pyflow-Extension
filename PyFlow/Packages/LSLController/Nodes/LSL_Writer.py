@@ -9,7 +9,7 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
 #DemoNode
 # LSL_Writer
-class LSL_Writer(NodeBase):
+class StreamTransmitter(NodeBase):
     def __init__(self, name):
         super(LSL_Writer, self).__init__(name)
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
@@ -37,7 +37,7 @@ class LSL_Writer(NodeBase):
         self.counter = 0
 
     def Tick(self, delta):
-        super(LSL_Writer, self).Tick(delta)
+        super(StreamTransmitter, self).Tick(delta)
         if self.bWorking:
             if not self.On:
                 timevar = time.time()
@@ -103,4 +103,4 @@ class LSL_Writer(NodeBase):
 
     @staticmethod
     def category():
-        return 'FlowControl'
+        return 'Transmitters'
