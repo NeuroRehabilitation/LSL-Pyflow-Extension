@@ -36,6 +36,7 @@ class SingleStreamGrapher(NodeBase):
 
         self.DataBase = dict()
         self.StructDataBase = dict()
+        self.DataBaseZero = dict()
 
         self.Graph_queue = multiprocessing.Queue()
         self.online = False
@@ -43,6 +44,7 @@ class SingleStreamGrapher(NodeBase):
         self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
 
         self.start = time.time()
+        self.empty = False
         self.counter = 0
 
     def Tick(self, delta):
@@ -51,27 +53,29 @@ class SingleStreamGrapher(NodeBase):
         if self.bWorking:
             if time.time() - self.start >= 1:
                 self.start = time.time()
-                # print("Number of values in one second->" + str(self.counter))
 
-                # print("Struct" + str(self.DataBase))
+                if self.empty:
+                    self.empty = False
+                else:
+                    self.Graph_queue.put(self.DataBaseZero)
 
-                # self.Graph_queue.put(self.DataBase)
-                # self.DataBase = None
-                # self.DataBase = copy.deepcopy(self.StructDataBase)
 
                 self.counter = 0
 
-            if (len(self.inlets) != 0) or (self.does_stream_exist(self.StreamName.getData())):
+            if (len(self.inlets) != 0):
 
                 # Pull a chunk of samples from the inlet
                 samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
 
                 if samples:
+                    self.empty = True
                     # Process the received samples
 
                     for sample, timestamp in zip(samples, timestamps):
                      
                         self.addDataToDict(self.inlets[0].info().name(), sample)
+                else:
+                    print("Empty")
 
                 self.Send.setData(self.DataBase)
 
@@ -83,6 +87,12 @@ class SingleStreamGrapher(NodeBase):
         if timer1 - time.time() != 0:
             self.counter += 1
             # print("it took |"+str(timer1-time.time())+"| to get the values")
+
+    def fill_any(self, i):
+        fill_var = []
+        while len(fill_var) < i:
+            fill_var.append(0)
+        return fill_var
 
     @staticmethod
     def keywords():
@@ -118,6 +128,7 @@ class SingleStreamGrapher(NodeBase):
             channels = inlet.info().desc().child("channels").child("channel")
 
             channels_dicts = dict()
+            channels_dicts_zero = dict()
             for i in range(inlet.info().channel_count()):
                 # Get the channel number (e.g. 1)
                 channel = i + 1
@@ -132,10 +143,11 @@ class SingleStreamGrapher(NodeBase):
                 stream_channels.update({channel: [sensor, unit]})
                 channels = channels.next_sibling()
                 channels_dicts[sensor] = []
+                channels_dicts_zero[sensor] = self.fill_any(int(inlet.info().nominal_srate()))
 
             self.DataBase[inlet.info().name()] = channels_dicts
-
             self.StructDataBase = copy.deepcopy(self.DataBase)
+            self.DataBaseZero[inlet.info().name()] = channels_dicts_zero
 
             inlet_info = {
                 "Name": inlet.info().name(),
@@ -169,15 +181,6 @@ class SingleStreamGrapher(NodeBase):
                 self.Graph_queue.put(self.DataBase)
                 self.DataBase = None
                 self.DataBase = copy.deepcopy(self.StructDataBase)
-
-    def Connection_Check(self):
-        streams = resolve_streams()
-        if len(streams) == 0:
-            stop()
-
-    def does_stream_exist(stream_name):
-        streams = resolve_stream('name', stream_name)
-        return len(streams) > 0
 
     @staticmethod
     def category():

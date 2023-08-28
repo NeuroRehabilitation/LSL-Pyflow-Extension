@@ -19,7 +19,7 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_NODES[DDA1.__name__] = DDA1
+
 _NODES = {
     DDA1.__name__: DDA1,
     Skill.__name__: Skill,

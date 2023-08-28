@@ -8,7 +8,7 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 #LSL_Writer
 class MultiStreamReceiver(NodeBase):
         def __init__(self, name):
-            super(LSL_Reader2, self).__init__(name)
+            super(MultiStreamReceiver, self).__init__(name)
             self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
             self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
@@ -26,7 +26,7 @@ class MultiStreamReceiver(NodeBase):
             self.counter = 0
 
         def Tick(self, delta):
-            super(LSL_Reader2, self).Tick(delta)
+            super(MultiStreamReceiver, self).Tick(delta)
             if self.bWorking:
                 if int(time.time()) - self.start >= 1:
                     self.start = time.time()
