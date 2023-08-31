@@ -12,6 +12,7 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 class StreamTransmitter(NodeBase):
     def __init__(self, name):
         super(StreamTransmitter, self).__init__(name)
+
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
         self.streamName = self.createInputPin("Name", 'StringPin')

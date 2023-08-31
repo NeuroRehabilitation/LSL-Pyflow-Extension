@@ -177,7 +177,6 @@ class SingleStreamGrapher(NodeBase):
             if len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate()):
                 # print("Length" + str(len(self.DataBase[key][row])))
                 self.DataBase[key][row].pop(0)
-                print("Sending data")
                 self.Graph_queue.put(self.DataBase)
                 self.DataBase = None
                 self.DataBase = copy.deepcopy(self.StructDataBase)

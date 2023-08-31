@@ -7,10 +7,10 @@ class SensorsEmteq(NodeBase):
     def __init__(self, name):
         super(SensorsEmteq, self).__init__(name)
         self.Sensor_Name = self.createInputPin('Name', 'StringPin')
-        self.data = self.createInputPin('InData', 'AnyPin', structure=StructureType.Multi)
-        self.data.enableOptions(
+        self.Data = self.createInputPin('InData', 'AnyPin', structure=StructureType.Multi)
+        self.Data.enableOptions(
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
-        self.data.disableOptions(PinOptions.SupportsOnlyArrays)
+        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
         self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
@@ -39,8 +39,10 @@ class SensorsEmteq(NodeBase):
 
     def compute(self, *args, **kwargs):
         sensor_name = self.Sensor_Name.getData()
-        data = self.data.getData()
-        if sensor_name in data:
-            self.Send.setData(data[sensor_name])
-            self.LastValue.setData(data[sensor_name][-1])
+        data = self.Data.getData()
+
+
+        if sensor_name in data["Emteq"]:
+            self.Send.setData(data["Emteq"][sensor_name])
+            self.LastValue.setData(data["Emteq"][sensor_name][-1])
 
