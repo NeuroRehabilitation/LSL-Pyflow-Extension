@@ -6,8 +6,16 @@ from PyFlow.Core.Common import *
 class DemoNode(NodeBase):
     def __init__(self, name):
         super(DemoNode, self).__init__(name)
-        self.inp = self.createInputPin('inp', 'BoolPin')
-        self.out = self.createOutputPin('out', 'BoolPin')
+        self.Sensor_Name = self.createInputPin('Name', 'StringPin')
+        self.Data = self.createInputPin('InData', 'AnyPin', structure=StructureType.Multi)
+        self.Data.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
+
+        self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
+        self.Send.enableOptions(PinOptions.AllowAny)
+
+        self.LastValue = self.createOutputPin('LastValue', 'FloatPin')
 
     @staticmethod
     def pinTypeHints():
@@ -31,5 +39,9 @@ class DemoNode(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        inputData = self.inp.getData()
-        self.out.setData(not inputData)
+        sensor_name = self.Sensor_Name.getData()
+        data = self.Data.getData()
+
+        if sensor_name in data["QuestionsStream"]:
+            self.Send.setData(data["QuestionsStream"][sensor_name])
+            self.LastValue.setData(data["QuestionsStream"][sensor_name][-1])

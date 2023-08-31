@@ -70,12 +70,12 @@ class StreamTransmitter(NodeBase):
                 sample = list(self.Data.getData().values())
                 if time.time() - self.start_time > 1:
                     self.start_time = time.time()
-                    print("Number of Data sent in one second:", self.counter)
+                    #print("Number of Data sent in one second:", self.counter)
                     self.counter = 0
                 self.counter += 1
                     #self.Send.setData({self.streamName.getData(): sample})
                     # self.outlet.push_sample(sample)
-                print("Time Consumed : ", (time.time() - timevar))
+                #print("Time Consumed : ", (time.time() - timevar))
 
     def get_all_keys(self, array_of_dicts):
         keys = dict()
