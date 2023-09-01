@@ -2,7 +2,6 @@ from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
 
-
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
 
@@ -14,9 +13,11 @@ class PIDController:
         self.error_sum = 0
         self.last_error = 0
 
-    def calculate(self, setpoint, input1, input2):
-        error = setpoint - (input1 + input2)
+    def calculate(self, setpoint, input1):
+        error = setpoint - input1
+
         self.error_sum += error
+
         error_diff = error - self.last_error
 
         output = (self.kp * error) + (self.ki * self.error_sum) + (self.kd * error_diff)
@@ -29,8 +30,7 @@ class PIDController:
 class PIDNode(NodeBase):
     def __init__(self, name):
         super(PIDNode, self).__init__(name)
-        self.bWorking = None
-        self.pid = None
+
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
@@ -38,17 +38,24 @@ class PIDNode(NodeBase):
         self.KI = self.createInputPin('KI', 'FloatPin')
         self.KD = self.createInputPin('KD', 'FloatPin')
 
-        self.Setpoint1 = self.createInputPin('Setpoint1', 'FloatPin')
-        self.Setpoint2 = self.createInputPin('Setpoint2', 'FloatPin')
+        self.Dif = self.createInputPin('Difficulty', 'IntPin')
 
-        self.FeedBack1 = self.createInputPin('FeedBack1', 'FloatPin')
-        self.FeedBack2 = self.createInputPin('FeedBack2', 'FloatPin')
+        self.Setpoint = self.createInputPin('Setpoint', 'FloatPin')
+
+        self.FeedBack = self.createInputPin('FeedBack', 'FloatPin')
+
+        #Output
+        self.NewDif = self.createOutputPin("New Difficulty", "IntPin")
 
         self.Result = self.createOutputPin("result", "FloatPin")
 
         self.out = self.createOutputPin("OUT", 'ExecPin')
 
+        self.bWorking = None
+        self.pid = None
+        self.start = time.time()
         self.val = 0
+        self.Difficulty = 0
 
     @staticmethod
     def pinTypeHints():
@@ -75,13 +82,30 @@ class PIDNode(NodeBase):
         super(PIDNode, self).Tick(delta)
 
         if self.bWorking:
-            control = self.pid.calculate(self.Setpoint1.getData(), self.val, self.val)
-            self.val += 0.02
-            print("Val=" + str(self.val))
-            print("Control=" + str(control))
-            self.Result.setData(self.val)
+            if time.time() - self.start >= 5:
+                control = self.pid.calculate(self.Setpoint.getData(), self.val)
 
-            time.sleep(1)
+                if control > 4:
+                    self.Difficulty -= 4
+
+                elif control < -4:
+                    self.Difficulty += 4
+
+                else:
+                    self.Difficulty += int(control)
+
+                if self.Difficulty < 1:
+                    self.Difficulty = 1
+                if self.Difficulty > 5:
+                    self.Difficulty = 5
+
+                print("Val =" + str(self.val))
+                print("Control =" + str(control))
+                print("Difficulty =" + str(self.Difficulty))
+                self.NewDif.setData(self.Difficulty)
+                self.val = self.FeedBack.getData()
+                self.Result.setData(self.val)
+                self.start = time.time()
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
@@ -89,9 +113,10 @@ class PIDNode(NodeBase):
     def start(self, *args, **kwargs):
         self.bWorking = True
 
+        self.Difficulty = self.Dif.getData()
         kp = self.KP.getData()
         ki = self.KI.getData()
         kd = self.KD.getData()
 
-        self.pid = PIDController(0.5, 0.2, 0.1)
-        self.val = 1
+        self.pid = PIDController(kp, ki, kd)
+        self.val = self.FeedBack.getData()

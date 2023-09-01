@@ -7,13 +7,9 @@ class TargetDifficulty(NodeBase):
     def __init__(self, name):
         super(TargetDifficulty, self).__init__(name)
 
-        self.Nvalues = self.createInputPin('NValues', 'IntPin')
+        self.Nvalues = self.createInputPin('NValues', 'FloatPin')
 
-        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
-        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
-
-        self.Target = self.createInputPin('Target', 'IntPin')
+        self.Target = self.createOutputPin('Target', 'IntPin')
 
 
     @staticmethod
@@ -38,4 +34,21 @@ class TargetDifficulty(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
+        nvalues = self.Nvalues.getData()
+        self.set_difficulty(nvalues)
+
+    def set_difficulty(self, skill_level):
+        # You can define your own mapping of skill levels to difficulty settings
+        # Here's a simple example:
+        print("skill_level :"+str(skill_level))
+        if skill_level <= 1:
+            print("Super Easy")
+        elif skill_level <= 2:
+            print("Easy")
+        elif skill_level <= 3:
+            print("Medium")
+        elif skill_level <= 4:
+            print("Hard")
+        else:
+            print("SuperHard")
 

@@ -9,7 +9,8 @@ from PyFlow.Packages.DDA.Nodes.Skill import Skill
 from PyFlow.Packages.DDA.Nodes.Difficulty import Difficulty
 from PyFlow.Packages.DDA.Nodes.Skill1 import Skill1
 from PyFlow.Packages.DDA.Nodes.Difficulty1 import Difficulty1
-
+from PyFlow.Packages.DDA.Nodes.TargetDifficulty import TargetDifficulty
+from PyFlow.Packages.DDA.Nodes.Dif import Dif
 # Factories
 
 _FOO_LIBS = {}
@@ -25,7 +26,9 @@ _NODES = {
     Skill.__name__: Skill,
     Difficulty.__name__: Difficulty,
     Skill1.__name__: Skill1,
-    Difficulty1.__name__: Difficulty1
+    Difficulty1.__name__: Difficulty1,
+    TargetDifficulty.__name__: TargetDifficulty,
+    Dif.__name__: Dif
 }
 
 
