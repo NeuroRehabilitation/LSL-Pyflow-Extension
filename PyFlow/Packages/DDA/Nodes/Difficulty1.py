@@ -6,17 +6,21 @@ from PyFlow.Core.Common import *
 class Difficulty1(NodeBase):
     def __init__(self, name):
         super(Difficulty1, self).__init__(name)
-        self.Const = self.createInputPin('Performance', 'FloatPin')
+
         self.Name = self.createInputPin('Name', 'StringPin')
 
-        self.Max = self.createInputPin('Max', 'IntPin')
-        self.Min = self.createInputPin('Min', 'IntPin')
+        self.Value = self.createInputPin('Value', 'IntPin')
 
-        self.LastLine = self.createInputPin('LastValue', 'FloatPin')
+        self.SE = self.createInputPin('SuperEasy', 'FloatPin')
+        self.E = self.createInputPin('Easy', 'FloatPin')
+        self.M = self.createInputPin('Medium', 'FloatPin')
+        self.H = self.createInputPin('Hard', 'FloatPin')
+        self.SH = self.createInputPin('SuperHard', 'FloatPin')
+
 
         # _____Output_____#
-        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Send.enableOptions(PinOptions.AllowAny)
+        self.Difficulty = self.createOutputPin('Difficulty', 'IntPin')
+        self.OutName = self.createOutputPin('Name', 'StringPin')
 
     @staticmethod
     def pinTypeHints():
@@ -40,13 +44,28 @@ class Difficulty1(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        if (self.Const.getData() is not None) and (self.Name.getData() is not None) and (
-                self.Max.getData() is not None) and (self.Min.getData() is not None):
+        value = self.Value.getData()
+        difficulty = 5
 
-            name = self.Data.getData()
-            max = self.Max.getData()
-            min = self.Min.getData()
-            const = self.Const.getData()
+        if value == 1:
+            difficulty = self.SE.getData()
+        elif value == 2:
+            difficulty = self.E.getData()
+        elif value == 3:
+            difficulty = self.M.getData()
+        elif value == 4:
+            difficulty = self.H.getData()
+        else:
+            difficulty = self.SH.getData()
+
+        self.OutName.setData(self.Name.getData())
+        self.Difficulty.setData(difficulty)
+
+
+
+
+
+
 
 
 

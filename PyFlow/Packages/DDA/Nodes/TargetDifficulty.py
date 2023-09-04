@@ -1,14 +1,16 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
+import statistics
 
 
 class TargetDifficulty(NodeBase):
     def __init__(self, name):
         super(TargetDifficulty, self).__init__(name)
-
-        self.Nvalues = self.createInputPin('NValues', 'FloatPin')
-
+        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.Data.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
         self.Target = self.createOutputPin('Target', 'IntPin')
 
 
@@ -34,8 +36,10 @@ class TargetDifficulty(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        nvalues = self.Nvalues.getData()
-        self.set_difficulty(nvalues)
+
+        data = self.Data.getData()
+        self.set_difficulty(int(statistics.median(data)))
+        self.Target.setData(int(statistics.median(data)))
 
     def set_difficulty(self, skill_level):
         # You can define your own mapping of skill levels to difficulty settings
