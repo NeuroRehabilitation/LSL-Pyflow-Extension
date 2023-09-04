@@ -1,7 +1,7 @@
 from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
-
+import json
 
 class SensorsEmteq(NodeBase):
     def __init__(self, name):
@@ -16,6 +16,7 @@ class SensorsEmteq(NodeBase):
         self.Send.enableOptions(PinOptions.AllowAny)
 
         self.LastValue = self.createOutputPin('LastValue', 'FloatPin')
+
     @staticmethod
     def pinTypeHints():
         helper = NodePinsSuggestionsHelper()
@@ -39,10 +40,17 @@ class SensorsEmteq(NodeBase):
 
     def compute(self, *args, **kwargs):
         sensor_name = self.Sensor_Name.getData()
-        data = self.Data.getData()
+        data_r = self.Data.getData()
+        if isinstance(data_r, dict):
+            print("is a dict")
+            data = data_r
+
+        if isinstance(data_r, str):
+            print("is a string ")
+            data = json.loads(data_r)
 
 
-        if sensor_name in data["Emteq"]:
-            self.Send.setData(data["Emteq"][sensor_name])
-            self.LastValue.setData(data["Emteq"][sensor_name][-1])
 
+        if sensor_name in data["Emteq1"]:
+            self.Send.setData(data["Emteq1"][sensor_name])
+            self.LastValue.setData(data["Emteq1"][sensor_name][-1])

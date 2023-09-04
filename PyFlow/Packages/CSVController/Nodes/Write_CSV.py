@@ -2,6 +2,7 @@ from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
 import csv
+import os
 
 
 def write_dict_to_csv(data_dict, filename):
@@ -65,5 +66,13 @@ class Write_CSV(NodeBase):
             if self.FileName.getData() is not None:
                 filename = self.FileName.getData() + ".csv"
 
-            write_dict_to_csv(data, filename)
-            print(f"Data successfully written to '{filename}'.")
+            try:
+                # Use the os.path.join() function to create a full file path
+                file_path = os.path.join( '',filename)
+
+                write_dict_to_csv(data, file_path)
+                print(f"Data successfully written to '{file_path}'.")
+            except PermissionError as e:
+                print(f"Permission denied: {e}")
+            except Exception as e:
+                print(f"An error occurred: {e}")

@@ -38,16 +38,21 @@ class PIDNode(NodeBase):
         self.KI = self.createInputPin('KI', 'FloatPin')
         self.KD = self.createInputPin('KD', 'FloatPin')
 
+        self.Timer = self.createInputPin('Timer', 'IntPin')
+
         self.Dif = self.createInputPin('Difficulty', 'IntPin')
 
         self.Setpoint = self.createInputPin('Setpoint', 'FloatPin')
 
         self.FeedBack = self.createInputPin('FeedBack', 'FloatPin')
 
-        #Output
+        # Output
         self.NewDif = self.createOutputPin("New Difficulty", "IntPin")
 
         self.Result = self.createOutputPin("result", "FloatPin")
+
+        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
+        self.Info.enableOptions(PinOptions.AllowAny)
 
         self.out = self.createOutputPin("OUT", 'ExecPin')
 
@@ -82,17 +87,10 @@ class PIDNode(NodeBase):
         super(PIDNode, self).Tick(delta)
 
         if self.bWorking:
-            if time.time() - self.start >= 5:
+            if time.time() - self.start >= 10:
                 control = self.pid.calculate(self.Setpoint.getData(), self.val)
 
-                if control > 4:
-                    self.Difficulty -= 4
-
-                elif control < -4:
-                    self.Difficulty += 4
-
-                else:
-                    self.Difficulty += int(control)
+                self.Difficulty += int(control)
 
                 if self.Difficulty < 1:
                     self.Difficulty = 1
@@ -102,10 +100,18 @@ class PIDNode(NodeBase):
                 print("Val =" + str(self.val))
                 print("Control =" + str(control))
                 print("Difficulty =" + str(self.Difficulty))
+
+                info = {"Time": time.time(), "SetPoint": self.Setpoint.getData(), "KP": self.KP.getData(),
+                        "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
+                        "FeedBack": self.FeedBack.getData(), "Output": control}
+
+                self.Info.setData(info)
+
                 self.NewDif.setData(self.Difficulty)
                 self.val = self.FeedBack.getData()
                 self.Result.setData(self.val)
                 self.start = time.time()
+                self.out.call()
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
