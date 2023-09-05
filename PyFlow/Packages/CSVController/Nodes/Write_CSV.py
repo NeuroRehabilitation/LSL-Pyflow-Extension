@@ -1,25 +1,30 @@
+import numpy as np
+
 from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
-import csv
+import pandas as pd
 import os
 
 
-def write_dict_to_csv(data_dict, filename):
-    # Extract the keys from the dictionary to use as header in CSV
+def append_to_csv(filename, data):
+    # Read the existing CSV file
+    try:
+        existing_data = pd.read_csv(filename)
+    except FileNotFoundError:
+        existing_data = pd.DataFrame()
 
-    fieldnames = data_dict.keys()
+    # Append new data to the existing data
+    new_data = existing_data.append(data, ignore_index=True)
 
-    # Open the CSV file in write mode
-    with open(filename, 'w', newline='') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    technologies = {
+        'Courses': ["Spark", "PySpark", "Hadoop", "Python"],
+        'Fee': [22000, 25000, np.nan, 24000],
+        'Duration': ['30day', None, '55days', np.nan],
+        'Discount': [1000, 2300, 1000, np.nan]}
 
-        # Write the header row
-        writer.writeheader()
-
-        # Write the data rows
-        for row_data in data_dict.values():
-            writer.writerow(row_data)
+    # Write the combined data to the CSV file
+    new_data.to_csv(technologies, index=False)
 
 
 class Write_CSV(NodeBase):
@@ -69,8 +74,8 @@ class Write_CSV(NodeBase):
             try:
                 # Use the os.path.join() function to create a full file path
                 file_path = os.path.join( '',filename)
-
-                write_dict_to_csv(data, file_path)
+                file_data = pd.read_csv(filename)
+                append_to_csv(file_path, data)
                 print(f"Data successfully written to '{file_path}'.")
             except PermissionError as e:
                 print(f"Permission denied: {e}")

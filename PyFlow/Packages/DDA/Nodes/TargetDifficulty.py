@@ -8,8 +8,7 @@ class TargetDifficulty(NodeBase):
     def __init__(self, name):
         super(TargetDifficulty, self).__init__(name)
         self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Data.enableOptions(
-            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
         self.Target = self.createOutputPin('Target', 'IntPin')
 
