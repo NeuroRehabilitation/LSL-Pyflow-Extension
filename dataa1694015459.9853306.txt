@@ -1,0 +1,2 @@
+{"Time": 0.03291177749633789, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 0.0, "Output": 2.02, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}
+{"Time": 60.058587312698364, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 0.0, "Output": 2.026666666666667, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}

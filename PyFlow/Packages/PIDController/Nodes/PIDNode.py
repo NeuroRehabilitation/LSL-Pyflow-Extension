@@ -2,7 +2,7 @@ import json
 import os
 
 import numpy as np
-import pandas as pd
+import math
 
 from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
@@ -26,7 +26,7 @@ class PIDController:
 
         error_diff = error - self.last_error
 
-        output = (self.kp * error) + (self.ki * self.error_sum) + (self.kd * (error_diff / time_delta))
+        output = (self.kp * error) + (self.ki * (self.error_sum / time_delta)) + (self.kd * (error_diff / time_delta))
 
         self.last_error = error
 
@@ -35,7 +35,7 @@ class PIDController:
 
 def save_json(file_name, data):
     print(os.getcwd())
-    with open(file_name + ".txt", "a") as outfile:
+    with open("Data/"+file_name + ".txt", "a") as outfile:
         json.dump(data, outfile)
         outfile.write('\n')
 
@@ -71,9 +71,10 @@ class PIDNode(NodeBase):
 
         self.bWorking = None
         self.pid = None
+        self.startTimer = time.time()
         self.start = time.time()
         self.val = 0
-        self.Difficulty = 0
+        self.Difficulty = 0.0
 
     @staticmethod
     def pinTypeHints():
@@ -103,20 +104,22 @@ class PIDNode(NodeBase):
             if time.time() - self.start >= self.Timer.getData():
                 control = self.pid.calculate(self.Setpoint.getData(), self.val, self.Timer.getData())
 
-                self.Difficulty += int(control)
+                self.Difficulty += control
 
                 if self.Difficulty < 1:
                     self.Difficulty = 1
                 if self.Difficulty > 5:
                     self.Difficulty = 5
 
-                info = {"Time": time.time(), "SetPoint": self.Setpoint.getData(), "KP": self.KP.getData(),
+                info = {"Time": time.time()-self.startTimer, "SetPoint": self.Setpoint.getData(), "KP": self.KP.getData(),
                         "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                        "FeedBack": self.FeedBack.getData(), "Output": control}
+                        "FeedBack": self.FeedBack.getData(), "Output": control, "Difficulty": math.ceil(self.Difficulty), "Difficulty2": self.Difficulty, "Difficulty3": round(self.Difficulty)}
+                print("Output = "+str(control))
+                print("Difficulty = "+str(math.ceil(self.Difficulty)))
 
                 self.Info.setData(info)
-                save_json("dataa",info)
-                self.NewDif.setData(self.Difficulty)
+                save_json("Both-data"+str(self.startTimer), info)
+                self.NewDif.setData(int(self.Difficulty))
                 self.val = self.FeedBack.getData()
                 self.Result.setData(self.val)
                 self.start = time.time()
@@ -127,7 +130,7 @@ class PIDNode(NodeBase):
 
     def start(self, *args, **kwargs):
         self.bWorking = True
-
+        self.startTimer = time.time()
         self.Difficulty = self.Dif.getData()
         kp = self.KP.getData()
         ki = self.KI.getData()

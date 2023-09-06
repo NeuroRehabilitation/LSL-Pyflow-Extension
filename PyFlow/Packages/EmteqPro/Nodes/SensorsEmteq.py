@@ -42,15 +42,15 @@ class SensorsEmteq(NodeBase):
         sensor_name = self.Sensor_Name.getData()
         data_r = self.Data.getData()
         if isinstance(data_r, dict):
-            print("is a dict")
+            #print("is a dict")
             data = data_r
 
         if isinstance(data_r, str):
-            print("is a string ")
+            #print("is a string ")
             data = json.loads(data_r)
 
 
 
-        if sensor_name in data["Emteq1"]:
-            self.Send.setData(data["Emteq1"][sensor_name])
-            self.LastValue.setData(data["Emteq1"][sensor_name][-1])
+        if sensor_name in data["Emteq"]:
+            self.Send.setData(data["Emteq"][sensor_name])
+            self.LastValue.setData(data["Emteq"][sensor_name][-1])

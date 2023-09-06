@@ -37,7 +37,7 @@ class TargetDifficulty(NodeBase):
     def compute(self, *args, **kwargs):
 
         data = self.Data.getData()
-        self.set_difficulty(int(statistics.median(data)))
+        #self.set_difficulty(int(statistics.median(data)))
         self.Target.setData(int(statistics.median(data)))
 
     def set_difficulty(self, skill_level):
