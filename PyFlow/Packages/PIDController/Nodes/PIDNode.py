@@ -118,7 +118,7 @@ class PIDNode(NodeBase):
                 print("Difficulty = "+str(math.ceil(self.Difficulty)))
 
                 self.Info.setData(info)
-                save_json("Both-data"+str(self.startTimer), info)
+                save_json("Questiondata"+str(self.startTimer), info)
                 self.NewDif.setData(int(self.Difficulty))
                 self.val = self.FeedBack.getData()
                 self.Result.setData(self.val)
