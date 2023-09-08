@@ -1,0 +1,11 @@
+{"Time": 0.6435437202453613, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 1.0, "Output": 1.53, "Difficulty": 5, "Difficulty2": 4.53, "Difficulty3": 5}
+{"Time": 30.832798957824707, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 3.0, "Output": 1.54, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}
+{"Time": 61.72396731376648, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 3.0, "Output": 0.5399999999999999, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}
+{"Time": 92.06764101982117, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 3.0, "Output": 0.5533333333333333, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}
+{"Time": 122.78692603111267, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": 0.56, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}
+{"Time": 153.2579071521759, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.4533333333333333, "Difficulty": 5, "Difficulty2": 4.546666666666667, "Difficulty3": 5}
+{"Time": 183.84915709495544, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.4533333333333333, "Difficulty": 5, "Difficulty2": 4.093333333333334, "Difficulty3": 4}
+{"Time": 213.93355870246887, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.45999999999999996, "Difficulty": 4, "Difficulty2": 3.6333333333333337, "Difficulty3": 4}
+{"Time": 244.57969045639038, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.4666666666666667, "Difficulty": 4, "Difficulty2": 3.166666666666667, "Difficulty3": 3}
+{"Time": 275.03296971321106, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.47333333333333333, "Difficulty": 3, "Difficulty2": 2.693333333333334, "Difficulty3": 3}
+{"Time": 305.37529134750366, "SetPoint": 4.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 30, "FeedBack": 5.0, "Output": -0.48, "Difficulty": 3, "Difficulty2": 2.213333333333334, "Difficulty3": 2}

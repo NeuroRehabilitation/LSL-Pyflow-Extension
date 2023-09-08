@@ -79,8 +79,6 @@ class SingleStreamGrapher(NodeBase):
 
                 self.Send.setData(self.DataBase)
 
-                self.out.call()
-
             else:
                 self.bWorking = False
 
@@ -167,6 +165,7 @@ class SingleStreamGrapher(NodeBase):
             while self.Graph_queue.get() != 1:
                 self.Graph_queue.put(stream_information)
             self.online = True
+            self.out.call()
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):

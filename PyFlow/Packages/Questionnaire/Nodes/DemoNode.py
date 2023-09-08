@@ -42,6 +42,16 @@ class DemoNode(NodeBase):
         sensor_name = self.Sensor_Name.getData()
         data = self.Data.getData()
 
+
         if sensor_name in data["QuestionsStream"]:
             self.Send.setData(data["QuestionsStream"][sensor_name])
-            self.LastValue.setData(data["QuestionsStream"][sensor_name][-1])
+            try:
+                if len(data["QuestionsStream"][sensor_name]) != 0:
+                    # Value exists, you can work with it here
+                    #print("Value exists:", last_item)
+                    self.LastValue.setData(data["QuestionsStream"][sensor_name][-1])
+                else:
+                    print("Value is None")
+            except KeyError:
+                print("Value does not exist")
+

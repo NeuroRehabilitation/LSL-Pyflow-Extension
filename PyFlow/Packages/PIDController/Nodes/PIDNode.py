@@ -47,6 +47,8 @@ class PIDNode(NodeBase):
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
+        self.Name = self.createInputPin('Name', 'StringPin')
+
         self.KP = self.createInputPin('KP', 'FloatPin')
         self.KI = self.createInputPin('KI', 'FloatPin')
         self.KD = self.createInputPin('KD', 'FloatPin')
@@ -118,17 +120,18 @@ class PIDNode(NodeBase):
                 print("Difficulty = "+str(math.ceil(self.Difficulty)))
 
                 self.Info.setData(info)
-                save_json("Questiondata"+str(self.startTimer), info)
+                save_json(self.Name.getData()+"-"+str(self.startTimer), info)
                 self.NewDif.setData(int(self.Difficulty))
                 self.val = self.FeedBack.getData()
                 self.Result.setData(self.val)
                 self.start = time.time()
-                self.out.call()
+
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
 
     def start(self, *args, **kwargs):
+
         self.bWorking = True
         self.startTimer = time.time()
         self.Difficulty = self.Dif.getData()
@@ -138,4 +141,5 @@ class PIDNode(NodeBase):
 
         self.pid = PIDController(kp, ki, kd)
         self.val = self.FeedBack.getData()
+        self.out.call()
 

@@ -9,15 +9,13 @@ class Skill1(NodeBase):
         self.StreamName = self.createInputPin('StreamName', 'StringPin')
         self.Name = self.createInputPin('Name', 'StringPin')
 
-        self.Max = self.createInputPin('Max', 'IntPin')
-        self.Min = self.createInputPin('Min', 'IntPin')
+        self.SE = self.createInputPin('SuperEasy', 'FloatPin')
+        self.E = self.createInputPin('Easy', 'FloatPin')
+        self.M = self.createInputPin('Medium', 'FloatPin')
+        self.H = self.createInputPin('Hard', 'FloatPin')
+        self.SH = self.createInputPin('SuperHard', 'FloatPin')
 
-        self.Target = self.createInputPin('Target', 'FloatPin')
-
-        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Data.enableOptions(
-            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
-        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
+        self.Target = self.createInputPin('Difficulty', 'FloatPin')
 
         self.Performance = self.createOutputPin('Performance', 'FloatPin')
 
@@ -43,27 +41,20 @@ class Skill1(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        if (self.Data.getData() is not None) and (self.Name.getData() is not None) and (
-                self.Max.getData() is not None) and (self.Min.getData() is not None) and (
-                self.StreamName.getData() is not None) and (
-                self.Target.getData() is not None):
 
-            target = self.Target.getData()
-            data = self.Data.getData()
-            stream = self.StreamName.getData()
-            name = self.Data.getData()
-            max = self.Max.getData()
-            min = self.Min.getData()
+        target = self.Target.getData()
 
-            rawSkill = data[stream][name][-1]
+        if target == 1:
+            self.Performance.setData(self.SE.getData())
 
-            if rawSkill < min:
-                performance = 0
+        elif target == 2:
+            self.Performance.setData(self.E.getData())
 
-            elif rawSkill > max:
-                performance = 1
+        elif target == 3:
+            self.Performance.setData(self.M.getData())
 
-            else:
-                performance = (rawSkill - min) / (max - min)
+        elif target == 4:
+            self.Performance.setData(self.H.getData())
 
-            self.Performance.setData(performance)
+        elif target == 5:
+            self.Performance.setData(self.SH.getData())

@@ -49,10 +49,11 @@ class StreamGrapher(NodeBase):
             self.addDataToDict(self.streamName.getData(),sample)
 
             self.Send.setData(self.DataBase)
+            print("Sample: " + str(sample))
             self.outlet.push_sample(sample)
             # Send the data sample
             if time.time()-self.start>1:
-                #print("number of loops per second:"+str(self.counter))
+
                 self.counter = 0
                 self.start = time.time()
             self.counter = self.counter+1
