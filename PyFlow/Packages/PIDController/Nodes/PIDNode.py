@@ -121,7 +121,7 @@ class PIDNode(NodeBase):
 
                 self.Info.setData(info)
                 save_json(self.Name.getData()+"-"+str(self.startTimer), info)
-                self.NewDif.setData(int(self.Difficulty))
+                self.NewDif.setData(round(self.Difficulty))
                 self.val = self.FeedBack.getData()
                 self.Result.setData(self.val)
                 self.start = time.time()

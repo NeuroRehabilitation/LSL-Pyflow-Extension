@@ -1,6 +1,16 @@
+import json
+import os
+
 from PyFlow.Core import NodeBase
 from PyFlow.Core.NodeBase import NodePinsSuggestionsHelper
 from PyFlow.Core.Common import *
+
+
+def save_json(file_name, data):
+    print(os.getcwd())
+    with open("Data/" + file_name + ".txt", "a") as outfile:
+        json.dump(data, outfile)
+        outfile.write('\n')
 
 
 class Skill1(NodeBase):
@@ -9,13 +19,19 @@ class Skill1(NodeBase):
         self.StreamName = self.createInputPin('StreamName', 'StringPin')
         self.Name = self.createInputPin('Name', 'StringPin')
 
-        self.SE = self.createInputPin('SuperEasy', 'FloatPin')
-        self.E = self.createInputPin('Easy', 'FloatPin')
+        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.Data.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
+
+        self.SB = self.createInputPin('SuperBad', 'FloatPin')
+        self.B = self.createInputPin('Bad', 'FloatPin')
         self.M = self.createInputPin('Medium', 'FloatPin')
-        self.H = self.createInputPin('Hard', 'FloatPin')
-        self.SH = self.createInputPin('SuperHard', 'FloatPin')
+        self.G = self.createInputPin('Good', 'FloatPin')
+        self.SG = self.createInputPin('SuperGood', 'FloatPin')
 
         self.Target = self.createInputPin('Difficulty', 'FloatPin')
+        self.startTimer = time.time()
 
         self.Performance = self.createOutputPin('Performance', 'FloatPin')
 
@@ -42,19 +58,43 @@ class Skill1(NodeBase):
 
     def compute(self, *args, **kwargs):
 
-        target = self.Target.getData()
+        data = self.Data.getData()
+        if len(data) != 0:
+            stream = self.StreamName.getData()
+            name = self.Name.getData()
 
-        if target == 1:
-            self.Performance.setData(self.SE.getData())
+            if len(data[stream]) != 0:
 
-        elif target == 2:
-            self.Performance.setData(self.E.getData())
+                lastvalue = data[stream][name][-1]
+                sb = self.SB.getData()
+                b = self.B.getData()
+                m = self.M.getData()
+                g = self.G.getData()
+                sg = self.SG.getData()
 
-        elif target == 3:
-            self.Performance.setData(self.M.getData())
+                target = self.Target.getData()
 
-        elif target == 4:
-            self.Performance.setData(self.H.getData())
+                if sb >= lastvalue:
+                    target -= 2
 
-        elif target == 5:
-            self.Performance.setData(self.SH.getData())
+                if b >= lastvalue:
+                    target -= 1
+
+                if m >= lastvalue:
+                    print("perfect")
+
+                if g >= lastvalue:
+                    target += 1
+
+                if sg >= lastvalue:
+                    target += 2
+
+                if target > 5:
+                    target = 5
+
+                if target < 1:
+                    target = 1
+                info = {"Skill Name": name, "Skill Value": lastvalue, "Difficulty": self.Target.getData(), "Results": target, "Super Bad": sb, "Bad": b, "Medium": m, "Good": g, "Super Good": sg}
+                save_json(name+"-"+str(self.startTimer), info)
+
+                self.Performance.setData(target)

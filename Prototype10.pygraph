@@ -12,30 +12,6 @@
             "uuid": "db2a6511-2613-4f5f-859a-4428ad748ee7",
             "inputs": [
                 {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "SingleStreamGrapher1_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "907cf054-c171-493f-bfa9-a1f8e1eb0d86",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "Stop",
                     "package": "PyFlowBase",
                     "fullName": "SingleStreamGrapher1_Stop",
@@ -81,6 +57,30 @@
                         "displayName": "Name",
                         "wires": {}
                     }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamGrapher1_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "907cf054-c171-493f-bfa9-a1f8e1eb0d86",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
                 }
             ],
             "outputs": [
@@ -96,10 +96,10 @@
                         {
                             "lhsNodeName": "SingleStreamGrapher1",
                             "outPinId": 1,
-                            "rhsNodeName": "PIDNode",
+                            "rhsNodeName": "SingleStreamGrapher",
                             "inPinId": 1,
                             "lhsNodeUid": "db2a6511-2613-4f5f-859a-4428ad748ee7",
-                            "rhsNodeUid": "4670da75-8e8a-4ac8-9c05-948d8999bddc"
+                            "rhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474"
                         }
                     ],
                     "pinIndex": 1,
@@ -116,10 +116,10 @@
                         "wires": {
                             "1": {
                                 "sourceUUID": "845aa0e1-1b12-4973-8276-98b19e4f75eb",
-                                "destinationUUID": "f4016c8b-b542-456a-8095-4ea380b7ce4a",
+                                "destinationUUID": "3da6c4cf-47bf-4a33-9f42-7eb29b465ab8",
                                 "sourceName": "SingleStreamGrapher1_OUT",
-                                "destinationName": "PIDNode_Begin",
-                                "uuid": "720e0d36-7ecc-429e-a996-2a53fab9edb6",
+                                "destinationName": "SingleStreamGrapher_Begin",
+                                "uuid": "3aaa690c-a601-4871-9776-ddb2205ee2e7",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -171,7 +171,7 @@
                                 "destinationUUID": "c5c47734-6b81-4b83-9bed-7e2ee5cd9426",
                                 "sourceName": "SingleStreamGrapher1_Data",
                                 "destinationName": "DemoNode_InData",
-                                "uuid": "4a222b20-c789-42f2-8eda-ea435ef078b5",
+                                "uuid": "c29aeac3-870a-4240-a8fb-1a7259f1e680",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -223,8 +223,8 @@
                     "output": {}
                 }
             },
-            "x": -952.2958841402764,
-            "y": -401.7990318768217
+            "x": -863.5116713272594,
+            "y": -119.43612555345561
         },
         {
             "package": "PIDController",
@@ -267,11 +267,11 @@
                     "uuid": "f4016c8b-b542-456a-8095-4ea380b7ce4a",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "SingleStreamGrapher1",
+                            "lhsNodeName": "SingleStreamGrapher",
                             "outPinId": 1,
                             "rhsNodeName": "PIDNode",
                             "inPinId": 1,
-                            "lhsNodeUid": "db2a6511-2613-4f5f-859a-4428ad748ee7",
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
                             "rhsNodeUid": "4670da75-8e8a-4ac8-9c05-948d8999bddc"
                         }
                     ],
@@ -289,11 +289,11 @@
                         "displayName": "Begin",
                         "wires": {
                             "1": {
-                                "sourceUUID": "845aa0e1-1b12-4973-8276-98b19e4f75eb",
+                                "sourceUUID": "14a1b758-c212-494a-acd7-a34b433708a2",
                                 "destinationUUID": "f4016c8b-b542-456a-8095-4ea380b7ce4a",
-                                "sourceName": "SingleStreamGrapher1_OUT",
+                                "sourceName": "SingleStreamGrapher_OUT",
                                 "destinationName": "PIDNode_Begin",
-                                "uuid": "720e0d36-7ecc-429e-a996-2a53fab9edb6",
+                                "uuid": "1efc8b52-cbe9-46d9-9f60-5836ed239e3b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -364,7 +364,7 @@
                                 "destinationUUID": "b284d1b9-3aec-447f-9b6e-57e41c7ea230",
                                 "sourceName": "DemoNode_LastValue",
                                 "destinationName": "PIDNode_FeedBack",
-                                "uuid": "8966cb8d-049e-400b-8220-a9c4c8205d0d",
+                                "uuid": "e5654408-87d4-4707-880b-e8d52c508de1",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -544,54 +544,6 @@
                     }
                 },
                 {
-                    "name": "New Difficulty",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_New Difficulty",
-                    "dataType": "IntPin",
-                    "direction": 1,
-                    "value": "2",
-                    "uuid": "633f8a97-336e-44ce-8b7a-73ce1c4367d5",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "PIDNode",
-                            "outPinId": 1,
-                            "rhsNodeName": "makeArray2",
-                            "inPinId": 1,
-                            "lhsNodeUid": "4670da75-8e8a-4ac8-9c05-948d8999bddc",
-                            "rhsNodeUid": "e791ff8e-92d5-404e-9ff1-7ba0172ad824"
-                        }
-                    ],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "New Difficulty",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "633f8a97-336e-44ce-8b7a-73ce1c4367d5",
-                                "destinationUUID": "1745b48e-da59-48ce-8917-45fada1b8526",
-                                "sourceName": "PIDNode_New Difficulty",
-                                "destinationName": "makeArray2_data",
-                                "uuid": "7d40074d-c7b8-429e-9cd0-9ae664f8e962",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
                     "name": "OUT",
                     "package": "PyFlowBase",
                     "fullName": "PIDNode_OUT",
@@ -626,7 +578,55 @@
                                 "destinationUUID": "877ac8ce-9713-4484-9305-732c5cc22514",
                                 "sourceName": "PIDNode_OUT",
                                 "destinationName": "StreamGrapher_Begin",
-                                "uuid": "97753451-7dba-4b97-8607-c041c80b0a20",
+                                "uuid": "cb8f8153-1567-4e3a-b611-ef5ec799b8ed",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "New Difficulty",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_New Difficulty",
+                    "dataType": "IntPin",
+                    "direction": 1,
+                    "value": "1",
+                    "uuid": "633f8a97-336e-44ce-8b7a-73ce1c4367d5",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PIDNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "makeArray2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "4670da75-8e8a-4ac8-9c05-948d8999bddc",
+                            "rhsNodeUid": "e791ff8e-92d5-404e-9ff1-7ba0172ad824"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "New Difficulty",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "633f8a97-336e-44ce-8b7a-73ce1c4367d5",
+                                "destinationUUID": "1745b48e-da59-48ce-8917-45fada1b8526",
+                                "sourceName": "PIDNode_New Difficulty",
+                                "destinationName": "makeArray2_data",
+                                "uuid": "9ed43bc8-8f68-4bd8-9639-9b8a1306de28",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -728,7 +728,7 @@
                                 "destinationUUID": "c5c47734-6b81-4b83-9bed-7e2ee5cd9426",
                                 "sourceName": "SingleStreamGrapher1_Data",
                                 "destinationName": "DemoNode_InData",
-                                "uuid": "4a222b20-c789-42f2-8eda-ea435ef078b5",
+                                "uuid": "c29aeac3-870a-4240-a8fb-1a7259f1e680",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -801,7 +801,7 @@
                                 "destinationUUID": "b284d1b9-3aec-447f-9b6e-57e41c7ea230",
                                 "sourceName": "DemoNode_LastValue",
                                 "destinationName": "PIDNode_FeedBack",
-                                "uuid": "8966cb8d-049e-400b-8220-a9c4c8205d0d",
+                                "uuid": "e5654408-87d4-4707-880b-e8d52c508de1",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -872,7 +872,7 @@
                     "fullName": "TargetDifficulty_Data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "[2]",
+                    "value": "[1]",
                     "uuid": "8f3d5ee3-cf10-4749-bbfb-f0677b204079",
                     "linkedTo": [
                         {
@@ -907,7 +907,7 @@
                                 "destinationUUID": "8f3d5ee3-cf10-4749-bbfb-f0677b204079",
                                 "sourceName": "makeArray2_out",
                                 "destinationName": "TargetDifficulty_Data",
-                                "uuid": "77775ec3-ac0c-4580-a423-05616d9553e1",
+                                "uuid": "4e593a86-e0df-4c31-9cf6-add05f89dfea",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -929,32 +929,32 @@
                     "fullName": "TargetDifficulty_Target",
                     "dataType": "IntPin",
                     "direction": 1,
-                    "value": "2",
+                    "value": "1",
                     "uuid": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
                     "linkedTo": [
                         {
                             "lhsNodeName": "TargetDifficulty",
                             "outPinId": 1,
-                            "rhsNodeName": "Difficulty1",
-                            "inPinId": 2,
+                            "rhsNodeName": "Skill3",
+                            "inPinId": 9,
                             "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
-                            "rhsNodeUid": "7b5c2cad-b0d8-4583-a63c-6c04dbdc2d4f"
+                            "rhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c"
                         },
                         {
                             "lhsNodeName": "TargetDifficulty",
                             "outPinId": 1,
-                            "rhsNodeName": "Difficulty8",
-                            "inPinId": 2,
+                            "rhsNodeName": "Skill1",
+                            "inPinId": 9,
                             "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
-                            "rhsNodeUid": "bb1fa214-6558-4299-943c-f5e866ba75ea"
+                            "rhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea"
                         },
                         {
                             "lhsNodeName": "TargetDifficulty",
                             "outPinId": 1,
-                            "rhsNodeName": "Difficulty9",
-                            "inPinId": 2,
+                            "rhsNodeName": "Skill4",
+                            "inPinId": 9,
                             "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
-                            "rhsNodeUid": "f3e61013-6d9d-48c0-b618-b7cdfa5521e8"
+                            "rhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12"
                         }
                     ],
                     "pinIndex": 1,
@@ -969,12 +969,12 @@
                         "bLabelHidden": false,
                         "displayName": "Target",
                         "wires": {
-                            "2": {
+                            "9": {
                                 "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
-                                "destinationUUID": "80b3b75c-194b-4a75-b97d-62a431c43453",
+                                "destinationUUID": "4327d5c3-8b40-4890-ab32-736a93b657ec",
                                 "sourceName": "TargetDifficulty_Target",
-                                "destinationName": "Difficulty9_Value",
-                                "uuid": "9193eec8-5a01-414a-b401-3697671d3a8d",
+                                "destinationName": "Skill4_Difficulty",
+                                "uuid": "f6856d00-47d9-407b-866b-f85e5b273918",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1053,7 +1053,7 @@
                                 "destinationUUID": "0a6ae602-6af6-4d59-a69f-bd29cf687d33",
                                 "sourceName": "makeArray_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "efeb942a-12ad-40f1-b01a-585ae47bf256",
+                                "uuid": "666665d8-912c-4ee5-bba3-106f23d9a573",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1073,7 +1073,7 @@
                     "fullName": "CreateDict_Data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "[20, 7, 7]",
+                    "value": "[30, 4, 7]",
                     "uuid": "56c7bf98-8162-4bad-9fc1-ba44fa459376",
                     "linkedTo": [
                         {
@@ -1108,7 +1108,7 @@
                                 "destinationUUID": "56c7bf98-8162-4bad-9fc1-ba44fa459376",
                                 "sourceName": "makeArray5_out",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "02d03daa-321d-45e3-bf6d-12b77917ca5c",
+                                "uuid": "e52b93fe-c8b6-415f-ae61-a89eae40765a",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1158,7 +1158,7 @@
                                 "destinationUUID": "e9db2e3e-c8ee-4647-aa45-65e95ff71361",
                                 "sourceName": "StreamGrapher_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "c6501a3f-26d8-4c40-9dcf-1429b0395540",
+                                "uuid": "540ed3ff-4d7f-4c09-b5ff-ad5d9957ea19",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1235,7 +1235,7 @@
                                 "destinationUUID": "0d2dec62-cba9-488a-853e-173f1c5f9adc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "StreamGrapher_Data",
-                                "uuid": "fa3ba393-b296-43ba-9a9d-8d11a7f89ad2",
+                                "uuid": "9a143021-70fb-4a51-833c-0bf33293daeb",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1262,8 +1262,8 @@
                     "output": {}
                 }
             },
-            "x": 236.90431304753994,
-            "y": 302.1818146337034
+            "x": 375.3144496510395,
+            "y": 21.482983524155518
         },
         {
             "package": "LSLController",
@@ -1337,7 +1337,7 @@
                                 "destinationUUID": "0d2dec62-cba9-488a-853e-173f1c5f9adc",
                                 "sourceName": "CreateDict_Data1",
                                 "destinationName": "StreamGrapher_Data",
-                                "uuid": "fa3ba393-b296-43ba-9a9d-8d11a7f89ad2",
+                                "uuid": "9a143021-70fb-4a51-833c-0bf33293daeb",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1409,7 +1409,7 @@
                                 "destinationUUID": "877ac8ce-9713-4484-9305-732c5cc22514",
                                 "sourceName": "PIDNode_OUT",
                                 "destinationName": "StreamGrapher_Begin",
-                                "uuid": "97753451-7dba-4b97-8607-c041c80b0a20",
+                                "uuid": "cb8f8153-1567-4e3a-b611-ef5ec799b8ed",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1506,7 +1506,7 @@
                                 "destinationUUID": "e9db2e3e-c8ee-4647-aa45-65e95ff71361",
                                 "sourceName": "StreamGrapher_OUT",
                                 "destinationName": "CreateDict_inExec",
-                                "uuid": "c6501a3f-26d8-4c40-9dcf-1429b0395540",
+                                "uuid": "540ed3ff-4d7f-4c09-b5ff-ad5d9957ea19",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1585,8 +1585,8 @@
                     "output": {}
                 }
             },
-            "x": 514.5173433647028,
-            "y": 156.07257572180185
+            "x": 540.2833147990207,
+            "y": -328.12297006717444
         },
         {
             "package": "DDA",
@@ -1625,15 +1625,15 @@
                     "fullName": "Difficulty1_Value",
                     "dataType": "IntPin",
                     "direction": 0,
-                    "value": "2",
+                    "value": "3",
                     "uuid": "e68d375b-bbd4-40d1-a2ad-38e218206dab",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "TargetDifficulty",
+                            "lhsNodeName": "Skill1",
                             "outPinId": 1,
                             "rhsNodeName": "Difficulty1",
                             "inPinId": 2,
-                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
+                            "lhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea",
                             "rhsNodeUid": "7b5c2cad-b0d8-4583-a63c-6c04dbdc2d4f"
                         }
                     ],
@@ -1650,11 +1650,11 @@
                         "displayName": "Value",
                         "wires": {
                             "2": {
-                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
+                                "sourceUUID": "7630f904-a8a4-4b36-af73-1c8df8b865c3",
                                 "destinationUUID": "e68d375b-bbd4-40d1-a2ad-38e218206dab",
-                                "sourceName": "TargetDifficulty_Target",
+                                "sourceName": "Skill1_Performance",
                                 "destinationName": "Difficulty1_Value",
-                                "uuid": "fc9a37c3-807e-4463-a845-3202e3446ecb",
+                                "uuid": "14dd385e-3063-427b-8bb8-20e608250a33",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1790,7 +1790,7 @@
                     "fullName": "Difficulty1_Difficulty",
                     "dataType": "IntPin",
                     "direction": 1,
-                    "value": "20",
+                    "value": "30",
                     "uuid": "13fcc937-aa93-42fd-afdd-bf09d4193eab",
                     "linkedTo": [
                         {
@@ -1819,7 +1819,7 @@
                                 "destinationUUID": "570270cc-9d5a-404c-aebd-93fecb86981b",
                                 "sourceName": "Difficulty1_Difficulty",
                                 "destinationName": "makeArray5_data",
-                                "uuid": "f3cbd185-a87b-4bb6-a6e4-6e403e851f31",
+                                "uuid": "fa631626-b03a-445d-9642-776315f456e6",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1867,7 +1867,7 @@
                                 "destinationUUID": "e0f551d6-6da8-4478-8c8e-c72446be5109",
                                 "sourceName": "Difficulty1_Name1",
                                 "destinationName": "makeArray_data",
-                                "uuid": "fbb82d9a-2fa8-446c-82e5-3fc043825e21",
+                                "uuid": "2e3dca93-7dda-47cf-af2c-debc5ca69265",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -1894,8 +1894,8 @@
                     "output": {}
                 }
             },
-            "x": -118.28410453609467,
-            "y": 90.73055685498827
+            "x": -37.04760139425419,
+            "y": -145.04613367754223
         },
         {
             "package": "DDA",
@@ -1934,7 +1934,7 @@
                     "fullName": "Difficulty8_SuperEasy",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "9.0",
+                    "value": "7.0",
                     "uuid": "e9d9f55f-ed37-4321-9f79-677d095427dc",
                     "linkedTo": [],
                     "pinIndex": 3,
@@ -2003,7 +2003,7 @@
                     "fullName": "Difficulty8_Easy",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "7.0",
+                    "value": "5.0",
                     "uuid": "1841e121-abdf-457d-b125-a2fb588eb6d1",
                     "linkedTo": [],
                     "pinIndex": 4,
@@ -2026,15 +2026,15 @@
                     "fullName": "Difficulty8_Value",
                     "dataType": "IntPin",
                     "direction": 0,
-                    "value": "2",
+                    "value": "3",
                     "uuid": "121d3934-b367-4e3b-8b8e-1ff6e2e7cb93",
                     "linkedTo": [
                         {
-                            "lhsNodeName": "TargetDifficulty",
+                            "lhsNodeName": "Skill3",
                             "outPinId": 1,
                             "rhsNodeName": "Difficulty8",
                             "inPinId": 2,
-                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
+                            "lhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c",
                             "rhsNodeUid": "bb1fa214-6558-4299-943c-f5e866ba75ea"
                         }
                     ],
@@ -2051,11 +2051,11 @@
                         "displayName": "Value",
                         "wires": {
                             "2": {
-                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
+                                "sourceUUID": "bb73400b-672d-4bca-ba45-38b12bdf341b",
                                 "destinationUUID": "121d3934-b367-4e3b-8b8e-1ff6e2e7cb93",
-                                "sourceName": "TargetDifficulty_Target",
+                                "sourceName": "Skill3_Performance",
                                 "destinationName": "Difficulty8_Value",
-                                "uuid": "85b97ba8-4cef-4fc3-a43a-4bc33bd73181",
+                                "uuid": "00b9d7a8-8ba2-4db2-98e6-15e1825718ca",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2074,7 +2074,7 @@
                     "fullName": "Difficulty8_Medium",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "5.0",
+                    "value": "4.0",
                     "uuid": "ae46af58-9442-41a8-b2b7-efddea5558dd",
                     "linkedTo": [],
                     "pinIndex": 5,
@@ -2128,7 +2128,7 @@
                                 "destinationUUID": "e0f551d6-6da8-4478-8c8e-c72446be5109",
                                 "sourceName": "Difficulty8_Name1",
                                 "destinationName": "makeArray_data",
-                                "uuid": "48e60a6d-dc1c-4bfa-be64-d3541d2cf715",
+                                "uuid": "3e0e3996-6ef5-486c-a3df-234d66839959",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2147,7 +2147,7 @@
                     "fullName": "Difficulty8_Difficulty",
                     "dataType": "IntPin",
                     "direction": 1,
-                    "value": "7",
+                    "value": "4",
                     "uuid": "2cafecee-5c16-468a-b04c-0c2dcfe109f6",
                     "linkedTo": [
                         {
@@ -2176,7 +2176,7 @@
                                 "destinationUUID": "570270cc-9d5a-404c-aebd-93fecb86981b",
                                 "sourceName": "Difficulty8_Difficulty",
                                 "destinationName": "makeArray5_data",
-                                "uuid": "b080fe40-0bce-4b6a-b1db-14b28030b2d6",
+                                "uuid": "d913d074-8eb9-424d-8034-394144afc4da",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2203,8 +2203,8 @@
                     "output": {}
                 }
             },
-            "x": -125.48801271468206,
-            "y": 255.6623468289513
+            "x": -40.16767861129454,
+            "y": 55.27885796316186
         },
         {
             "package": "DDA",
@@ -2266,9 +2266,18 @@
                     "fullName": "Difficulty9_SuperEasy",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "9.0",
+                    "value": "3.0",
                     "uuid": "59b4e837-18dd-463a-9ce1-f2dd4a35de47",
-                    "linkedTo": [],
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "Skill4",
+                            "outPinId": 1,
+                            "rhsNodeName": "Difficulty9",
+                            "inPinId": 3,
+                            "lhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12",
+                            "rhsNodeUid": "f3e61013-6d9d-48c0-b618-b7cdfa5521e8"
+                        }
+                    ],
                     "pinIndex": 3,
                     "options": [
                         256
@@ -2280,7 +2289,23 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "SuperEasy",
-                        "wires": {}
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "e862de2f-9519-46bf-944a-423438346a04",
+                                "destinationUUID": "59b4e837-18dd-463a-9ce1-f2dd4a35de47",
+                                "sourceName": "Skill4_Performance",
+                                "destinationName": "Difficulty9_SuperEasy",
+                                "uuid": "cbe57163-1f4a-4048-be15-f257223a7d81",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 },
                 {
@@ -2337,16 +2362,7 @@
                     "direction": 0,
                     "value": "2",
                     "uuid": "80b3b75c-194b-4a75-b97d-62a431c43453",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "TargetDifficulty",
-                            "outPinId": 1,
-                            "rhsNodeName": "Difficulty9",
-                            "inPinId": 2,
-                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
-                            "rhsNodeUid": "f3e61013-6d9d-48c0-b618-b7cdfa5521e8"
-                        }
-                    ],
+                    "linkedTo": [],
                     "pinIndex": 2,
                     "options": [
                         256
@@ -2358,23 +2374,7 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "Value",
-                        "wires": {
-                            "2": {
-                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
-                                "destinationUUID": "80b3b75c-194b-4a75-b97d-62a431c43453",
-                                "sourceName": "TargetDifficulty_Target",
-                                "destinationName": "Difficulty9_Value",
-                                "uuid": "9193eec8-5a01-414a-b401-3697671d3a8d",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
+                        "wires": {}
                     }
                 },
                 {
@@ -2437,7 +2437,7 @@
                                 "destinationUUID": "e0f551d6-6da8-4478-8c8e-c72446be5109",
                                 "sourceName": "Difficulty9_Name1",
                                 "destinationName": "makeArray_data",
-                                "uuid": "b1b64cf1-2a3c-4355-b766-97a91d4d1a91",
+                                "uuid": "1269ffac-2320-4a9b-a5a1-082f877893eb",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2485,7 +2485,7 @@
                                 "destinationUUID": "570270cc-9d5a-404c-aebd-93fecb86981b",
                                 "sourceName": "Difficulty9_Difficulty",
                                 "destinationName": "makeArray5_data",
-                                "uuid": "89fbaf65-fb5e-4bda-ac38-0cc937955f13",
+                                "uuid": "20978150-8164-46cf-bf00-7aeb4282aa9e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2512,8 +2512,8 @@
                     "output": {}
                 }
             },
-            "x": -119.92956208332663,
-            "y": 418.861518268825
+            "x": -41.41561291585081,
+            "y": 240.25846119795298
         },
         {
             "package": "PyFlowBase",
@@ -2575,7 +2575,7 @@
                     "fullName": "makeArray_data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "[\"lifeSpawnRate\"]",
+                    "value": "[\"ballSpeed\", \"ballSpawnRate\", \"lifeSpawnRate\"]",
                     "uuid": "e0f551d6-6da8-4478-8c8e-c72446be5109",
                     "linkedTo": [
                         {
@@ -2622,7 +2622,7 @@
                                 "destinationUUID": "e0f551d6-6da8-4478-8c8e-c72446be5109",
                                 "sourceName": "Difficulty9_Name1",
                                 "destinationName": "makeArray_data",
-                                "uuid": "b1b64cf1-2a3c-4355-b766-97a91d4d1a91",
+                                "uuid": "1269ffac-2320-4a9b-a5a1-082f877893eb",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2698,7 +2698,7 @@
                                 "destinationUUID": "0a6ae602-6af6-4d59-a69f-bd29cf687d33",
                                 "sourceName": "makeArray_out",
                                 "destinationName": "CreateDict_Keys",
-                                "uuid": "efeb942a-12ad-40f1-b01a-585ae47bf256",
+                                "uuid": "666665d8-912c-4ee5-bba3-106f23d9a573",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2726,8 +2726,8 @@
                     "output": {}
                 }
             },
-            "x": 103.12794753980724,
-            "y": 322.32559405898064
+            "x": 207.50615946374722,
+            "y": -3.2953776275847133
         },
         {
             "package": "PyFlowBase",
@@ -2789,7 +2789,7 @@
                     "fullName": "makeArray5_data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "[7]",
+                    "value": "[30, 4, 7]",
                     "uuid": "570270cc-9d5a-404c-aebd-93fecb86981b",
                     "linkedTo": [
                         {
@@ -2836,7 +2836,7 @@
                                 "destinationUUID": "570270cc-9d5a-404c-aebd-93fecb86981b",
                                 "sourceName": "Difficulty9_Difficulty",
                                 "destinationName": "makeArray5_data",
-                                "uuid": "89fbaf65-fb5e-4bda-ac38-0cc937955f13",
+                                "uuid": "20978150-8164-46cf-bf00-7aeb4282aa9e",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2858,7 +2858,7 @@
                     "fullName": "makeArray5_out",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "[20, 7, 7]",
+                    "value": "[30, 4, 7]",
                     "uuid": "e2b49d3e-c24e-4d24-ae17-154d1f533a5d",
                     "linkedTo": [
                         {
@@ -2889,7 +2889,7 @@
                                 "destinationUUID": "56c7bf98-8162-4bad-9fc1-ba44fa459376",
                                 "sourceName": "makeArray5_out",
                                 "destinationName": "CreateDict_Data",
-                                "uuid": "02d03daa-321d-45e3-bf6d-12b77917ca5c",
+                                "uuid": "e52b93fe-c8b6-415f-ae61-a89eae40765a",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -2940,8 +2940,8 @@
                     "output": {}
                 }
             },
-            "x": 80.25353913362903,
-            "y": 424.8079256248614
+            "x": 210.4960138140338,
+            "y": 100.54823092547828
         },
         {
             "package": "PyFlowBase",
@@ -2957,7 +2957,7 @@
                     "fullName": "makeArray2_data",
                     "dataType": "AnyPin",
                     "direction": 0,
-                    "value": "[2]",
+                    "value": "[1]",
                     "uuid": "1745b48e-da59-48ce-8917-45fada1b8526",
                     "linkedTo": [
                         {
@@ -2988,7 +2988,7 @@
                                 "destinationUUID": "1745b48e-da59-48ce-8917-45fada1b8526",
                                 "sourceName": "PIDNode_New Difficulty",
                                 "destinationName": "makeArray2_data",
-                                "uuid": "7d40074d-c7b8-429e-9cd0-9ae664f8e962",
+                                "uuid": "9ed43bc8-8f68-4bd8-9639-9b8a1306de28",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3079,7 +3079,7 @@
                     "fullName": "makeArray2_out",
                     "dataType": "AnyPin",
                     "direction": 1,
-                    "value": "[2]",
+                    "value": "[1]",
                     "uuid": "6f3477c2-5cf5-4505-be2a-4c0083f09521",
                     "linkedTo": [
                         {
@@ -3110,7 +3110,7 @@
                                 "destinationUUID": "8f3d5ee3-cf10-4749-bbfb-f0677b204079",
                                 "sourceName": "makeArray2_out",
                                 "destinationName": "TargetDifficulty_Data",
-                                "uuid": "77775ec3-ac0c-4580-a423-05616d9553e1",
+                                "uuid": "4e593a86-e0df-4c31-9cf6-add05f89dfea",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -3150,53 +3150,6 @@
             "uuid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
             "inputs": [
                 {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "SingleStreamGrapher_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "3da6c4cf-47bf-4a33-9f42-7eb29b465ab8",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "SingleStreamGrapher_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"\"",
-                    "uuid": "5d6e4bcd-aae5-4cb4-92d7-ff1f1814df42",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "Stop",
                     "package": "PyFlowBase",
                     "fullName": "SingleStreamGrapher_Stop",
@@ -3219,19 +3172,17 @@
                         "displayName": "Stop",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "OUT",
+                    "name": "Name",
                     "package": "PyFlowBase",
-                    "fullName": "SingleStreamGrapher_OUT",
-                    "dataType": "ExecPin",
-                    "direction": 1,
-                    "value": "null",
-                    "uuid": "14a1b758-c212-494a-acd7-a34b433708a2",
+                    "fullName": "SingleStreamGrapher_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream\"",
+                    "uuid": "5d6e4bcd-aae5-4cb4-92d7-ff1f1814df42",
                     "linkedTo": [],
-                    "pinIndex": 1,
+                    "pinIndex": 3,
                     "options": [
                         256
                     ],
@@ -3241,8 +3192,127 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "OUT",
+                        "displayName": "Name",
                         "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamGrapher_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "3da6c4cf-47bf-4a33-9f42-7eb29b465ab8",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher1",
+                            "outPinId": 1,
+                            "rhsNodeName": "SingleStreamGrapher",
+                            "inPinId": 1,
+                            "lhsNodeUid": "db2a6511-2613-4f5f-859a-4428ad748ee7",
+                            "rhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "845aa0e1-1b12-4973-8276-98b19e4f75eb",
+                                "destinationUUID": "3da6c4cf-47bf-4a33-9f42-7eb29b465ab8",
+                                "sourceName": "SingleStreamGrapher1_OUT",
+                                "destinationName": "SingleStreamGrapher_Begin",
+                                "uuid": "3aaa690c-a601-4871-9776-ddb2205ee2e7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamGrapher_Data",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "9af0aa7a-8d56-4911-9071-a78def161454",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill4",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12"
+                        },
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill1",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea"
+                        },
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill3",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "9af0aa7a-8d56-4911-9071-a78def161454",
+                                "destinationUUID": "191401dd-7bb6-455a-873f-fbe3392e6097",
+                                "sourceName": "SingleStreamGrapher_Data",
+                                "destinationName": "Skill3_Data",
+                                "uuid": "fe53c9ba-25a9-439f-8c8e-b230c6d7b69c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 },
                 {
@@ -3271,29 +3341,51 @@
                     }
                 },
                 {
-                    "name": "Data",
+                    "name": "OUT",
                     "package": "PyFlowBase",
-                    "fullName": "SingleStreamGrapher_Data",
-                    "dataType": "AnyPin",
+                    "fullName": "SingleStreamGrapher_OUT",
+                    "dataType": "ExecPin",
                     "direction": 1,
-                    "value": null,
-                    "uuid": "9af0aa7a-8d56-4911-9071-a78def161454",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        1,
-                        16,
-                        256,
-                        512
+                    "value": "null",
+                    "uuid": "14a1b758-c212-494a-acd7-a34b433708a2",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 1,
+                            "rhsNodeName": "PIDNode",
+                            "inPinId": 1,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "4670da75-8e8a-4ac8-9c05-948d8999bddc"
+                        }
                     ],
-                    "structure": 3,
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
                     "alwaysList": false,
                     "alwaysSingle": false,
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {}
+                        "displayName": "OUT",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "14a1b758-c212-494a-acd7-a34b433708a2",
+                                "destinationUUID": "f4016c8b-b542-456a-8095-4ea380b7ce4a",
+                                "sourceName": "SingleStreamGrapher_OUT",
+                                "destinationName": "PIDNode_Begin",
+                                "uuid": "1efc8b52-cbe9-46d9-9f60-5836ed239e3b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 }
             ],
@@ -3310,8 +3402,8 @@
                     "output": {}
                 }
             },
-            "x": -747.0267071382103,
-            "y": -470.0716471825596
+            "x": -791.948847715228,
+            "y": 81.3180843595446
         },
         {
             "package": "DDA",
@@ -3322,132 +3414,12 @@
             "uuid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea",
             "inputs": [
                 {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "ff6d6c64-d88f-4ff1-916a-eb57efde5002",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        1,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Difficulty",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Difficulty",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "c4c211b1-e913-4c5d-9fbd-c80c48a77b95",
-                    "linkedTo": [],
-                    "pinIndex": 9,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Difficulty",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Bad",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Bad",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "8a0acf1c-55b6-4c39-bbeb-790905e3b279",
-                    "linkedTo": [],
-                    "pinIndex": 5,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Bad",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Medium",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Medium",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "059964e6-4ca1-4e76-8674-cb853aa1c50d",
-                    "linkedTo": [],
-                    "pinIndex": 6,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Medium",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Good",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill1_Good",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "e2c547f7-b453-44d8-af90-8a8a4f1b0e12",
-                    "linkedTo": [],
-                    "pinIndex": 7,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Good",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "StreamName",
                     "package": "PyFlowBase",
                     "fullName": "Skill1_StreamName",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"\"",
+                    "value": "\"Stream\"",
                     "uuid": "57743b1e-556a-4dca-81af-fc9ec8bb284f",
                     "linkedTo": [],
                     "pinIndex": 1,
@@ -3465,15 +3437,15 @@
                     }
                 },
                 {
-                    "name": "SuperGood",
+                    "name": "Medium",
                     "package": "PyFlowBase",
-                    "fullName": "Skill1_SuperGood",
+                    "fullName": "Skill1_Medium",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
-                    "uuid": "5a020ee5-9a1a-43a1-85cd-90185c0c4d52",
+                    "value": "1.2",
+                    "uuid": "059964e6-4ca1-4e76-8674-cb853aa1c50d",
                     "linkedTo": [],
-                    "pinIndex": 8,
+                    "pinIndex": 6,
                     "options": [
                         256
                     ],
@@ -3483,8 +3455,79 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "SuperGood",
+                        "displayName": "Medium",
                         "wires": {}
+                    }
+                },
+                {
+                    "name": "Bad",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Bad",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "1.5",
+                    "uuid": "8a0acf1c-55b6-4c39-bbeb-790905e3b279",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Bad",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Difficulty",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Difficulty",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "1.0",
+                    "uuid": "c4c211b1-e913-4c5d-9fbd-c80c48a77b95",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "TargetDifficulty",
+                            "outPinId": 1,
+                            "rhsNodeName": "Skill1",
+                            "inPinId": 9,
+                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
+                            "rhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea"
+                        }
+                    ],
+                    "pinIndex": 9,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Difficulty",
+                        "wires": {
+                            "9": {
+                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
+                                "destinationUUID": "c4c211b1-e913-4c5d-9fbd-c80c48a77b95",
+                                "sourceName": "TargetDifficulty_Target",
+                                "destinationName": "Skill1_Difficulty",
+                                "uuid": "1f5c782a-3237-490c-8498-33fa3a3990f4",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 },
                 {
@@ -3493,7 +3536,7 @@
                     "fullName": "Skill1_Name",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"\"",
+                    "value": "\"ReactTime\"",
                     "uuid": "338a160b-8257-4e2b-aa71-acd999caadd5",
                     "linkedTo": [],
                     "pinIndex": 2,
@@ -3507,6 +3550,29 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Good",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Good",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "1.0",
+                    "uuid": "e2c547f7-b453-44d8-af90-8a8a4f1b0e12",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Good",
                         "wires": {}
                     }
                 },
@@ -3532,6 +3598,83 @@
                         "displayName": "SuperBad",
                         "wires": {}
                     }
+                },
+                {
+                    "name": "SuperGood",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_SuperGood",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.8",
+                    "uuid": "5a020ee5-9a1a-43a1-85cd-90185c0c4d52",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "SuperGood",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill1_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "ff6d6c64-d88f-4ff1-916a-eb57efde5002",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill1",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        1,
+                        2,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "9af0aa7a-8d56-4911-9071-a78def161454",
+                                "destinationUUID": "ff6d6c64-d88f-4ff1-916a-eb57efde5002",
+                                "sourceName": "SingleStreamGrapher_Data",
+                                "destinationName": "Skill1_Data",
+                                "uuid": "f0dbc500-e2e8-4d92-bed3-b560597df3bc",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
                 }
             ],
             "outputs": [
@@ -3541,9 +3684,18 @@
                     "fullName": "Skill1_Performance",
                     "dataType": "FloatPin",
                     "direction": 1,
-                    "value": "0.0",
+                    "value": "3.0",
                     "uuid": "7630f904-a8a4-4b36-af73-1c8df8b865c3",
-                    "linkedTo": [],
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "Skill1",
+                            "outPinId": 1,
+                            "rhsNodeName": "Difficulty1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "7c490eaf-4bc6-470b-8c6b-c78c65674fea",
+                            "rhsNodeUid": "7b5c2cad-b0d8-4583-a63c-6c04dbdc2d4f"
+                        }
+                    ],
                     "pinIndex": 1,
                     "options": [
                         256
@@ -3555,7 +3707,23 @@
                     "wrapper": {
                         "bLabelHidden": false,
                         "displayName": "Performance",
-                        "wires": {}
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "7630f904-a8a4-4b36-af73-1c8df8b865c3",
+                                "destinationUUID": "e68d375b-bbd4-40d1-a2ad-38e218206dab",
+                                "sourceName": "Skill1_Performance",
+                                "destinationName": "Difficulty1_Value",
+                                "uuid": "14dd385e-3063-427b-8bb8-20e608250a33",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 }
             ],
@@ -3572,8 +3740,8 @@
                     "output": {}
                 }
             },
-            "x": -480.0899056275042,
-            "y": -5.908840003880432
+            "x": -291.3125204982578,
+            "y": -127.33826361309373
         },
         {
             "package": "DDA",
@@ -3584,178 +3752,12 @@
             "uuid": "5e1098e9-e654-4675-b79a-595ab3b3a95c",
             "inputs": [
                 {
-                    "name": "Bad",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Bad",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "348c8132-faf9-4838-9013-d9c327332318",
-                    "linkedTo": [],
-                    "pinIndex": 5,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Bad",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Good",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Good",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "17403e50-ef3d-4a60-b205-7baa0a5e11eb",
-                    "linkedTo": [],
-                    "pinIndex": 7,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Good",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Medium",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Medium",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "73961d46-f8ab-4c41-977d-2f522ba4728f",
-                    "linkedTo": [],
-                    "pinIndex": 6,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Medium",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Difficulty",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Difficulty",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "77488bcb-eb1b-4e34-b140-945d0a09adc6",
-                    "linkedTo": [],
-                    "pinIndex": 9,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Difficulty",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "191401dd-7bb6-455a-873f-fbe3392e6097",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        1,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "StreamName",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_StreamName",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"\"",
-                    "uuid": "3c218ced-20d8-4db5-9aee-c8d3f12db477",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "StreamName",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill3_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"\"",
-                    "uuid": "2b08f855-b1ba-4997-80fb-6fb8971aa375",
-                    "linkedTo": [],
-                    "pinIndex": 2,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "SuperBad",
                     "package": "PyFlowBase",
                     "fullName": "Skill3_SuperBad",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
+                    "value": "100.0",
                     "uuid": "c1ade659-2b47-4a7f-b8b1-57db4897b926",
                     "linkedTo": [],
                     "pinIndex": 4,
@@ -3778,7 +3780,7 @@
                     "fullName": "Skill3_SuperGood",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
+                    "value": "300.0",
                     "uuid": "52ba3172-e6b0-47d5-ab39-89a6a2ba22b6",
                     "linkedTo": [],
                     "pinIndex": 8,
@@ -3794,17 +3796,38 @@
                         "displayName": "SuperGood",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "Performance",
+                    "name": "Bad",
                     "package": "PyFlowBase",
-                    "fullName": "Skill3_Performance",
+                    "fullName": "Skill3_Bad",
                     "dataType": "FloatPin",
-                    "direction": 1,
-                    "value": "0.0",
-                    "uuid": "bb73400b-672d-4bca-ba45-38b12bdf341b",
+                    "direction": 0,
+                    "value": "150.0",
+                    "uuid": "348c8132-faf9-4838-9013-d9c327332318",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Bad",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "StreamName",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_StreamName",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream\"",
+                    "uuid": "3c218ced-20d8-4db5-9aee-c8d3f12db477",
                     "linkedTo": [],
                     "pinIndex": 1,
                     "options": [
@@ -3816,8 +3839,229 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Performance",
+                        "displayName": "StreamName",
                         "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "191401dd-7bb6-455a-873f-fbe3392e6097",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill3",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        1,
+                        2,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "9af0aa7a-8d56-4911-9071-a78def161454",
+                                "destinationUUID": "191401dd-7bb6-455a-873f-fbe3392e6097",
+                                "sourceName": "SingleStreamGrapher_Data",
+                                "destinationName": "Skill3_Data",
+                                "uuid": "fe53c9ba-25a9-439f-8c8e-b230c6d7b69c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Medium",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Medium",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "200.0",
+                    "uuid": "73961d46-f8ab-4c41-977d-2f522ba4728f",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Medium",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Difficulty",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Difficulty",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "1.0",
+                    "uuid": "77488bcb-eb1b-4e34-b140-945d0a09adc6",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "TargetDifficulty",
+                            "outPinId": 1,
+                            "rhsNodeName": "Skill3",
+                            "inPinId": 9,
+                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
+                            "rhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c"
+                        }
+                    ],
+                    "pinIndex": 9,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Difficulty",
+                        "wires": {
+                            "9": {
+                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
+                                "destinationUUID": "77488bcb-eb1b-4e34-b140-945d0a09adc6",
+                                "sourceName": "TargetDifficulty_Target",
+                                "destinationName": "Skill3_Difficulty",
+                                "uuid": "74cb4ddf-c56a-42a1-80ee-23cec6963b49",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ScorePsecond\"",
+                    "uuid": "2b08f855-b1ba-4997-80fb-6fb8971aa375",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Good",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Good",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "250.0",
+                    "uuid": "17403e50-ef3d-4a60-b205-7baa0a5e11eb",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Good",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Performance",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill3_Performance",
+                    "dataType": "FloatPin",
+                    "direction": 1,
+                    "value": "3.0",
+                    "uuid": "bb73400b-672d-4bca-ba45-38b12bdf341b",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "Skill3",
+                            "outPinId": 1,
+                            "rhsNodeName": "Difficulty8",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5e1098e9-e654-4675-b79a-595ab3b3a95c",
+                            "rhsNodeUid": "bb1fa214-6558-4299-943c-f5e866ba75ea"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Performance",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "bb73400b-672d-4bca-ba45-38b12bdf341b",
+                                "destinationUUID": "121d3934-b367-4e3b-8b8e-1ff6e2e7cb93",
+                                "sourceName": "Skill3_Performance",
+                                "destinationName": "Difficulty8_Value",
+                                "uuid": "00b9d7a8-8ba2-4db2-98e6-15e1825718ca",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 }
             ],
@@ -3834,8 +4078,8 @@
                     "output": {}
                 }
             },
-            "x": -484.5227604462756,
-            "y": 199.48009993251276
+            "x": -287.5777133939349,
+            "y": 72.60556837456998
         },
         {
             "package": "DDA",
@@ -3846,35 +4090,12 @@
             "uuid": "19e4b428-c8db-4bc7-8af7-d08439010a12",
             "inputs": [
                 {
-                    "name": "SuperBad",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_SuperBad",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "bf533114-d136-4d66-bb94-ac2e86ee9d9f",
-                    "linkedTo": [],
-                    "pinIndex": 4,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "SuperBad",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "Good",
                     "package": "PyFlowBase",
                     "fullName": "Skill4_Good",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
+                    "value": "2.5",
                     "uuid": "042f9c59-c0b2-4789-b915-8ecb7d9bb36b",
                     "linkedTo": [],
                     "pinIndex": 7,
@@ -3892,35 +4113,12 @@
                     }
                 },
                 {
-                    "name": "Difficulty",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_Difficulty",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.0",
-                    "uuid": "4327d5c3-8b40-4890-ab32-736a93b657ec",
-                    "linkedTo": [],
-                    "pinIndex": 9,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Difficulty",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "Name",
                     "package": "PyFlowBase",
                     "fullName": "Skill4_Name",
                     "dataType": "StringPin",
                     "direction": 0,
-                    "value": "\"\"",
+                    "value": "\"LifePsecond\"",
                     "uuid": "1a5e54ec-4ff1-415b-8ca7-14237568d01b",
                     "linkedTo": [],
                     "pinIndex": 2,
@@ -3938,15 +4136,15 @@
                     }
                 },
                 {
-                    "name": "Medium",
+                    "name": "SuperBad",
                     "package": "PyFlowBase",
-                    "fullName": "Skill4_Medium",
+                    "fullName": "Skill4_SuperBad",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
-                    "uuid": "adeecc4f-020a-4a9b-a8a5-a4a701fb854a",
+                    "value": "1.0",
+                    "uuid": "bf533114-d136-4d66-bb94-ac2e86ee9d9f",
                     "linkedTo": [],
-                    "pinIndex": 6,
+                    "pinIndex": 4,
                     "options": [
                         256
                     ],
@@ -3956,58 +4154,7 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Medium",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "c450cf19-64dd-4e6d-8748-9bf35dc6787a",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        1,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "StreamName",
-                    "package": "PyFlowBase",
-                    "fullName": "Skill4_StreamName",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"\"",
-                    "uuid": "3545b2e8-02a6-475f-8021-f40be1beb11f",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "StreamName",
+                        "displayName": "SuperBad",
                         "wires": {}
                     }
                 },
@@ -4017,7 +4164,7 @@
                     "fullName": "Skill4_SuperGood",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
+                    "value": "3.0",
                     "uuid": "8b3a81b3-2e8f-46c3-b2a5-b1ad731fa901",
                     "linkedTo": [],
                     "pinIndex": 8,
@@ -4040,7 +4187,7 @@
                     "fullName": "Skill4_Bad",
                     "dataType": "FloatPin",
                     "direction": 0,
-                    "value": "0.0",
+                    "value": "1.5",
                     "uuid": "17b3d5c9-17e2-4239-971a-43f6f2648f74",
                     "linkedTo": [],
                     "pinIndex": 5,
@@ -4056,17 +4203,69 @@
                         "displayName": "Bad",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "Performance",
+                    "name": "Data",
                     "package": "PyFlowBase",
-                    "fullName": "Skill4_Performance",
-                    "dataType": "FloatPin",
-                    "direction": 1,
-                    "value": "0.0",
-                    "uuid": "e862de2f-9519-46bf-944a-423438346a04",
+                    "fullName": "Skill4_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "c450cf19-64dd-4e6d-8748-9bf35dc6787a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamGrapher",
+                            "outPinId": 2,
+                            "rhsNodeName": "Skill4",
+                            "inPinId": 3,
+                            "lhsNodeUid": "bf9aef5a-e202-4b2a-a662-042eb5e72474",
+                            "rhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        1,
+                        2,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "9af0aa7a-8d56-4911-9071-a78def161454",
+                                "destinationUUID": "c450cf19-64dd-4e6d-8748-9bf35dc6787a",
+                                "sourceName": "SingleStreamGrapher_Data",
+                                "destinationName": "Skill4_Data",
+                                "uuid": "3455ff7d-c84f-40c3-a779-354ea5c39490",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "StreamName",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill4_StreamName",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream\"",
+                    "uuid": "3545b2e8-02a6-475f-8021-f40be1beb11f",
                     "linkedTo": [],
                     "pinIndex": 1,
                     "options": [
@@ -4078,8 +4277,129 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Performance",
+                        "displayName": "StreamName",
                         "wires": {}
+                    }
+                },
+                {
+                    "name": "Medium",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill4_Medium",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "2.0",
+                    "uuid": "adeecc4f-020a-4a9b-a8a5-a4a701fb854a",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Medium",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Difficulty",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill4_Difficulty",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "1.0",
+                    "uuid": "4327d5c3-8b40-4890-ab32-736a93b657ec",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "TargetDifficulty",
+                            "outPinId": 1,
+                            "rhsNodeName": "Skill4",
+                            "inPinId": 9,
+                            "lhsNodeUid": "9e2be282-a524-4057-839f-cc2d6ec750f3",
+                            "rhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12"
+                        }
+                    ],
+                    "pinIndex": 9,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Difficulty",
+                        "wires": {
+                            "9": {
+                                "sourceUUID": "8e04fba3-49e4-48d7-8ddc-8d408c451c63",
+                                "destinationUUID": "4327d5c3-8b40-4890-ab32-736a93b657ec",
+                                "sourceName": "TargetDifficulty_Target",
+                                "destinationName": "Skill4_Difficulty",
+                                "uuid": "f6856d00-47d9-407b-866b-f85e5b273918",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Performance",
+                    "package": "PyFlowBase",
+                    "fullName": "Skill4_Performance",
+                    "dataType": "FloatPin",
+                    "direction": 1,
+                    "value": "3.0",
+                    "uuid": "e862de2f-9519-46bf-944a-423438346a04",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "Skill4",
+                            "outPinId": 1,
+                            "rhsNodeName": "Difficulty9",
+                            "inPinId": 3,
+                            "lhsNodeUid": "19e4b428-c8db-4bc7-8af7-d08439010a12",
+                            "rhsNodeUid": "f3e61013-6d9d-48c0-b618-b7cdfa5521e8"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Performance",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "e862de2f-9519-46bf-944a-423438346a04",
+                                "destinationUUID": "59b4e837-18dd-463a-9ce1-f2dd4a35de47",
+                                "sourceName": "Skill4_Performance",
+                                "destinationName": "Difficulty9_SuperEasy",
+                                "uuid": "cbe57163-1f4a-4048-be15-f257223a7d81",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
                     }
                 }
             ],
@@ -4096,8 +4416,8 @@
                     "output": {}
                 }
             },
-            "x": -478.8910576597256,
-            "y": 403.4985180727152
+            "x": -291.5618395381198,
+            "y": 275.34959954804845
         }
     ],
     "depth": 1,
