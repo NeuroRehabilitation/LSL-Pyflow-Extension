@@ -81,7 +81,7 @@ class Skill1(NodeBase):
                     target -= 1
 
                 if m >= lastvalue:
-                    print("perfect")
+                    print()
 
                 if g >= lastvalue:
                     target += 1

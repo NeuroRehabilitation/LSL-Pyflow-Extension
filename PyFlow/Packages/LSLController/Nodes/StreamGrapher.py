@@ -49,7 +49,7 @@ class StreamGrapher(NodeBase):
             self.addDataToDict(self.streamName.getData(),sample)
 
             self.Send.setData(self.DataBase)
-            print("Sample: " + str(sample))
+
             self.outlet.push_sample(sample)
             # Send the data sample
             if time.time()-self.start>1:

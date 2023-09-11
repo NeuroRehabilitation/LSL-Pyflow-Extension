@@ -117,7 +117,6 @@ class PIDNode(NodeBase):
                         "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
                         "FeedBack": self.FeedBack.getData(), "Output": control, "Difficulty": math.ceil(self.Difficulty), "Difficulty2": self.Difficulty, "Difficulty3": round(self.Difficulty)}
                 print("Output = "+str(control))
-                print("Difficulty = "+str(math.ceil(self.Difficulty)))
 
                 self.Info.setData(info)
                 save_json(self.Name.getData()+"-"+str(self.startTimer), info)
