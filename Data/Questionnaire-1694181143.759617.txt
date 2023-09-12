@@ -1,6 +1,0 @@
-{"Time": 1.7599728107452393, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 3.0, "Output": 0.0, "Difficulty": 3, "Difficulty2": 3.0, "Difficulty3": 3}
-{"Time": 63.299036264419556, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 3.0, "Output": 0.0, "Difficulty": 3, "Difficulty2": 3.0, "Difficulty3": 3}
-{"Time": 124.76758766174316, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 3.0, "Output": 0.0, "Difficulty": 3, "Difficulty2": 3.0, "Difficulty3": 3}
-{"Time": 184.9799268245697, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 1.0, "Output": 0.0, "Difficulty": 3, "Difficulty2": 3.0, "Difficulty3": 3}
-{"Time": 245.57534098625183, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 1.0, "Output": 1.01, "Difficulty": 5, "Difficulty2": 4.01, "Difficulty3": 4}
-{"Time": 305.69529604911804, "SetPoint": 3.0, "KP": 0.5, "KI": 0.2, "KD": 0.1, "Timer": 60, "FeedBack": 2.0, "Output": 1.0133333333333334, "Difficulty": 5, "Difficulty2": 5, "Difficulty3": 5}

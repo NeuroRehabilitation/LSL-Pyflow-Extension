@@ -40,18 +40,21 @@ class DemoNode(NodeBase):
 
     def compute(self, *args, **kwargs):
         sensor_name = self.Sensor_Name.getData()
-        data = self.Data.getData()
-
-
-        if sensor_name in data["QuestionsStream"]:
-            self.Send.setData(data["QuestionsStream"][sensor_name])
-            try:
-                if len(data["QuestionsStream"][sensor_name]) != 0:
-                    # Value exists, you can work with it here
-                    #print("Value exists:", last_item)
-                    self.LastValue.setData(data["QuestionsStream"][sensor_name][-1])
-                else:
-                    print("Value is None")
-            except KeyError:
-                print("Value does not exist")
+        if self.Data.getData() is not None:
+            data = self.Data.getData()
+            if len(data) != 0:
+                print("Hey-0")
+                if data.keys() is not None:
+                    print("Hey-1")
+                    if sensor_name in data["QuestionsStream"]:
+                        self.Send.setData(data["QuestionsStream"][sensor_name])
+                        try:
+                            if len(data["QuestionsStream"][sensor_name]) != 0:
+                                # Value exists, you can work with it here
+                                #print("Value exists:", last_item)
+                                self.LastValue.setData(data["QuestionsStream"][sensor_name][-1])
+                            else:
+                                print("Value is None")
+                        except KeyError:
+                            print("Value does not exist")
 

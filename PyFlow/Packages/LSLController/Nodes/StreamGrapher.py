@@ -35,16 +35,21 @@ class StreamGrapher(NodeBase):
         self.On = False
 
         self.DataBase = dict()
-        self.channels_dicts=dict()
+        self.channels_dicts = dict()
         self.start = time.time()
         self.counter = 0
 
     def Tick(self, delta):
         super(StreamGrapher, self).Tick(delta)
         if self.bWorking:
+
+
+
             self.out.call()
+
+
             # Generate a random value
-            sample=list(self.Data.getData().values())
+            sample = list(self.Data.getData().values())
 
             self.addDataToDict(self.streamName.getData(),sample)
 

@@ -74,8 +74,7 @@ class SingleStreamGrapher(NodeBase):
                     for sample, timestamp in zip(samples, timestamps):
                      
                         self.addDataToDict(self.inlets[0].info().name(), sample)
-                else:
-                    print("Empty")
+
 
                 self.Send.setData(self.DataBase)
 
