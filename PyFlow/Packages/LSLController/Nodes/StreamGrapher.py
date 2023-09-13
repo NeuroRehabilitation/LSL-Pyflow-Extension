@@ -6,7 +6,8 @@ from PyFlow.Core.Common import *
 from pylsl import StreamInlet, resolve_streams, pylsl, StreamInfo, StreamOutlet
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
-#DemoNode
+
+# DemoNode
 # LSL_Writer
 class StreamGrapher(NodeBase):
     def __init__(self, name):
@@ -27,7 +28,7 @@ class StreamGrapher(NodeBase):
         self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 
-        self.info=None
+        self.info = None
         self.bWorking = False
         self.outlet = None
         self.info = None
@@ -43,26 +44,23 @@ class StreamGrapher(NodeBase):
         super(StreamGrapher, self).Tick(delta)
         if self.bWorking:
 
-
-
+            #if time.time() - self.start >= 10:
+                #self.out.call()
+                #self.start
             self.out.call()
-
-
             # Generate a random value
             sample = list(self.Data.getData().values())
 
-            self.addDataToDict(self.streamName.getData(),sample)
+            self.addDataToDict(self.streamName.getData(), sample)
 
             self.Send.setData(self.DataBase)
 
             self.outlet.push_sample(sample)
             # Send the data sample
-            if time.time()-self.start>1:
-
+            if time.time() - self.start > 1:
                 self.counter = 0
                 self.start = time.time()
-            self.counter = self.counter+1
-
+            self.counter = self.counter + 1
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):
@@ -117,13 +115,12 @@ class StreamGrapher(NodeBase):
             info_channels = info.desc().append_child("channels")
 
             for name in data.keys():
-                info_channels.append_child("channel").append_child_value("label",name)
+                info_channels.append_child("channel").append_child_value("label", name)
             self.DataBase[stream_name] = self.channels_dicts
-
 
         self.bWorking = True
         stream_information.append(info)
-        self.info=info
+        self.info = info
         self.outlet = StreamOutlet(self.info)
         self.Info_Stream.setData(stream_information)
 

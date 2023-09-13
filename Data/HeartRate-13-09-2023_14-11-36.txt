@@ -1,0 +1,9 @@
+{"Time": 1.160050868988037, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 85.28515625, "Output": -0.27535664062500004, "Difficulty": 3, "Difficulty2": 2.724643359375, "Difficulty3": 3}
+{"Time": 11.536969661712646, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 83.4609375, "Output": -0.28539843750000005, "Difficulty": 3, "Difficulty2": 2.439244921875, "Difficulty3": 2}
+{"Time": 21.705074071884155, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 83.4609375, "Output": -0.200926953125, "Difficulty": 3, "Difficulty2": 2.2383179687499997, "Difficulty3": 2}
+{"Time": 31.875947952270508, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 83.4609375, "Output": -0.20803125000000003, "Difficulty": 3, "Difficulty2": 2.0302867187499998, "Difficulty3": 2}
+{"Time": 41.95013976097107, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 86.63671875, "Output": -0.21495312500000002, "Difficulty": 2, "Difficulty2": 1.8153335937499997, "Difficulty3": 2}
+{"Time": 52.13261866569519, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 85.87109375, "Output": -0.387333203125, "Difficulty": 2, "Difficulty2": 1.4280003906249996, "Difficulty3": 1}
+{"Time": 62.2856981754303, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 85.87109375, "Output": -0.36040000000000005, "Difficulty": 2, "Difficulty2": 1.0676003906249996, "Difficulty3": 1}
+{"Time": 72.41541171073914, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 85.87109375, "Output": -0.37221875000000004, "Difficulty": 1, "Difficulty2": 1, "Difficulty3": 1}
+{"Time": 82.48724699020386, "SetPoint": 80.0, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 10, "FeedBack": 85.87109375, "Output": -0.38396093750000004, "Difficulty": 1, "Difficulty2": 1, "Difficulty3": 1}

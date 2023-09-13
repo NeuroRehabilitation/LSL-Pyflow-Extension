@@ -53,7 +53,9 @@ class PIDNode(NodeBase):
 
         self.Timer = self.createInputPin('Timer', 'IntPin')
 
-        self.Dif = self.createInputPin('Difficulty', 'IntPin')
+        self.Max = self.createInputPin('Max', 'IntPin')
+
+        self.Min = self.createInputPin('Min', 'IntPin')
 
         self.Setpoint = self.createInputPin('Setpoint', 'FloatPin')
 
@@ -106,12 +108,6 @@ class PIDNode(NodeBase):
             if time.time() - self.start >= self.Timer.getData():
                 control = self.pid.calculate(self.Setpoint.getData(), self.val, self.Timer.getData())
 
-                self.Difficulty += control
-
-                if self.Difficulty < 1:
-                    self.Difficulty = 1
-                if self.Difficulty > 5:
-                    self.Difficulty = 5
 
                 info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
                         "KP": self.KP.getData(),

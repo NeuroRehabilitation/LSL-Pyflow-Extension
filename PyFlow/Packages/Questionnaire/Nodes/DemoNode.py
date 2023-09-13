@@ -43,9 +43,9 @@ class DemoNode(NodeBase):
         if self.Data.getData() is not None:
             data = self.Data.getData()
             if len(data) != 0:
-                print("Hey-0")
+
                 if data.keys() is not None:
-                    print("Hey-1")
+
                     if sensor_name in data["QuestionsStream"]:
                         self.Send.setData(data["QuestionsStream"][sensor_name])
                         try:

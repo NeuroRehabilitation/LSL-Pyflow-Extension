@@ -23,7 +23,7 @@ class Skill1(NodeBase):
         self.StreamName = self.createInputPin('StreamName', 'StringPin')
         self.Name = self.createInputPin('Name', 'StringPin')
 
-        self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.Data = self.createInputPin('InData', 'AnyPin', structure=StructureType.Multi)
         self.Data.enableOptions(
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
@@ -65,48 +65,60 @@ class Skill1(NodeBase):
 
         if self.Data.getData() is not None:
             data = self.Data.getData()
+
             if len(data) != 0:
                 stream = self.StreamName.getData()
                 name = self.Name.getData()
+                print("hey-2")
 
-                if data is dict():
+                if len(data[stream]) != 0:
+                    print("hey-5")
+                    lastvalue = data[stream][name][-1]
+                    sb = self.SB.getData()
+                    b = self.B.getData()
+                    m = self.M.getData()
+                    g = self.G.getData()
+                    sg = self.SG.getData()
 
-                    if data.keys() is not None:
+                    target = self.Target.getData()
+                    if sb < sg:
+                        if sb >= lastvalue:
+                            target -= 2
 
-                        if len(data[stream]) != 0:
+                        if b >= lastvalue:
+                            target -= 1
 
-                            lastvalue = data[stream][name][-1]
-                            sb = self.SB.getData()
-                            b = self.B.getData()
-                            m = self.M.getData()
-                            g = self.G.getData()
-                            sg = self.SG.getData()
+                        if m >= lastvalue:
+                            print()
 
-                            target = self.Target.getData()
+                        if g >= lastvalue:
+                            target += 1
 
-                            if sb >= lastvalue:
-                                target -= 2
+                        if g < lastvalue:
+                            target += 2
+                    else:
+                        if sb <= lastvalue:
+                            target -= 2
 
-                            if b >= lastvalue:
-                                target -= 1
+                        if b <= lastvalue:
+                            target -= 1
 
-                            if m >= lastvalue:
-                                print()
+                        if m <= lastvalue:
+                            print()
 
-                            if g >= lastvalue:
-                                target += 1
+                        if g <= lastvalue:
+                            target += 1
 
-                            if sg >= lastvalue:
-                                target += 2
+                        if g > lastvalue:
+                            target += 2
 
-                            if target > 5:
-                                target = 5
+                    if target > 5:
+                        target = 5
 
-                            if target < 1:
-                                target = 1
-                            info = {"Skill Name": name, "Skill Value": lastvalue, "Difficulty": self.Target.getData(), "Results": target, "Super Bad": sb, "Bad": b, "Medium": m, "Good": g, "Super Good": sg}
-                            save_json(name, info,self.now)
+                    if target < 1:
+                        target = 1
+                    info = {"Skill Name": name, "Skill Value": lastvalue, "Difficulty": self.Target.getData(), "Results": target, "Super Bad": sb, "Bad": b, "Medium": m, "Good": g, "Super Good": sg}
+                    save_json(name, info,self.now)
 
-                            self.Performance.setData(target)
-                            print("please work im tired ")
-                            self.outExec.call()
+                    self.Performance.setData(target)
+
