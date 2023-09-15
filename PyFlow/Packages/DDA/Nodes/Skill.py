@@ -9,17 +9,16 @@ class Skill(NodeBase):
         self.StreamName = self.createInputPin('StreamName', 'StringPin')
         self.Name = self.createInputPin('Name', 'StringPin')
 
-        self.Max = self.createInputPin('Max', 'IntPin')
-        self.Min = self.createInputPin('Min', 'IntPin')
-
-        self.Focus = self.createInputPin('Target', 'IntPin')
-
         self.Data = self.createInputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Data.enableOptions(
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
-        self.Performance = self.createOutputPin('Performance', 'FloatPin')
+        self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
+        self.Send.enableOptions(PinOptions.AllowAny)
+
+        self.LastValue = self.createOutputPin('LastValue', 'FloatPin')
+        self.SLastValue = self.createOutputPin('SLastValue', 'FloatPin')
 
     @staticmethod
     def pinTypeHints():
@@ -43,46 +42,23 @@ class Skill(NodeBase):
         return "Description in rst format."
 
     def compute(self, *args, **kwargs):
-        if (self.Data.getData() is not None) and (self.Name.getData() is not None) and (
-                self.Max.getData() is not None) and (self.Min.getData() is not None) and (
-                self.StreamName.getData() is not None):
-
-            print("Skill issue mate ")
+        if self.Data.getData() is not None:
             data = self.Data.getData()
-            stream = self.StreamName.getData()
-            name = self.Data.getData()
-            max = self.Max.getData()
-            min = self.Min.getData()
+            stream_name = self.StreamName.getData()
+            name = self.Name.getData()
+            if len(data) != 0:
 
-            rawSkill = 0
+                if data.keys() is not None:
 
-            try:
-                if stream in data:
-                    print("Flag1")
-                    if name in data[stream]:
-                        print("Flag2")
-                        if isinstance(data[stream][name], list) and len(data[stream][name]) > 0:
-                            nested_list = data[stream][name]
-                            rawSkill = nested_list[-1]
-                            print("Last element exists:", rawSkill)
-                        else:
-                            print("No elements in 'name'")
-                    else:
-                        print("Key 'name' does not exist in the data[stream] dictionary")
-                else:
-                    print("Key 'stream' does not exist in the data dictionary")
-            except TypeError as te:
-                print("TypeError:", te)
-            except Exception as e:
-                print("An error occurred:", e)
-
-            if rawSkill < min:
-                performance = 0
-
-            elif rawSkill > max:
-                performance = 1
-
-            else:
-                performance = (rawSkill - min) / (max - min)
-
-            self.Performance.setData(performance)
+                    if name in data[stream_name]:
+                        self.Send.setData(data[stream_name][name])
+                        try:
+                            if len(data[stream_name][name]) != 0:
+                                # Value exists, you can work with it here
+                                # print("Value exists:", last_item)
+                                self.LastValue.setData(data[stream_name][name][-1])
+                                self.SLastValue.setData(data[stream_name][name][-2])
+                            else:
+                                print("Value is None")
+                        except KeyError:
+                            print("Value does not exist")

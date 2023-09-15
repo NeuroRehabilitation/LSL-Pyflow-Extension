@@ -42,6 +42,7 @@ class PIDNode(NodeBase):
     def __init__(self, name):
         super(PIDNode, self).__init__(name)
 
+        self.default = None
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
@@ -53,18 +54,20 @@ class PIDNode(NodeBase):
 
         self.Timer = self.createInputPin('Timer', 'IntPin')
 
-        self.Max = self.createInputPin('Max', 'IntPin')
+        self.Default = self.createInputPin('Default', 'FloatPin')
 
-        self.Min = self.createInputPin('Min', 'IntPin')
+        self.Max = self.createInputPin('Max', 'FloatPin')
 
-        self.Setpoint = self.createInputPin('Setpoint', 'FloatPin')
+        self.Min = self.createInputPin('Min', 'FloatPin')
+
+        self.Setpoint = self.createInputPin('Set point', 'FloatPin')
 
         self.FeedBack = self.createInputPin('FeedBack', 'FloatPin')
 
         # Output
-        self.NewDif = self.createOutputPin("New Difficulty", "IntPin")
+        self.Result = self.createOutputPin("Result", "FloatPin")
 
-        self.Result = self.createOutputPin("result", "FloatPin")
+        self.Control = self.createOutputPin("Control", "FloatPin")
 
         self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Multi)
         self.Info.enableOptions(PinOptions.AllowAny)
@@ -108,21 +111,30 @@ class PIDNode(NodeBase):
             if time.time() - self.start >= self.Timer.getData():
                 control = self.pid.calculate(self.Setpoint.getData(), self.val, self.Timer.getData())
 
-
                 info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
                         "KP": self.KP.getData(),
                         "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
                         "FeedBack": self.FeedBack.getData(), "Output": control,
-                        "Difficulty": math.ceil(self.Difficulty), "Difficulty2": self.Difficulty,
-                        "Difficulty3": round(self.Difficulty)}
+                        "Difficulty": self.default}
+
+                max = self.Max.getData()
+                min = self.Min.getData()
+
+                self.default += control
+
+                if max < self.default:
+                    self.default = max
+                elif min > self.default:
+                    self.default = min
+
                 # print("Output = "+str(control))
 
                 self.Info.setData(info)
 
                 save_json(self.Name.getData(), info, self.now)
-                self.NewDif.setData(round(self.Difficulty))
                 self.val = self.FeedBack.getData()
-                self.Result.setData(self.val)
+                self.Result.setData(self.default)
+                self.Control.setData(control)
                 self.start = time.time()
 
     def stop(self, *args, **kwargs):
@@ -132,7 +144,7 @@ class PIDNode(NodeBase):
 
         self.bWorking = True
         self.startTimer = time.time()
-        self.Difficulty = self.Dif.getData()
+        self.default = self.Default.getData()
         kp = self.KP.getData()
         ki = self.KI.getData()
         kd = self.KD.getData()
