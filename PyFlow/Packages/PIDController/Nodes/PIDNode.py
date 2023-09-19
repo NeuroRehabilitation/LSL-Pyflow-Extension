@@ -111,18 +111,10 @@ class PIDNode(NodeBase):
             if time.time() - self.start >= self.Timer.getData():
                 control = self.pid.calculate(self.Setpoint.getData(), self.val, self.Timer.getData())
 
-                info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
-                        "KP": self.KP.getData(),
-                        "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                        "FeedBack": self.FeedBack.getData(), "Output": control,
-                        "Percentage": (control / self.FeedBack.getData()),
-                        "Difficulty": self.default}
-
                 max = self.Max.getData()
                 min = self.Min.getData()
 
-                # self.default += control
-                self.default += self.default * (control / self.FeedBack.getData())
+                self.default += control
 
 
                 if max >= min:
@@ -139,6 +131,22 @@ class PIDNode(NodeBase):
                         self.default = min
 
                 # print("Output = "+str(control))
+                if self.FeedBack.getData() == 0:
+                    #self.default += self.default * control
+                    info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
+                            "KP": self.KP.getData(),
+                            "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
+                            "FeedBack": self.FeedBack.getData(), "Output": control,
+                            "Percentage": control,
+                            "Difficulty": self.default}
+                else:
+                    #self.default += self.default * (control / self.FeedBack.getData())
+                    info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
+                            "KP": self.KP.getData(),
+                            "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
+                            "FeedBack": self.FeedBack.getData(), "Output": control,
+                            "Percentage": (control / self.FeedBack.getData()),
+                            "Difficulty": self.default}
 
                 self.Info.setData(info)
 

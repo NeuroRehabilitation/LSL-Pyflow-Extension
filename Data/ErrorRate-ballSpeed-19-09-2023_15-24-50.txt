@@ -1,0 +1,1 @@
+{"Time": 0.13192987442016602, "SetPoint": 0.3, "KP": 7.5, "KI": 2.0, "KD": 1.0, "Timer": 10, "FeedBack": 0.0, "Output": 2.34, "Percentage": 2.34, "Difficulty": 32.34}
