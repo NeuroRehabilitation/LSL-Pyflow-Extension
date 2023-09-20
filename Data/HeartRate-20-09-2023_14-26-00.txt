@@ -1,0 +1,17 @@
+{"Time": 0.21864819526672363, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.3064870312500005, "Percentage": 0.003197126441465308, "Difficulty": 1.0}
+{"Time": 1.273756504058838, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.38850468750000067, "Percentage": 0.004052695489181377, "Difficulty": 1.0}
+{"Time": 2.3859057426452637, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.47483906250000074, "Percentage": 0.004953294486777238, "Difficulty": 1.0}
+{"Time": 3.488159418106079, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.5611734375000009, "Percentage": 0.0058538934843730996, "Difficulty": 1.0}
+{"Time": 4.522422790527344, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.6475078125000011, "Percentage": 0.006754492481968961, "Difficulty": 1.0}
+{"Time": 5.6420392990112305, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.7338421875000012, "Percentage": 0.007655091479564822, "Difficulty": 1.0}
+{"Time": 6.772128582000732, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.8201765625000013, "Percentage": 0.008555690477160684, "Difficulty": 1.0}
+{"Time": 7.812328100204468, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.9065109375000016, "Percentage": 0.009456289474756546, "Difficulty": 1.0}
+{"Time": 9.030945301055908, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 0.9928453125000016, "Percentage": 0.010356888472352407, "Difficulty": 1.0}
+{"Time": 10.080130338668823, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.0791796875000017, "Percentage": 0.011257487469948268, "Difficulty": 1.0}
+{"Time": 11.162212133407593, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.1655140625000018, "Percentage": 0.012158086467544129, "Difficulty": 1.0}
+{"Time": 12.309691905975342, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.2518484375000019, "Percentage": 0.01305868546513999, "Difficulty": 1.0}
+{"Time": 13.415059804916382, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.3381828125000022, "Percentage": 0.013959284462735852, "Difficulty": 1.0}
+{"Time": 14.492226839065552, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.4245171875000022, "Percentage": 0.014859883460331713, "Difficulty": 1.0}
+{"Time": 15.57017207145691, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.5108515625000023, "Percentage": 0.015760482457927574, "Difficulty": 1.0}
+{"Time": 16.70209550857544, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.5971859375000026, "Percentage": 0.016661081455523436, "Difficulty": 1.0}
+{"Time": 17.74487018585205, "SetPoint": 100.18, "KP": 0.05, "KI": 0.02, "KD": 0.001, "Timer": 1, "FeedBack": 95.86328125, "Output": 1.6835203125000027, "Percentage": 0.0175616804531193, "Difficulty": 1.0}
