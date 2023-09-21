@@ -1,4 +1,0 @@
-{"Time": 0.1196599006652832, "SetPoint": 7.0, "KP": 0.1, "KI": 0.05, "KD": 0.025, "Timer": 10, "FeedBack": 10.0, "Output": -0.32250000000000006, "Percentage": -0.03225000000000001, "Difficulty": 30.0}
-{"Time": 10.26199221611023, "SetPoint": 7.0, "KP": 0.1, "KI": 0.05, "KD": 0.025, "Timer": 10, "FeedBack": 10.0, "Output": -0.33000000000000007, "Percentage": -0.03300000000000001, "Difficulty": 10.0}
-{"Time": 20.354365348815918, "SetPoint": 7.0, "KP": 0.1, "KI": 0.05, "KD": 0.025, "Timer": 10, "FeedBack": 10.0, "Output": -0.34500000000000003, "Percentage": -0.0345, "Difficulty": 60.0}
-{"Time": 30.45379662513733, "SetPoint": 7.0, "KP": 0.1, "KI": 0.05, "KD": 0.025, "Timer": 10, "FeedBack": 10.0, "Output": -0.36000000000000004, "Percentage": -0.036000000000000004, "Difficulty": 10.0}
