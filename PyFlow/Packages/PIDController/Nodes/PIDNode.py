@@ -23,7 +23,7 @@ class PIDController:
 
         error_diff = error - self.last_error
 
-        output = (self.kp * error) + (self.ki * self.error_sum) + (self.kd * error_diff)
+        output = (self.kp * error) + (self.ki * self.error_sum) + (self.kd * (error_diff/time_delta))
 
         self.last_error = error
 
@@ -53,7 +53,7 @@ class PIDNode(NodeBase):
         self.KI = self.createInputPin('KI', 'FloatPin')
         self.KD = self.createInputPin('KD', 'FloatPin')
 
-        self.Timer = self.createInputPin('Timer', 'IntPin')
+        self.Timer = self.createInputPin('Timer', 'FloatPin')
 
         self.Default = self.createInputPin('Default', 'FloatPin')
 
@@ -82,7 +82,7 @@ class PIDNode(NodeBase):
         self.End_Out = self.createOutputPin("Stop", 'ExecPin')
 
         self.bWorking = None
-        self.receivedNewValue=False
+        self.receivedNewValue = False
         self.pid = None
         self.startTimer = time.time()
         self.start = time.time()
@@ -135,23 +135,12 @@ class PIDNode(NodeBase):
                     elif min < self.default:
                         self.default = min
 
-                # print("Output = "+str(control))
-                if self.FeedBack.getData() == 0:
-                    # self.default += self.default * control
-                    info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
-                            "KP": self.KP.getData(),
-                            "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                            "Performance": performance, "Output": control,
-                            "Percentage": control,
-                            "Difficulty": self.default}
-                else:
-                    # self.default += self.default * (control / self.FeedBack.getData())
-                    info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
-                            "KP": self.KP.getData(),
-                            "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                            "Performance": performance, "Output": control,
-                            "Percentage": (control / self.FeedBack.getData()),
-                            "Difficulty": self.default}
+                info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
+                        "KP": self.KP.getData(),
+                        "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
+                        "Performance": performance, "Output": control,
+                        "Percentage": control,
+                        "Difficulty": self.default}
 
                 self.Info.setData(info)
 
@@ -163,9 +152,9 @@ class PIDNode(NodeBase):
                 self.receivedNewValue = False
         self.val = self.Performance.getData()
 
-
     def Action(self, *args, **kwargs):
         self.receivedNewValue = True
+        self.val = self.Performance.getData()
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
