@@ -22,13 +22,16 @@ class SingleStreamGrapher(NodeBase):
         self.StreamName = self.createInputPin("Name", 'StringPin')
 
         # Output pins
-        self.out = self.createOutputPin("OUT", 'ExecPin')
 
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 
         self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
         self.Info.enableOptions(PinOptions.AllowAny)
+
+        self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
+        self.Action_Out = self.createOutputPin("Action", 'ExecPin')
+        self.End_Out = self.createOutputPin("Stop", 'ExecPin')
 
         self.inlets = []
         self.bWorking = False
@@ -59,10 +62,9 @@ class SingleStreamGrapher(NodeBase):
                 else:
                     self.Graph_queue.put(self.DataBaseZero)
 
-
                 self.counter = 0
 
-            if (len(self.inlets) != 0):
+            if len(self.inlets) != 0:
 
                 # Pull a chunk of samples from the inlet
                 samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
@@ -72,12 +74,10 @@ class SingleStreamGrapher(NodeBase):
                     # Process the received samples
 
                     for sample, timestamp in zip(samples, timestamps):
-                     
                         self.addDataToDict(self.inlets[0].info().name(), sample)
 
-
                 self.Send.setData(self.DataBase)
-
+                self.Action_Out.call()
             else:
                 self.bWorking = False
 
@@ -104,6 +104,7 @@ class SingleStreamGrapher(NodeBase):
         self.Prosess.terminate()
         self.Prosess.join()
         self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
+        self.End_Out.call()
 
     def start(self, *args, **kwargs):
         if self.bWorking:
@@ -164,7 +165,7 @@ class SingleStreamGrapher(NodeBase):
             while self.Graph_queue.get() != 1:
                 self.Graph_queue.put(stream_information)
             self.online = True
-            self.out.call()
+            self.Begin_Out.call()
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):
