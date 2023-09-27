@@ -23,7 +23,7 @@ class PIDController:
 
         error_diff = error - self.last_error
 
-        output = (self.kp * error) + (self.ki * self.error_sum) + (self.kd * (error_diff/time_delta))
+        output = (self.kp * error) + (self.ki * (self.error_sum/time_delta)) + (self.kd * (error_diff/time_delta))
 
         self.last_error = error
 
