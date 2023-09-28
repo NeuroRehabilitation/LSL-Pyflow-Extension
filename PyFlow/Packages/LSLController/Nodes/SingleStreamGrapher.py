@@ -74,8 +74,8 @@ class SingleStreamGrapher(NodeBase):
                     # Process the received samples
                     for sample, timestamp in zip(samples, timestamps):
                         self.addDataToDict(self.inlets[0].info().name(), sample)
+                        #print("Samples 1 : "+str(sample) + "TimesStamps"+str(timestamp))
                 self.Send.setData(self.DataBase)
-                self.Action_Out.call()
             else:
                 self.bWorking = False
 

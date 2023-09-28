@@ -57,8 +57,6 @@ class Skill(NodeBase):
                                 # Value exists, you can work with it here
                                 # print("Value exists:", last_item)
                                 self.LastValue.setData(data[stream_name][name][-1])
-                                self.SLastValue.setData(data[stream_name][name][-2])
-                            else:
-                                print("Value is None")
+
                         except KeyError:
                             print("Value does not exist")

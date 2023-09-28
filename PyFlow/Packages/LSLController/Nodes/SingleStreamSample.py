@@ -23,14 +23,12 @@ class SingleStreamSample(NodeBase):
 
         # Output pins
 
-        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
-        self.Send.enableOptions(PinOptions.AllowAny)
+        self.Send = self.createOutputPin("Value", "FloatPin")
 
         self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
         self.Info.enableOptions(PinOptions.AllowAny)
 
         self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
-        self.Action_Out = self.createOutputPin("Action", 'ExecPin')
         self.End_Out = self.createOutputPin("Stop", 'ExecPin')
 
         self.inlets = []
@@ -60,10 +58,14 @@ class SingleStreamSample(NodeBase):
             if len(self.inlets) != 0:
 
                 # Pull a chunk of samples from the inlet
-                samples, timestamps = self.inlets[0].pull_sample()
-                self.addDataToDict(self.inlets[0].info().name(), samples)
-                self.Send.setData(self.DataBase)
-                self.Action_Out.call()
+                samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
+
+                if samples:
+                    self.empty = True
+                    # Process the received samples
+                    for sample, timestamp in zip(samples, timestamps):
+                        self.Send.setData(samples[0][0])
+
             else:
                 self.bWorking = False
 

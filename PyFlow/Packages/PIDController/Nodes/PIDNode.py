@@ -9,23 +9,27 @@ from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
 
 class PIDController:
-    def __init__(self, kp, ki, kd):
-        self.kp = kp
-        self.ki = ki
-        self.kd = kd
-        self.error_sum = 0
-        self.last_error = 0
+    def __init__(self, kp, ki, kd, integral_max=32767):
+        self.kp = kp  # Proportional gain
+        self.ki = ki  # Integral gain
+        self.kd = kd  # Derivative gain
+        self.integral_max = integral_max
+        self.prev_error = 0
+        self.integral = 0
 
-    def calculate(self, setpoint, input1, time_delta):
-        error = setpoint - input1
+    def calculate(self, setpoint, current_value, time_delta):
+        error = setpoint - current_value
+        self.integral += error * time_delta
 
-        self.error_sum += error
+        # Clamp the integral term to prevent windup
+        self.integral = min(max(self.integral, -self.integral_max), self.integral_max)
 
-        error_diff = error - self.last_error
+        derivative = (error - self.prev_error) / time_delta
 
-        output = (self.kp * error) + (self.ki * (self.error_sum/time_delta)) + (self.kd * (error_diff/time_delta))
+        # Calculate the control output using bitwise operations
+        output = (self.kp * error) + (self.ki * self.integral) + (self.kd * derivative)
 
-        self.last_error = error
+        self.prev_error = error
 
         return output
 
@@ -44,7 +48,6 @@ class PIDNode(NodeBase):
 
         self.default = None
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
-        self.ActionPin = self.createInputPin("Action", 'ExecPin', None, self.Action)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
         self.Name = self.createInputPin('Name', 'StringPin')
@@ -61,20 +64,17 @@ class PIDNode(NodeBase):
 
         self.Min = self.createInputPin('Min', 'FloatPin')
 
-        self.Setpoint = self.createInputPin('Set point', 'FloatPin')
+        self.Setpoint = self.createInputPin('Setpoint', 'FloatPin')
 
-        self.Performance = self.createInputPin('Performance', 'AnyPin', structure=StructureType.Multi)
-        self.Performance.enableOptions(
-            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
-        self.Performance.disableOptions(PinOptions.SupportsOnlyArrays)
+        self.Performance = self.createInputPin('Performance', 'FloatPin')
 
         # Output
         self.Result = self.createOutputPin("Result", "FloatPin")
 
-        self.Control = self.createOutputPin("Control", "FloatPin")
+        # self.Control = self.createOutputPin("Control", "FloatPin")
 
-        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Multi)
-        self.Info.enableOptions(PinOptions.AllowAny)
+        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.Send.enableOptions(PinOptions.AllowAny)
 
         self.now = datetime.now()
 
@@ -86,6 +86,7 @@ class PIDNode(NodeBase):
         self.pid = None
         self.startTimer = time.time()
         self.start = time.time()
+        self.timeDelta = 0
         self.val = 0
         self.Difficulty = 0.0
 
@@ -112,10 +113,11 @@ class PIDNode(NodeBase):
 
     def Tick(self, delta):
         super(PIDNode, self).Tick(delta)
-        if self.bWorking and self.receivedNewValue:
-
-            for performance in self.val:
-                control = self.pid.calculate(self.Setpoint.getData(), performance, self.Timer.getData())
+        if self.bWorking:
+            self.timeDelta = time.time() - self.start
+            if time.time() - self.start >= self.Timer.getData()-self.timeDelta:
+                self.start = time.time()
+                control = self.pid.calculate(self.Setpoint.getData(), self.Performance.getData(), self.Timer.getData())
 
                 max = self.Max.getData()
                 min = self.Min.getData()
@@ -138,23 +140,21 @@ class PIDNode(NodeBase):
                 info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
                         "KP": self.KP.getData(),
                         "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                        "Performance": performance, "Output": control,
+                        "Performance": self.Performance.getData(), "Output": control,
                         "Percentage": control,
                         "Difficulty": self.default}
 
-                self.Info.setData(info)
+                _dict = dict()
+                _dict = {"" + self.Name.getData() + "": self.default}
 
+                self.Send.setData(_dict)
                 save_json(self.Name.getData(), info, self.now)
 
-                self.Result.setData(self.default)
-                self.Control.setData(control)
-                self.start = time.time()
-                self.receivedNewValue = False
-        self.val = self.Performance.getData()
 
-    def Action(self, *args, **kwargs):
-        self.receivedNewValue = True
-        self.val = self.Performance.getData()
+                #self.Result.setData(self.default)
+
+
+            self.val = self.Performance.getData()
 
     def stop(self, *args, **kwargs):
         self.bWorking = False

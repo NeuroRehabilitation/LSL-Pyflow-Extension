@@ -23,10 +23,10 @@ class StreamGrapher(NodeBase):
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
         self.out = self.createOutputPin("OUT", 'ExecPin')
-        self.Info_Stream = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
-        self.Info_Stream.enableOptions(PinOptions.AllowAny)
-        self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
-        self.Send.enableOptions(PinOptions.AllowAny)
+        # self.Info_Stream = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
+        # self.Info_Stream.enableOptions(PinOptions.AllowAny)
+        # self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
+        # self.Send.enableOptions(PinOptions.AllowAny)
 
         self.info = None
         self.bWorking = False
@@ -44,18 +44,18 @@ class StreamGrapher(NodeBase):
         super(StreamGrapher, self).Tick(delta)
         if self.bWorking:
 
-            #if time.time() - self.start >= 10:
-                #self.out.call()
-                #self.start
+            # if time.time() - self.start >= 10:
+            # self.out.call()
+            # self.start
             self.out.call()
             # Generate a random value
             sample = list(self.Data.getData().values())
 
-            self.addDataToDict(self.streamName.getData(), sample)
+            # self.addDataToDict(self.streamName.getData(), sample)
 
-            self.Send.setData(self.DataBase)
+            # self.Send.setData(self.DataBase)
+            # self.outlet.push_sample(sample)
 
-            self.outlet.push_sample(sample)
             # Send the data sample
             if time.time() - self.start > 1:
                 self.counter = 0
@@ -90,10 +90,11 @@ class StreamGrapher(NodeBase):
         self.On = False
 
     def start(self, *args, **kwargs):
+        global info
         self.out.call()
         data = self.Data.getData()
         if data is not None:
-            stream_information = []
+
             stream_name = self.streamName.getData()
             stream_type = self.streamType.getData()
             channel_count = len(data)
@@ -118,11 +119,11 @@ class StreamGrapher(NodeBase):
                 info_channels.append_child("channel").append_child_value("label", name)
             self.DataBase[stream_name] = self.channels_dicts
 
-        self.bWorking = True
-        stream_information.append(info)
-        self.info = info
-        self.outlet = StreamOutlet(self.info)
-        self.Info_Stream.setData(stream_information)
+            self.info = info
+            self.outlet = StreamOutlet(self.info)
+            self.bWorking = True
+
+        # self.Info_Stream.setData(stream_information)
 
     @staticmethod
     def category():
