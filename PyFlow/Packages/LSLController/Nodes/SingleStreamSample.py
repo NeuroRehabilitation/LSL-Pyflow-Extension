@@ -13,9 +13,9 @@ import multiprocessing
 
 
 # LSL_Writer
-class SingleStreamGrapher(NodeBase):
+class SingleStreamSample(NodeBase):
     def __init__(self, name):
-        super(SingleStreamGrapher, self).__init__(name)
+        super(SingleStreamSample, self).__init__(name)
         # Input pins
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
@@ -44,14 +44,13 @@ class SingleStreamGrapher(NodeBase):
         self.Graph_queue = multiprocessing.Queue()
         self.online = False
 
-        self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
 
         self.start = time.time()
         self.empty = False
         self.counter = 0
 
     def Tick(self, delta):
-        super(SingleStreamGrapher, self).Tick(delta)
+        super(SingleStreamSample, self).Tick(delta)
         timer1 = time.time()
         if self.bWorking:
             if time.time() - self.start >= 1:
@@ -62,8 +61,7 @@ class SingleStreamGrapher(NodeBase):
 
                 # Pull a chunk of samples from the inlet
                 samples, timestamps = self.inlets[0].pull_sample()
-
-
+                self.addDataToDict(self.inlets[0].info().name(), samples)
                 self.Send.setData(self.DataBase)
                 self.Action_Out.call()
             else:
@@ -140,8 +138,6 @@ class SingleStreamGrapher(NodeBase):
 
             self.inlets.append(inlet)
 
-            self.Prosess.start()
-
             self.online = True
             self.Begin_Out.call()
 
@@ -151,7 +147,7 @@ class SingleStreamGrapher(NodeBase):
             # if i == 0:
             # print("Lenght"+str(len(self.DataBase[key][row])))
 
-            if len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate()):
+            if len(self.DataBase[key][row]) > 1:
                 # print("Length" + str(len(self.DataBase[key][row])))
                 self.DataBase[key][row].pop(0)
                 self.DataBase = None
