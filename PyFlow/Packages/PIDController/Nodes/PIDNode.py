@@ -21,15 +21,16 @@ class PIDController:
         error = setpoint - current_value
         self.integral += error * time_delta
 
-        # Clamp the integral term to prevent windup
+        #Clamp the integral term to prevent windup
         self.integral = min(max(self.integral, -self.integral_max), self.integral_max)
 
         derivative = (error - self.prev_error) / time_delta
 
-        # Calculate the control output using bitwise operations
+        #Calculate the control output using bitwise operations
         output = (self.kp * error) + (self.ki * self.integral) + (self.kd * derivative)
 
         self.prev_error = error
+
 
         return output
 
@@ -69,7 +70,7 @@ class PIDNode(NodeBase):
         self.Performance = self.createInputPin('Performance', 'FloatPin')
 
         # Output
-        self.Result = self.createOutputPin("Result", "FloatPin")
+        #self.Result = self.createOutputPin("Result", "FloatPin")
 
         # self.Control = self.createOutputPin("Control", "FloatPin")
 
@@ -80,6 +81,9 @@ class PIDNode(NodeBase):
 
         self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
         self.End_Out = self.createOutputPin("Stop", 'ExecPin')
+
+        self._Max = 0
+        self._Min = 0
 
         self.bWorking = None
         self.receivedNewValue = False
@@ -114,28 +118,26 @@ class PIDNode(NodeBase):
     def Tick(self, delta):
         super(PIDNode, self).Tick(delta)
         if self.bWorking:
-            self.timeDelta = time.time() - self.start
-            if time.time() - self.start >= self.Timer.getData()-self.timeDelta:
+
+            if time.time() - self.start >= self.Timer.getData()-self.timeDelta*0.75:
+                #self.timeDelta = ((time.time() - self.start)-self.Timer.getData())*2
                 self.start = time.time()
                 control = self.pid.calculate(self.Setpoint.getData(), self.Performance.getData(), self.Timer.getData())
 
-                max = self.Max.getData()
-                min = self.Min.getData()
-
                 self.default += control
 
-                if max >= min:
-                    if max < self.default:
-                        self.default = max
+                if self._Max >= self._Min:
+                    if self._Max < self.default:
+                        self.default = self._Max
 
-                    elif min > self.default:
-                        self.default = min
+                    elif self._Min > self.default:
+                        self.default = self._Min
                 else:
-                    if max > self.default:
-                        self.default = max
+                    if self._Max > self.default:
+                        self.default = self._Max
 
-                    elif min < self.default:
-                        self.default = min
+                    elif self._Min < self.default:
+                        self.default = self._Min
 
                 info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
                         "KP": self.KP.getData(),
@@ -171,4 +173,6 @@ class PIDNode(NodeBase):
 
         self.pid = PIDController(kp, ki, kd)
         self.val = self.Performance.getData()
+        self._Max = self.Max.getData()
+        self._Min = self.Min.getData()
         self.Begin_Out.call()

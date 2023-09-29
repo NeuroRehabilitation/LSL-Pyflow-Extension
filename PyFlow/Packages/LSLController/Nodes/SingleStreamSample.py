@@ -46,6 +46,7 @@ class SingleStreamSample(NodeBase):
         self.start = time.time()
         self.empty = False
         self.counter = 0
+        self.LastValue = 0
 
     def Tick(self, delta):
         super(SingleStreamSample, self).Tick(delta)
@@ -64,7 +65,9 @@ class SingleStreamSample(NodeBase):
                     self.empty = True
                     # Process the received samples
                     for sample, timestamp in zip(samples, timestamps):
-                        self.Send.setData(samples[0][0])
+                        if self.LastValue != samples[0][0]:
+                            self.Send.setData(samples[0][0])
+                            self.LastValue == samples[0][0]
 
             else:
                 self.bWorking = False

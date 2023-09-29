@@ -47,14 +47,14 @@ class StreamGrapher(NodeBase):
             # if time.time() - self.start >= 10:
             # self.out.call()
             # self.start
-            self.out.call()
+            #self.out.call()
             # Generate a random value
             sample = list(self.Data.getData().values())
 
             # self.addDataToDict(self.streamName.getData(), sample)
 
-            # self.Send.setData(self.DataBase)
-            # self.outlet.push_sample(sample)
+            #self.Send.setData(self.DataBase)
+            self.outlet.push_sample(sample)
 
             # Send the data sample
             if time.time() - self.start > 1:
@@ -91,7 +91,7 @@ class StreamGrapher(NodeBase):
 
     def start(self, *args, **kwargs):
         global info
-        self.out.call()
+        #self.out.call()
         data = self.Data.getData()
         if data is not None:
 
