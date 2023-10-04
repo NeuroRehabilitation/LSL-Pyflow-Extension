@@ -12,29 +12,6 @@
             "uuid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
             "inputs": [
                 {
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "SingleStreamSample_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"Stream\"",
-                    "uuid": "4e127177-3bfe-4bfa-8d58-1ef40fe51b71",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
                     "name": "Begin",
                     "package": "PyFlowBase",
                     "fullName": "SingleStreamSample_Begin",
@@ -81,27 +58,16 @@
                         "displayName": "Stop",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "Start",
+                    "name": "Name",
                     "package": "PyFlowBase",
-                    "fullName": "SingleStreamSample_Start",
-                    "dataType": "ExecPin",
-                    "direction": 1,
-                    "value": "null",
-                    "uuid": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "SingleStreamSample",
-                            "outPinId": 3,
-                            "rhsNodeName": "PIDNode",
-                            "inPinId": 1,
-                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
-                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
-                        }
-                    ],
+                    "fullName": "SingleStreamSample_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"Stream\"",
+                    "uuid": "4e127177-3bfe-4bfa-8d58-1ef40fe51b71",
+                    "linkedTo": [],
                     "pinIndex": 3,
                     "options": [
                         256
@@ -112,26 +78,12 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Start",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
-                                "destinationUUID": "073a5650-747b-4569-b652-6ca21730d29d",
-                                "sourceName": "SingleStreamSample_Start",
-                                "destinationName": "PIDNode_Begin",
-                                "uuid": "5787ae47-83ed-435d-bb00-c52eadb796cc",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
+                        "displayName": "Name",
+                        "wires": {}
                     }
-                },
+                }
+            ],
+            "outputs": [
                 {
                     "name": "Value",
                     "package": "PyFlowBase",
@@ -167,7 +119,55 @@
                                 "destinationUUID": "8cda2fdf-18f5-4d5e-9d95-1db8cbd61f42",
                                 "sourceName": "SingleStreamSample_Value",
                                 "destinationName": "PIDNode_Performance",
-                                "uuid": "e83f306e-93e2-4c0d-b9bc-03d9a9ac91b6",
+                                "uuid": "79fcf7aa-e7f6-4358-8265-8853c439254b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Start",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample_Start",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample",
+                            "outPinId": 3,
+                            "rhsNodeName": "PIDNode",
+                            "inPinId": 1,
+                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
+                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Start",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
+                                "destinationUUID": "073a5650-747b-4569-b652-6ca21730d29d",
+                                "sourceName": "SingleStreamSample_Start",
+                                "destinationName": "PIDNode_Begin",
+                                "uuid": "a610f2e5-4b51-4501-8e2c-c857962c395b",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -242,8 +242,8 @@
                     "output": {}
                 }
             },
-            "x": -478.0,
-            "y": -104.0
+            "x": -416.0,
+            "y": -262.0
         },
         {
             "package": "PIDController",
@@ -253,172 +253,6 @@
             "name": "PIDNode",
             "uuid": "a5786425-ffc2-489b-807c-07778e94fd95",
             "inputs": [
-                {
-                    "name": "KD",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_KD",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.025",
-                    "uuid": "83cc3af6-97c6-45a5-9520-edb555569d3b",
-                    "linkedTo": [],
-                    "pinIndex": 6,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "KD",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "073a5650-747b-4569-b652-6ca21730d29d",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "SingleStreamSample",
-                            "outPinId": 3,
-                            "rhsNodeName": "PIDNode",
-                            "inPinId": 1,
-                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
-                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
-                        }
-                    ],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {
-                            "1": {
-                                "sourceUUID": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
-                                "destinationUUID": "073a5650-747b-4569-b652-6ca21730d29d",
-                                "sourceName": "SingleStreamSample_Start",
-                                "destinationName": "PIDNode_Begin",
-                                "uuid": "5787ae47-83ed-435d-bb00-c52eadb796cc",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "Name",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_Name",
-                    "dataType": "StringPin",
-                    "direction": 0,
-                    "value": "\"ballSpeed\"",
-                    "uuid": "5f3e1f9f-1e58-47b7-9c68-c7f54ddbaf28",
-                    "linkedTo": [],
-                    "pinIndex": 3,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Name",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Max",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_Max",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "200.0",
-                    "uuid": "38052dcc-40e1-433e-89af-6b9cf757e2f7",
-                    "linkedTo": [],
-                    "pinIndex": 9,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Max",
-                        "wires": {}
-                    }
-                },
-                {
-                    "name": "Performance",
-                    "package": "PyFlowBase",
-                    "fullName": "PIDNode_Performance",
-                    "dataType": "FloatPin",
-                    "direction": 0,
-                    "value": "0.4000000059604645",
-                    "uuid": "8cda2fdf-18f5-4d5e-9d95-1db8cbd61f42",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "SingleStreamSample",
-                            "outPinId": 1,
-                            "rhsNodeName": "PIDNode",
-                            "inPinId": 12,
-                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
-                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
-                        }
-                    ],
-                    "pinIndex": 12,
-                    "options": [
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Performance",
-                        "wires": {
-                            "12": {
-                                "sourceUUID": "36eba728-3569-4ab8-a70b-2883bf55bd94",
-                                "destinationUUID": "8cda2fdf-18f5-4d5e-9d95-1db8cbd61f42",
-                                "sourceName": "SingleStreamSample_Value",
-                                "destinationName": "PIDNode_Performance",
-                                "uuid": "e83f306e-93e2-4c0d-b9bc-03d9a9ac91b6",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
                 {
                     "name": "Timer",
                     "package": "PyFlowBase",
@@ -513,6 +347,77 @@
                     }
                 },
                 {
+                    "name": "Performance",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_Performance",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.4000000059604645",
+                    "uuid": "8cda2fdf-18f5-4d5e-9d95-1db8cbd61f42",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample",
+                            "outPinId": 1,
+                            "rhsNodeName": "PIDNode",
+                            "inPinId": 12,
+                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
+                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
+                        }
+                    ],
+                    "pinIndex": 12,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Performance",
+                        "wires": {
+                            "12": {
+                                "sourceUUID": "36eba728-3569-4ab8-a70b-2883bf55bd94",
+                                "destinationUUID": "8cda2fdf-18f5-4d5e-9d95-1db8cbd61f42",
+                                "sourceName": "SingleStreamSample_Value",
+                                "destinationName": "PIDNode_Performance",
+                                "uuid": "79fcf7aa-e7f6-4358-8265-8853c439254b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Max",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_Max",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "200.0",
+                    "uuid": "38052dcc-40e1-433e-89af-6b9cf757e2f7",
+                    "linkedTo": [],
+                    "pinIndex": 9,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Max",
+                        "wires": {}
+                    }
+                },
+                {
                     "name": "Default",
                     "package": "PyFlowBase",
                     "fullName": "PIDNode_Default",
@@ -580,19 +485,17 @@
                         "displayName": "Setpoint",
                         "wires": {}
                     }
-                }
-            ],
-            "outputs": [
+                },
                 {
-                    "name": "Start",
+                    "name": "KD",
                     "package": "PyFlowBase",
-                    "fullName": "PIDNode_Start",
-                    "dataType": "ExecPin",
-                    "direction": 1,
-                    "value": "null",
-                    "uuid": "e1b3bd93-5338-4160-8ad2-5e48e484a586",
+                    "fullName": "PIDNode_KD",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.025",
+                    "uuid": "83cc3af6-97c6-45a5-9520-edb555569d3b",
                     "linkedTo": [],
-                    "pinIndex": 2,
+                    "pinIndex": 6,
                     "options": [
                         256
                     ],
@@ -602,10 +505,84 @@
                     "alwaysDict": false,
                     "wrapper": {
                         "bLabelHidden": false,
-                        "displayName": "Start",
+                        "displayName": "KD",
                         "wires": {}
                     }
                 },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "073a5650-747b-4569-b652-6ca21730d29d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample",
+                            "outPinId": 3,
+                            "rhsNodeName": "PIDNode",
+                            "inPinId": 1,
+                            "lhsNodeUid": "4016e5e6-88d5-497a-9c8d-4568a372903c",
+                            "rhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "f1e80fe6-20a4-468b-aefc-cb34f66147da",
+                                "destinationUUID": "073a5650-747b-4569-b652-6ca21730d29d",
+                                "sourceName": "SingleStreamSample_Start",
+                                "destinationName": "PIDNode_Begin",
+                                "uuid": "a610f2e5-4b51-4501-8e2c-c857962c395b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ballSpeed\"",
+                    "uuid": "5f3e1f9f-1e58-47b7-9c68-c7f54ddbaf28",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
                 {
                     "name": "Data",
                     "package": "PyFlowBase",
@@ -645,7 +622,7 @@
                                 "destinationUUID": "b92b0614-935d-4b96-9026-8c78c5e791b1",
                                 "sourceName": "PIDNode_Data",
                                 "destinationName": "StreamGrapher_Data",
-                                "uuid": "7085e6ef-0db1-44d5-bc86-21ed4c465ebe",
+                                "uuid": "dcf89731-ad73-438d-9f2a-611452c10db2",
                                 "hOffsetL": "0.0",
                                 "hOffsetR": "0.0",
                                 "hOffsetLSShape": "0.0",
@@ -680,6 +657,29 @@
                         "displayName": "Stop1",
                         "wires": {}
                     }
+                },
+                {
+                    "name": "Start",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode_Start",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "e1b3bd93-5338-4160-8ad2-5e48e484a586",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Start",
+                        "wires": {}
+                    }
                 }
             ],
             "meta": {
@@ -695,8 +695,8 @@
                     "output": {}
                 }
             },
-            "x": -133.0,
-            "y": -162.0
+            "x": -110.0,
+            "y": -293.0
         },
         {
             "package": "LSLController",
@@ -706,84 +706,6 @@
             "name": "StreamGrapher",
             "uuid": "7aca5360-3627-4dfe-8789-238eead091ce",
             "inputs": [
-                {
-                    "name": "Data",
-                    "package": "PyFlowBase",
-                    "fullName": "StreamGrapher_Data",
-                    "dataType": "AnyPin",
-                    "direction": 0,
-                    "value": null,
-                    "uuid": "b92b0614-935d-4b96-9026-8c78c5e791b1",
-                    "linkedTo": [
-                        {
-                            "lhsNodeName": "PIDNode",
-                            "outPinId": 1,
-                            "rhsNodeName": "StreamGrapher",
-                            "inPinId": 6,
-                            "lhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95",
-                            "rhsNodeUid": "7aca5360-3627-4dfe-8789-238eead091ce"
-                        }
-                    ],
-                    "pinIndex": 6,
-                    "options": [
-                        1,
-                        2,
-                        8,
-                        16,
-                        256,
-                        512,
-                        1024
-                    ],
-                    "structure": 3,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Data",
-                        "wires": {
-                            "6": {
-                                "sourceUUID": "30e29f37-b372-4ce0-b473-e68ef0c87912",
-                                "destinationUUID": "b92b0614-935d-4b96-9026-8c78c5e791b1",
-                                "sourceName": "PIDNode_Data",
-                                "destinationName": "StreamGrapher_Data",
-                                "uuid": "7085e6ef-0db1-44d5-bc86-21ed4c465ebe",
-                                "hOffsetL": "0.0",
-                                "hOffsetR": "0.0",
-                                "hOffsetLSShape": "0.0",
-                                "hOffsetRSShape": "0.0",
-                                "vOffset": "0.0",
-                                "vOffsetSShape": "0.0",
-                                "snapVToFirst": 1,
-                                "snapVToSecond": 0
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "Begin",
-                    "package": "PyFlowBase",
-                    "fullName": "StreamGrapher_Begin",
-                    "dataType": "ExecPin",
-                    "direction": 0,
-                    "value": "null",
-                    "uuid": "f6d8b43c-70d8-42c0-b066-d31591e56763",
-                    "linkedTo": [],
-                    "pinIndex": 1,
-                    "options": [
-                        8,
-                        256
-                    ],
-                    "structure": 0,
-                    "alwaysList": false,
-                    "alwaysSingle": false,
-                    "alwaysDict": false,
-                    "wrapper": {
-                        "bLabelHidden": false,
-                        "displayName": "Begin",
-                        "wires": {}
-                    }
-                },
                 {
                     "name": "Type",
                     "package": "PyFlowBase",
@@ -876,6 +798,84 @@
                         "displayName": "Name",
                         "wires": {}
                     }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "b92b0614-935d-4b96-9026-8c78c5e791b1",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PIDNode",
+                            "outPinId": 1,
+                            "rhsNodeName": "StreamGrapher",
+                            "inPinId": 6,
+                            "lhsNodeUid": "a5786425-ffc2-489b-807c-07778e94fd95",
+                            "rhsNodeUid": "7aca5360-3627-4dfe-8789-238eead091ce"
+                        }
+                    ],
+                    "pinIndex": 6,
+                    "options": [
+                        1,
+                        2,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "6": {
+                                "sourceUUID": "30e29f37-b372-4ce0-b473-e68ef0c87912",
+                                "destinationUUID": "b92b0614-935d-4b96-9026-8c78c5e791b1",
+                                "sourceName": "PIDNode_Data",
+                                "destinationName": "StreamGrapher_Data",
+                                "uuid": "dcf89731-ad73-438d-9f2a-611452c10db2",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "f6d8b43c-70d8-42c0-b066-d31591e56763",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
                 }
             ],
             "outputs": [
@@ -916,8 +916,994 @@
                     "output": {}
                 }
             },
-            "x": 91.0,
-            "y": -230.0
+            "x": 222.0,
+            "y": -208.0
+        },
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "SingleStreamSample",
+            "owningGraphName": "root",
+            "name": "SingleStreamSample1",
+            "uuid": "78419673-9cad-4ac3-b8f1-4587598e8687",
+            "inputs": [
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "1a1c7d6b-f16a-4998-8407-8c38ef95d6d9",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"QuestionsStream\"",
+                    "uuid": "8fcc337e-eb7c-484c-afa5-299150e00095",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "992553ed-0c50-4d71-b151-5f26ed41e421",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Stop1",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Stop1",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "f432e353-fb72-4c32-ac40-f73c7b5eb73d",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop1",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Info",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Info",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "8e712f97-4d62-4da1-ab2a-86da3f889f30",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Info",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Start",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Start",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "eec4d02b-941e-4592-9a04-6ae82c043ce8",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample1",
+                            "outPinId": 3,
+                            "rhsNodeName": "PIDNode2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "78419673-9cad-4ac3-b8f1-4587598e8687",
+                            "rhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Start",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "eec4d02b-941e-4592-9a04-6ae82c043ce8",
+                                "destinationUUID": "7c3e5244-0b5d-4035-a2bb-1e960c874548",
+                                "sourceName": "SingleStreamSample1_Start",
+                                "destinationName": "PIDNode2_Begin",
+                                "uuid": "8a1ae937-b053-4d4b-a4ad-d6c6a8ff135c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Value",
+                    "package": "PyFlowBase",
+                    "fullName": "SingleStreamSample1_Value",
+                    "dataType": "FloatPin",
+                    "direction": 1,
+                    "value": "3.0",
+                    "uuid": "7531d384-8955-4b30-ae7d-a162712fb63f",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample1",
+                            "outPinId": 1,
+                            "rhsNodeName": "PIDNode2",
+                            "inPinId": 12,
+                            "lhsNodeUid": "78419673-9cad-4ac3-b8f1-4587598e8687",
+                            "rhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Value",
+                        "wires": {
+                            "12": {
+                                "sourceUUID": "7531d384-8955-4b30-ae7d-a162712fb63f",
+                                "destinationUUID": "cb9ba48e-f858-422c-9cf6-3cb39906734e",
+                                "sourceName": "SingleStreamSample1_Value",
+                                "destinationName": "PIDNode2_Performance",
+                                "uuid": "08f40df2-a420-417a-bead-ea95f0ae408c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "SingleStreamSample1"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SingleStreamSample1</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -423.0,
+            "y": 52.0
+        },
+        {
+            "package": "PIDController",
+            "lib": null,
+            "type": "PIDNode",
+            "owningGraphName": "root",
+            "name": "PIDNode2",
+            "uuid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df",
+            "inputs": [
+                {
+                    "name": "Setpoint",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Setpoint",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "3.0",
+                    "uuid": "a6ec4b9c-a789-4c78-9721-c038bb2ced78",
+                    "linkedTo": [],
+                    "pinIndex": 11,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Setpoint",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "KD",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_KD",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "d74ecefc-81b7-43d7-96b1-f015e3d54eeb",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "KD",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "7c3e5244-0b5d-4035-a2bb-1e960c874548",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample1",
+                            "outPinId": 3,
+                            "rhsNodeName": "PIDNode2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "78419673-9cad-4ac3-b8f1-4587598e8687",
+                            "rhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "eec4d02b-941e-4592-9a04-6ae82c043ce8",
+                                "destinationUUID": "7c3e5244-0b5d-4035-a2bb-1e960c874548",
+                                "sourceName": "SingleStreamSample1_Start",
+                                "destinationName": "PIDNode2_Begin",
+                                "uuid": "8a1ae937-b053-4d4b-a4ad-d6c6a8ff135c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ballSpeed\"",
+                    "uuid": "5a5233e7-fa75-497a-b9aa-51d279c1c303",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Max",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Max",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "200.0",
+                    "uuid": "7e89b37d-4235-40d8-94dd-168ea23e0917",
+                    "linkedTo": [],
+                    "pinIndex": 9,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Max",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Performance",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Performance",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "3.0",
+                    "uuid": "cb9ba48e-f858-422c-9cf6-3cb39906734e",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SingleStreamSample1",
+                            "outPinId": 1,
+                            "rhsNodeName": "PIDNode2",
+                            "inPinId": 12,
+                            "lhsNodeUid": "78419673-9cad-4ac3-b8f1-4587598e8687",
+                            "rhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df"
+                        }
+                    ],
+                    "pinIndex": 12,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Performance",
+                        "wires": {
+                            "12": {
+                                "sourceUUID": "7531d384-8955-4b30-ae7d-a162712fb63f",
+                                "destinationUUID": "cb9ba48e-f858-422c-9cf6-3cb39906734e",
+                                "sourceName": "SingleStreamSample1_Value",
+                                "destinationName": "PIDNode2_Performance",
+                                "uuid": "08f40df2-a420-417a-bead-ea95f0ae408c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Timer",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Timer",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.01",
+                    "uuid": "cd782846-bf3d-4dcd-8a43-99bfc6e5b348",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Timer",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "KP",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_KP",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.005",
+                    "uuid": "c624465f-95fd-458b-814c-212d83427d47",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "KP",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Min",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Min",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "10.0",
+                    "uuid": "536c74df-d493-457d-ba3b-3a57a2122d41",
+                    "linkedTo": [],
+                    "pinIndex": 10,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Min",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "ecf7b457-5b1e-4c08-843d-ab7fda3fb9de",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Default",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Default",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "50.0",
+                    "uuid": "b15ec092-661d-4abf-a776-f2d05d5b6223",
+                    "linkedTo": [],
+                    "pinIndex": 8,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Default",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "KI",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_KI",
+                    "dataType": "FloatPin",
+                    "direction": 0,
+                    "value": "0.0",
+                    "uuid": "71887569-8bab-4dcb-8531-8f80e033df06",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "KI",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "Start",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Start",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "2f0311ac-8438-4244-aaca-530c47764579",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Start",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Data",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "b464ff5d-0803-4f80-b1ea-c27d068ca875",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PIDNode2",
+                            "outPinId": 1,
+                            "rhsNodeName": "StreamGrapher4",
+                            "inPinId": 6,
+                            "lhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df",
+                            "rhsNodeUid": "06bd772a-0249-47cc-a386-12451d5c6716"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        1,
+                        2,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "6": {
+                                "sourceUUID": "b464ff5d-0803-4f80-b1ea-c27d068ca875",
+                                "destinationUUID": "bbd4953e-8aaa-496a-9bbb-610e22fa5e8a",
+                                "sourceName": "PIDNode2_Data",
+                                "destinationName": "StreamGrapher4_Data",
+                                "uuid": "4edcd610-6a32-41f3-a70e-90c6dbc83394",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Stop1",
+                    "package": "PyFlowBase",
+                    "fullName": "PIDNode2_Stop1",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "ced1df32-8bb8-4b15-b72b-07cae3857fcb",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop1",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "PIDNode2"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">PIDNode2</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -93.44085797489993,
+            "y": 30.09589496804834
+        },
+        {
+            "package": "LSLController",
+            "lib": null,
+            "type": "StreamGrapher",
+            "owningGraphName": "root",
+            "name": "StreamGrapher4",
+            "uuid": "06bd772a-0249-47cc-a386-12451d5c6716",
+            "inputs": [
+                {
+                    "name": "Type",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_Type",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"PyflowStream\"",
+                    "uuid": "8e9534b4-28e9-491f-9f3e-3347dc444acf",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Type",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Stop",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_Stop",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "dd6e3153-b32d-4398-8c9f-80223ea36601",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Stop",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "ID",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_ID",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"ID2\"",
+                    "uuid": "1430a0ea-9003-41c7-b258-bc4b31b40599",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "ID",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Name",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_Name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"PyflowStream\"",
+                    "uuid": "7eb9ea6b-6832-48a4-994d-9f806b6d9389",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "Data",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_Data",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "bbd4953e-8aaa-496a-9bbb-610e22fa5e8a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PIDNode2",
+                            "outPinId": 1,
+                            "rhsNodeName": "StreamGrapher4",
+                            "inPinId": 6,
+                            "lhsNodeUid": "7b3a27bc-eabe-4500-8b6b-87b241e8c9df",
+                            "rhsNodeUid": "06bd772a-0249-47cc-a386-12451d5c6716"
+                        }
+                    ],
+                    "pinIndex": 6,
+                    "options": [
+                        1,
+                        2,
+                        8,
+                        16,
+                        256,
+                        512,
+                        1024
+                    ],
+                    "structure": 3,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Data",
+                        "wires": {
+                            "6": {
+                                "sourceUUID": "b464ff5d-0803-4f80-b1ea-c27d068ca875",
+                                "destinationUUID": "bbd4953e-8aaa-496a-9bbb-610e22fa5e8a",
+                                "sourceName": "PIDNode2_Data",
+                                "destinationName": "StreamGrapher4_Data",
+                                "uuid": "4edcd610-6a32-41f3-a70e-90c6dbc83394",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Begin",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_Begin",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "72a545cc-773d-40d8-bc6d-fb4266ab8f34",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "Begin",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "OUT",
+                    "package": "PyFlowBase",
+                    "fullName": "StreamGrapher4_OUT",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "266ae111-70ae-4b38-91ad-71343d7bdea6",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "OUT",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "StreamGrapher4"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">StreamGrapher4</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 229.08685423608495,
+            "y": 59.71472938836925
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "commentNode",
+            "owningGraphName": "root",
+            "name": "Performance ",
+            "uuid": "a62d30ce-c54f-48a8-b435-4a414b10934b",
+            "inputs": [],
+            "outputs": [],
+            "meta": {
+                "var": {},
+                "label": "Performance "
+            },
+            "wrapper": {
+                "resize": {
+                    "w": 804.0,
+                    "h": 276.0
+                },
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Performance </p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                },
+                "owningNodes": [
+                    "StreamGrapher",
+                    "PIDNode",
+                    "SingleStreamSample"
+                ],
+                "color": 318819328
+            },
+            "x": -433.3503659403922,
+            "y": -316.43065869270595
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "commentNode",
+            "owningGraphName": "root",
+            "name": "Stress",
+            "uuid": "23eaf84f-19ce-4e93-8953-213033216254",
+            "inputs": [],
+            "outputs": [],
+            "meta": {
+                "var": {},
+                "label": "Stress"
+            },
+            "wrapper": {
+                "resize": {
+                    "w": 804.0,
+                    "h": 276.0
+                },
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Stress</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                },
+                "owningNodes": [
+                    "PIDNode2",
+                    "StreamGrapher4",
+                    "SingleStreamSample1"
+                ],
+                "color": 1297874944
+            },
+            "x": -427.0,
+            "y": -11.0
         }
     ],
     "depth": 1,

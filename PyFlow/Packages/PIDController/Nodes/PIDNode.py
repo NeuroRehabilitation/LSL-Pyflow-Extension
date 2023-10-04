@@ -166,9 +166,10 @@ class PIDNode(NodeBase):
 
             self.val = self.Performance.getData()
         else:
-            self.interval = self.Timer.getData()
-            self.DelayCalculation(self, round(self.randomval, 3))
-            self.randomval += 0.001
+            if self.randomval < 1:
+                self.interval = self.Timer.getData()
+                self.DelayCalculation(self, round(self.randomval, 3))
+                self.randomval += 0.001
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
