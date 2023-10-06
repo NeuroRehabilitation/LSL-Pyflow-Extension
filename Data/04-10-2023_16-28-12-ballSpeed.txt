@@ -1,4 +1,4 @@
-{"Time": 0.011966943740844727, "SetPoint": 3.0, "KP": 0.005, "KI": 0.0, "KD": 0.0, "Timer": 0.01, "Performance": 3.0, "Difficulty": 50.0}
+ {"Time": 0.011966943740844727, "SetPoint": 3.0, "KP": 0.005, "KI": 0.0, "KD": 0.0, "Timer": 0.01, "Performance": 3.0, "Difficulty": 50.0}
 {"Time": 0.14219021797180176, "SetPoint": 3.0, "KP": 0.005, "KI": 0.0, "KD": 0.0, "Timer": 0.01, "Performance": 3.0, "Difficulty": 50.0}
 {"Time": 0.1701803207397461, "SetPoint": 3.0, "KP": 0.005, "KI": 0.0, "KD": 0.0, "Timer": 0.01, "Performance": 3.0, "Difficulty": 50.0}
 {"Time": 0.1947777271270752, "SetPoint": 3.0, "KP": 0.005, "KI": 0.0, "KD": 0.0, "Timer": 0.01, "Performance": 3.0, "Difficulty": 50.0}
