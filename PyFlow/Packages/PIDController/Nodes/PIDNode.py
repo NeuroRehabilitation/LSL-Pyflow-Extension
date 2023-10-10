@@ -79,6 +79,8 @@ class PIDNode(NodeBase):
 
         self.Performance = self.createInputPin('Performance', 'FloatPin')
 
+
+
         # Output
         # self.Result = self.createOutputPin("Result", "FloatPin")
 
@@ -132,7 +134,9 @@ class PIDNode(NodeBase):
         if self.bWorking:
 
             if time.time() - self.start >= self.timeDelta:
+
                 self.timeDelta = self.DelayCalculation(self, round(time.time() - self.start, 3))
+
                 # self.timeDelta = ((time.time() - self.start)-self.Timer.getData())*2
                 self.start = time.time()
                 control = self.pid.calculate(self.Setpoint.getData(), self.Performance.getData(), self.Timer.getData())
@@ -169,6 +173,7 @@ class PIDNode(NodeBase):
             if self.randomval < 1:
                 self.interval = self.Timer.getData()
                 self.DelayCalculation(self, round(self.randomval, 3))
+                #print("Delta time " + str( self.DelayCalculation(self, round(self.randomval, 3))) + "Time since last Update" + str(self.randomval))
                 self.randomval += 0.001
 
     def stop(self, *args, **kwargs):
@@ -195,7 +200,7 @@ class PIDNode(NodeBase):
     def DelayCalculation(self, real_interval):
         interval = self.interval
         if real_interval > self.interval:
-            interval += self.interval - real_interval
+            interval += self.interval - real_interval-0.002
             print("Interval = "+str(self.interval) + "real Interval = "+str(real_interval) + "Delay = "+str(interval))
-        return self.interval
+        return interval
 

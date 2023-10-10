@@ -5,6 +5,7 @@ from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
 from PyFlow.Packages.PIDController.Nodes.PIDNode import PIDNode
+from PyFlow.Packages.PIDController.Nodes.PIDNode2 import PIDNode2
 
 # Factories
 
@@ -16,6 +17,11 @@ _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
 _NODES[PIDNode.__name__] = PIDNode
+_NODES = {
+	PIDNode.__name__: PIDNode,
+	PIDNode2.__name__: PIDNode2,
+
+}
 
 
 class PIDController(IPackage):
