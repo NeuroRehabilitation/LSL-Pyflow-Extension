@@ -49,14 +49,11 @@ class DemoNode(NodeBase):
     def description():
         return "Description in rst format."
 
-
-
     def action(self, *args, **kwargs):
         if self.bWorking:
-
             data = self.data.getData()
-            self.save_json(self.name, data, self.now)
-
+            for value in data["Emteq"]:
+                self.save_json(self.name, value, self.now)
 
     def start(self, *args, **kwargs):
         self.bWorking = True

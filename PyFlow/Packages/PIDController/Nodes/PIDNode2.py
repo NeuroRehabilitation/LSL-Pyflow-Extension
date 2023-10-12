@@ -7,7 +7,15 @@ from PyFlow.Core.Common import *
 
 from PyFlow.Packages.PyFlowBase.Nodes import FLOW_CONTROL_COLOR
 
+class Memoize:
+    def __init__(self, func):
+        self.func = func
+        self.memo = {}
 
+    def __call__(self, *args):
+        if args not in self.memo:
+            self.memo[args] = self.func(*args)
+        return self.memo[args]
 class PIDController:
     def __init__(self, kp, ki, kd):
         self.kp = kp
@@ -42,6 +50,7 @@ class PIDNode2(NodeBase):
     def __init__(self, name):
         super(PIDNode2, self).__init__(name)
 
+        self.timeDelta = 0
         self.default = None
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.ActionPin = self.createInputPin("Action", 'ExecPin', None, self.Action)
@@ -69,17 +78,13 @@ class PIDNode2(NodeBase):
         self.Performance.disableOptions(PinOptions.SupportsOnlyArrays)
 
         # Output
-        self.Result = self.createOutputPin("Result", "FloatPin")
 
-        self.Control = self.createOutputPin("Control", "FloatPin")
-
-        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Multi)
-        self.Info.enableOptions(PinOptions.AllowAny)
 
         self.now = datetime.now()
 
-        self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
-        self.End_Out = self.createOutputPin("Stop", 'ExecPin')
+
+        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
+        self.Send.enableOptions(PinOptions.AllowAny)
 
         self.bWorking = None
         self.receivedNewValue = False
@@ -88,6 +93,8 @@ class PIDNode2(NodeBase):
         self.start = time.time()
         self.val = 0
         self.Difficulty = 0.0
+        self.position = 0
+        self.randomval = 0.001
 
     @staticmethod
     def pinTypeHints():
@@ -112,10 +119,13 @@ class PIDNode2(NodeBase):
 
     def Tick(self, delta):
         super(PIDNode2, self).Tick(delta)
-        if self.bWorking and self.receivedNewValue:
+        if self.bWorking:
 
-            for performance in self.val:
-                control = self.pid.calculate(self.Setpoint.getData(), performance, self.Timer.getData())
+            if time.time() - self.start >= self.timeDelta:
+                #print("flag1"+str(self.val[self.position]))
+                self.timeDelta = self.DelayCalculation(self, round(time.time() - self.start, 3))
+
+                control = self.pid.calculate(self.Setpoint.getData(), self.val[self.position], self.Timer.getData())
 
                 max = self.Max.getData()
                 min = self.Min.getData()
@@ -138,27 +148,38 @@ class PIDNode2(NodeBase):
                 info = {"Time": time.time() - self.startTimer, "SetPoint": self.Setpoint.getData(),
                         "KP": self.KP.getData(),
                         "KI": self.KI.getData(), "KD": self.KD.getData(), "Timer": self.Timer.getData(),
-                        "Performance": performance, "Output": control,
+                        "Performance": self.val[self.position], "Output": control,
                         "Percentage": control,
                         "Difficulty": self.default}
 
-                self.Info.setData(info)
-
                 save_json(self.Name.getData(), info, self.now)
 
-                self.Result.setData(self.default)
-                self.Control.setData(control)
+                _dict = dict()
+                _dict = {"" + self.Name.getData() + "": self.default}
+
+                self.Send.setData(_dict)
+
                 self.start = time.time()
-                self.receivedNewValue = False
-        self.val = self.Performance.getData()
+
+                self.position += 1
+                if self.position > len(self.val)-1:
+                    self.position = len(self.val)-1
+        else:
+            if self.randomval < 1:
+                self.interval = self.Timer.getData()
+                self.DelayCalculation(self, round(self.randomval, 3))
+                #print("Delta time " + str( self.DelayCalculation(self, round(self.randomval, 3))) + "Time since last Update" + str(self.randomval))
+                self.randomval += 0.001
+
 
     def Action(self, *args, **kwargs):
         self.receivedNewValue = True
+        self.position = 0
         self.val = self.Performance.getData()
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
-        self.End_Out.call()
+        #self.End_Out.call()
 
     def start(self, *args, **kwargs):
 
@@ -171,4 +192,13 @@ class PIDNode2(NodeBase):
 
         self.pid = PIDController(kp, ki, kd)
         self.val = self.Performance.getData()
-        self.Begin_Out.call()
+        #self.Begin_Out.call()
+
+    @Memoize
+    def DelayCalculation(self, real_interval):
+        interval = self.interval
+        if real_interval > self.interval:
+            interval += self.interval - real_interval - 0.002
+            print("Interval = " + str(self.interval) + "real Interval = " + str(real_interval) + "Delay = " + str(
+                interval))
+        return interval
