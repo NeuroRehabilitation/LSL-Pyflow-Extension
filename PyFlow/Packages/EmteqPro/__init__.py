@@ -6,6 +6,7 @@ from PyFlow.UI.UIInterfaces import IPackage
 # Class based nodes
 from PyFlow.Packages.EmteqPro.Nodes.AcquisitionEmteq import AcquisitionEmteq
 from PyFlow.Packages.EmteqPro.Nodes.SensorsEmteq import SensorsEmteq
+from PyFlow.Packages.EmteqPro.Nodes.SensorsEmteq2 import SensorsEmteq2
 from PyFlow.Packages.EmteqPro.Nodes.CalculationEmteq import CalculationEmteq
 from PyFlow.Packages.EmteqPro.Nodes.CSVEmteq import CSVEmteq
 from PyFlow.Packages.EmteqPro.Nodes.HeartRate import HeartRate
@@ -23,6 +24,7 @@ _EXPORTERS = OrderedDict()
 _NODES={
 	AcquisitionEmteq.__name__:AcquisitionEmteq,
 	SensorsEmteq.__name__:SensorsEmteq,
+	SensorsEmteq2.__name__:SensorsEmteq2,
 	CSVEmteq.__name__:CSVEmteq,
 	HeartRate.__name__:HeartRate,
 	CalculationEmteq.__name__:CalculationEmteq

@@ -26,8 +26,8 @@ class SingleStreamGrapher(NodeBase):
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 
-        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
-        self.Info.enableOptions(PinOptions.AllowAny)
+        #self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
+        #self.Info.enableOptions(PinOptions.AllowAny)
 
         self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
         self.Action_Out = self.createOutputPin("Action", 'ExecPin')
@@ -155,7 +155,7 @@ class SingleStreamGrapher(NodeBase):
             }
             stream_information.append(inlet_info)
             stream_information2 = {inlet.info().name(): inlet_info}
-            self.Info.setData(stream_information)
+            #self.Info.setData(stream_information)
 
             self.inlets.append(inlet)
 

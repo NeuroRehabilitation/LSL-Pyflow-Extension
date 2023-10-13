@@ -19,6 +19,7 @@ class SingleStreamSample(NodeBase):
         # Input pins
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
+
         self.StreamName = self.createInputPin("Name", 'StringPin')
 
         # Output pins

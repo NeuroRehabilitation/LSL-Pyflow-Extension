@@ -19,13 +19,19 @@ class SingleStreamReceiver(NodeBase):
         # Input pins
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
+        self.StreamName = self.createInputPin("Name", 'StringPin')
 
         # Output pins
-        self.out = self.createOutputPin("OUT", 'ExecPin')
+
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
-        self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
-        self.Info.enableOptions(PinOptions.AllowAny)
+
+        #self.Info = self.createOutputPin('Info', 'AnyPin', structure=StructureType.Single)
+        #self.Info.enableOptions(PinOptions.AllowAny)
+
+        self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
+        self.Action_Out = self.createOutputPin("Action", 'ExecPin')
+        self.End_Out = self.createOutputPin("Stop", 'ExecPin')
 
         self.inlets = []
         self.bWorking = False
@@ -33,12 +39,13 @@ class SingleStreamReceiver(NodeBase):
 
         self.DataBase = dict()
         self.StructDataBase = dict()
+        self.DataBaseZero = dict()
 
         self.Graph_queue = multiprocessing.Queue()
         self.online = False
-        self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
 
         self.start = time.time()
+        self.empty = False
         self.counter = 0
 
     def Tick(self, delta):
@@ -47,37 +54,39 @@ class SingleStreamReceiver(NodeBase):
         if self.bWorking:
             if time.time() - self.start >= 1:
                 self.start = time.time()
-                # print("Number of values in one second->" + str(self.counter))
 
-                # print("Struct" + str(self.DataBase))
-
-                # self.Graph_queue.put(self.DataBase)
-                # self.DataBase = None
-                # self.DataBase = copy.deepcopy(self.StructDataBase)
+                if self.empty:
+                    self.empty = False
+                else:
+                    self.Graph_queue.put(self.DataBaseZero)
 
                 self.counter = 0
+
             if len(self.inlets) != 0:
-                for inlet in self.inlets:
-                    # Pull a chunk of samples from the inlet
-                    samples, timestamps = inlet.pull_chunk(max_samples=int(inlet.info().nominal_srate()))
 
-                    if samples:
-                        # Process the received samples
-                        for sample, timestamp in zip(samples, timestamps):
-                            # Do something with the sample data and timestamp
-                            # self.Send.setData(sample)
-                            # print(+"Received sample:", sample, "at timestamp:", timestamp)
-                            self.addDataToDict(inlet.info().name(), sample)
+                # Pull a chunk of samples from the inlet
+                samples, timestamps = self.inlets[0].pull_chunk(max_samples=int(self.inlets[0].info().nominal_srate()))
 
-                self.out.call()
+                if samples:
+                    self.empty = True
+                    # Process the received samples
+                    for sample, timestamp in zip(samples, timestamps):
+                        self.addDataToDict(self.inlets[0].info().name(), sample)
+                        #print("Samples 1 : "+str(sample) + "TimesStamps"+str(timestamp))
+                self.Action_Out.call()
                 self.Send.setData(self.DataBase)
-
             else:
                 self.bWorking = False
 
         if timer1 - time.time() != 0:
             self.counter += 1
             # print("it took |"+str(timer1-time.time())+"| to get the values")
+
+    def fill_any(self, i):
+        fill_var = []
+        while len(fill_var) < i:
+            fill_var.append(0)
+        return fill_var
 
     @staticmethod
     def keywords():
@@ -89,15 +98,9 @@ class SingleStreamReceiver(NodeBase):
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
-        self.Prosess.terminate()
-        self.Prosess.join()
-        self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
+        self.End_Out.call()
 
     def start(self, *args, **kwargs):
-        if self.bWorking:
-            self.Prosess.terminate()
-            self.Prosess.join()
-            self.Prosess = multiprocessing.Process(target=main2.Run, args=(self.Graph_queue,))
 
         self.bWorking = True
         streams = resolve_streams()
@@ -107,11 +110,13 @@ class SingleStreamReceiver(NodeBase):
         for stream in streams:
 
             inlet = StreamInlet(stream)
-
+            if inlet.info().name() != self.StreamName.getData():
+                continue
             stream_channels = dict()
             channels = inlet.info().desc().child("channels").child("channel")
 
             channels_dicts = dict()
+            channels_dicts_zero = dict()
             for i in range(inlet.info().channel_count()):
                 # Get the channel number (e.g. 1)
                 channel = i + 1
@@ -126,10 +131,11 @@ class SingleStreamReceiver(NodeBase):
                 stream_channels.update({channel: [sensor, unit]})
                 channels = channels.next_sibling()
                 channels_dicts[sensor] = []
+                channels_dicts_zero[sensor] = self.fill_any(int(inlet.info().nominal_srate()))
 
             self.DataBase[inlet.info().name()] = channels_dicts
-
             self.StructDataBase = copy.deepcopy(self.DataBase)
+            self.DataBaseZero[inlet.info().name()] = channels_dicts_zero
 
             inlet_info = {
                 "Name": inlet.info().name(),
@@ -140,17 +146,13 @@ class SingleStreamReceiver(NodeBase):
             }
             stream_information.append(inlet_info)
             stream_information2 = {inlet.info().name(): inlet_info}
-
+            #self.Info.setData(stream_information)
 
             self.inlets.append(inlet)
 
-        self.Info.setData(stream_information)
-        self.Prosess.start()
-        print("->{}".format(stream_information))
-        self.Graph_queue.put(stream_information)
-        while self.Graph_queue.get() != 1:
-            self.Graph_queue.put(stream_information)
-        self.online = True
+
+            self.online = True
+            self.Begin_Out.call()
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):
@@ -158,10 +160,10 @@ class SingleStreamReceiver(NodeBase):
             # if i == 0:
             # print("Lenght"+str(len(self.DataBase[key][row])))
 
-            if (len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate())):
-                # print("Lenght" + str(len(self.DataBase[key][row])))
+            if len(self.DataBase[key][row]) > (self.inlets[-1].info().nominal_srate()):
+                # print("Length" + str(len(self.DataBase[key][row])))
                 self.DataBase[key][row].pop(0)
-                self.Graph_queue.put(self.DataBase)
+                #self.Graph_queue.put(self.DataBase)
                 self.DataBase = None
                 self.DataBase = copy.deepcopy(self.StructDataBase)
 
