@@ -123,6 +123,7 @@ class SingleStreamReceiver(NodeBase):
 
                 # Get the channel type (e.g. ECG)
                 sensor = channels.child_value("label")
+                print("Sensor:" + str(sensor))
 
                 # Get the channel unit (e.g. mV)
                 unit = channels.child_value("unit")

@@ -86,7 +86,7 @@ class PIDNode2(NodeBase):
 
         self.now = datetime.now()
 
-        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Dict)
+        self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
 
         self.bWorking = None
@@ -158,7 +158,7 @@ class PIDNode2(NodeBase):
 
                 # Create a dictionary for sending data
                 data_dict = {self.Name.getData(): self.default}
-                print("Data Info :{}".format(data_dict))
+                #print("Data Info :{}".format(data_dict))
                 self.Send.setData(data_dict)
 
                 self.start = time.time()
