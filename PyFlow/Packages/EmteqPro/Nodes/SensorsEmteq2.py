@@ -17,10 +17,13 @@ class SensorsEmteq2(NodeBase):
 
         self.Send = self.createOutputPin('DataOut', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+
         self.Begin_Out = self.createOutputPin("Start", 'ExecPin')
         self.End_Out = self.createOutputPin("Stop", 'ExecPin')
 
-        self.LastValue = self.createOutputPin('LastValue', 'FloatPin')
+        self.LastValue = self.createOutputPin('LastValue', 'AnyPin', structure=StructureType.Multi)
+        self.LastValue.enableOptions(PinOptions.AllowAny)
+
 
         self.bWorking = False
     @staticmethod
@@ -49,11 +52,11 @@ class SensorsEmteq2(NodeBase):
         if self.bWorking:
             sensor_name = self.Sensor_Name.getData()
             data = self.Data.getData()
-
             if sensor_name in data["Emteq"]:
                 self.Send.setData(data["Emteq"][sensor_name])
-                if len(data["Emteq"][sensor_name]) !=0:
-                    self.LastValue.setData(data["Emteq"][sensor_name][-1])
+                if len(data["Emteq"][sensor_name]) != 0:
+                    value = {"HR": data["Emteq"][sensor_name][-1]}
+                    self.LastValue.setData(value)
 
     def start(self, *args, **kwargs):
         self.bWorking = True
