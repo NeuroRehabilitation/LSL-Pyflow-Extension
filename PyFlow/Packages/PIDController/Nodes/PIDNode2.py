@@ -82,12 +82,16 @@ class PIDNode2(NodeBase):
             PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Performance.disableOptions(PinOptions.SupportsOnlyArrays)
 
+
         # Output
 
         self.now = datetime.now()
 
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
+
+
+        self.outExec = self.createOutputPin(DEFAULT_OUT_EXEC_NAME, 'ExecPin')
 
         self.bWorking = None
         self.receivedNewValue = False
@@ -160,6 +164,8 @@ class PIDNode2(NodeBase):
                 data_dict = {self.Name.getData(): self.default}
                 #print("Data Info :{}".format(data_dict))
                 self.Send.setData(data_dict)
+
+                self.outExec.call()
 
                 self.start = time.time()
                 self.position += 1

@@ -53,7 +53,7 @@ class SensorsEmteq3(NodeBase):
             if sensor_name in data["Emteq"]:
                 self.Send.setData(data["Emteq"][sensor_name])
                 if len(data["Emteq"][sensor_name]) != 0:
-                    self.LastValue.setData(data["Emteq"][sensor_name][-1])
+                    self.LastValue.setData(data["Emteq"][sensor_name][-1]*1.2)
 
     def start(self, *args, **kwargs):
         self.bWorking = True

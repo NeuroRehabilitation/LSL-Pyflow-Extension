@@ -44,23 +44,18 @@ class StreamGrapher(NodeBase):
         super(StreamGrapher, self).Tick(delta)
         if self.bWorking:
 
-            # if time.time() - self.start >= 10:
-            # self.out.call()
-            # self.start
-            #self.out.call()
-            # Generate a random value
-            sample = list(self.Data.getData().values())
+            if time.time() - self.start >= 0.2:
 
-            # self.addDataToDict(self.streamName.getData(), sample)
+                sample = list(self.Data.getData().values())
 
-            #self.Send.setData(self.DataBase)
-            self.outlet.push_sample(sample)
+                # self.addDataToDict(self.streamName.getData(), sample)
 
-            # Send the data sample
-            if time.time() - self.start > 1:
-                self.counter = 0
+                #self.Send.setData(self.DataBase)
+                self.outlet.push_sample(sample)
+
+
                 self.start = time.time()
-            self.counter = self.counter + 1
+
 
     def addDataToDict(self, key, data):
         for i, row in enumerate(self.DataBase[key]):

@@ -16,6 +16,11 @@ class CreateDict2(NodeBase):
         self.Data.enableOptions(PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
         self.Data.disableOptions(PinOptions.SupportsOnlyArrays)
 
+        self.Data2 = self.createInputPin('Data2', 'AnyPin', structure=StructureType.Multi)
+        self.Data2.enableOptions(
+            PinOptions.AllowMultipleConnections | PinOptions.AllowAny | PinOptions.DictElementSupported)
+        self.Data2.disableOptions(PinOptions.SupportsOnlyArrays)
+
         #_____Output_____#
         self.Send = self.createOutputPin('Data', 'AnyPin', structure=StructureType.Multi)
         self.Send.enableOptions(PinOptions.AllowAny)
@@ -48,4 +53,7 @@ class CreateDict2(NodeBase):
 
     def compute(self, *args, **kwargs):
         if self.Data.getData() is not None:
-            self.Send.setData(self.Data)
+            data = self.Data.getData()
+            data2 = self.Data2.getData()
+            data.update(data2)
+            self.Send.setData(data)
