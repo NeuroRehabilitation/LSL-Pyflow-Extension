@@ -209,7 +209,7 @@ class PIDNode2(NodeBase):
     def DelayCalculation(self, real_interval):
         interval = self.interval
         if real_interval > self.interval:
-            interval += self.interval - real_interval - 0.002
+            interval += self.interval - real_interval - 0.005
             # print("Interval = " + str(self.interval) + "real Interval = " + str(real_interval) + "Delay = " + str(
             # interval))
         return interval
