@@ -174,10 +174,13 @@ class PIDNode2(NodeBase):
                     self.position = len(self.val) - 1
         else:
             if self.randomval < 1:
+                print("Loading "+str((self.randomval/1
+                                      )*100)+"% ...")
                 self.interval = self.Timer.getData()
                 self.DelayCalculation(self, round(self.randomval, 3))
                 # print("Delta time " + str( self.DelayCalculation(self, round(self.randomval, 3))) + "Time since last Update" + str(self.randomval))
                 self.randomval += 0.001
+
 
     def Action(self, *args, **kwargs):
         self.receivedNewValue = True
