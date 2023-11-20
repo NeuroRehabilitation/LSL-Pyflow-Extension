@@ -4,7 +4,7 @@ from collections import OrderedDict
 from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
-from PyFlow.Packages.JSON.Nodes.DemoNode import DemoNode
+from PyFlow.Packages.JSON.Nodes.SaveJson import SaveJson
 
 # Factories
 
@@ -15,7 +15,7 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_NODES[DemoNode.__name__] = DemoNode
+_NODES[SaveJson.__name__] = SaveJson
 
 
 class JSON(IPackage):
