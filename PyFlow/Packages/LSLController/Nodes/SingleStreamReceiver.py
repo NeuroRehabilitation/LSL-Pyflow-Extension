@@ -20,6 +20,7 @@ class SingleStreamReceiver(NodeBase):
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
         self.StreamName = self.createInputPin("Name", 'StringPin')
+        self.MarkersName = self.createInputPin("Markers", 'StringPin')
 
         # Output pins
 
