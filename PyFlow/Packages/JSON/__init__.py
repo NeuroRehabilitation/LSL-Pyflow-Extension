@@ -5,6 +5,7 @@ from PyFlow.UI.UIInterfaces import IPackage
 
 # Class based nodes
 from PyFlow.Packages.JSON.Nodes.SaveJson import SaveJson
+from PyFlow.Packages.JSON.Nodes.SaveJson2 import SaveJson2
 
 # Factories
 
@@ -16,7 +17,10 @@ _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
 _NODES[SaveJson.__name__] = SaveJson
-
+_NODES = {
+	SaveJson.__name__: SaveJson,
+	SaveJson2.__name__: SaveJson2,
+}
 
 class JSON(IPackage):
 	def __init__(self):

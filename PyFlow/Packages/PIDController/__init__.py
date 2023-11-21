@@ -16,11 +16,9 @@ _TOOLS = OrderedDict()
 _PREFS_WIDGETS = OrderedDict()
 _EXPORTERS = OrderedDict()
 
-_NODES[PIDNode.__name__] = PIDNode
 _NODES = {
 	PIDNode.__name__: PIDNode,
 	PIDNode2.__name__: PIDNode2,
-
 }
 
 
