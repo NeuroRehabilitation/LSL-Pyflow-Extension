@@ -58,11 +58,12 @@ class PIDNode2(NodeBase):
         self.timeDelta = 0
         self.default = None
         self.beginPin = self.createInputPin("Begin", 'ExecPin', None, self.start)
-
+        self.ActionPin = self.createInputPin("Action", 'ExecPin', None, self.Action)
 
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
         self.Name = self.createInputPin('Name', 'StringPin')
+        self.ID = self.createInputPin('ID', 'StringPin')
 
         self.KP = self.createInputPin('KP', 'FloatPin')
         self.KI = self.createInputPin('KI', 'FloatPin')
@@ -190,8 +191,9 @@ class PIDNode2(NodeBase):
 
     def stop(self, *args, **kwargs):
         self.bWorking = False
-        save_json(self.Name.getData(), self.dataGathering, self.now)
-        print("Number of Loops :" + str(self.count_loops))
+        file_name = "ID"+self.ID.getData()+"_"+self.Name.getData()
+        save_json(file_name, self.dataGathering, self.now)
+        #print("Number of Loops :" + str(self.count_loops))
         # self.End_Out.call()
 
     def start(self, *args, **kwargs):

@@ -62,6 +62,7 @@ class PIDNode(NodeBase):
         self.stopPin = self.createInputPin("Stop", 'ExecPin', None, self.stop)
 
         self.Name = self.createInputPin('Name', 'StringPin')
+        self.ID = self.createInputPin('ID', 'StringPin')
 
         self.KP = self.createInputPin('KP', 'FloatPin')
         self.KI = self.createInputPin('KI', 'FloatPin')
@@ -164,7 +165,8 @@ class PIDNode(NodeBase):
                 _dict = {"" + self.Name.getData() + "": self.default}
 
                 self.Send.setData(_dict)
-                save_json(self.Name.getData(), info, self.now)
+                file_name = "ID" + self.ID.getData() + "_" + self.Name.getData()
+                save_json(file_name, info, self.now)
 
                 # self.Result.setData(self.default)
 
